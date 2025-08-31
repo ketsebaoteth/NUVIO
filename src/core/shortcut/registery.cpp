@@ -1,5 +1,5 @@
 #include "core/shortcut/registery.h"
-
+#include <cstdio>
 
 NUVIO_NAMESPACE_BEGIN
 
