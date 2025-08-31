@@ -3,6 +3,7 @@
 #include "core/dna/project_manager.h"
 #include "core/window/window_manager.h"
 #include "core/ui/ui.h"
+#include "core/ui/theme/theme.h"
 
 NUVIO_NAMESPACE_BEGIN
 
@@ -13,6 +14,7 @@ NuvioApp::NuvioApp(int argc, char** argv) {
     nuvio::gWindowManager.set_window_size(1280, 720);
     nuvio::gWindowManager.create_window("Nuvio", WINDOW_FLAG_RESIZABLE | WINDOW_FLAG_MAXIMIZED);
     nuvio::gUIManager.init();
+    nuvio::ui::gThemeManager.ApplyTheme("Default");
     // for now
     UNUSED(project_path);
     UNUSED(argc);
