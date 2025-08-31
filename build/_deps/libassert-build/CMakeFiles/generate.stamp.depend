@@ -1,0 +1,23 @@
+# CMake generation dependency list for this directory.
+C:/Program Files/CMake/share/cmake-4.1/Modules/BasicConfigVersion-SameMajorVersion.cmake.in
+C:/Program Files/CMake/share/cmake-4.1/Modules/CMakePackageConfigHelpers.cmake
+C:/Program Files/CMake/share/cmake-4.1/Modules/ExternalProject/PatchInfo.txt.in
+C:/Program Files/CMake/share/cmake-4.1/Modules/ExternalProject/RepositoryInfo.txt.in
+C:/Program Files/CMake/share/cmake-4.1/Modules/ExternalProject/UpdateInfo.txt.in
+C:/Program Files/CMake/share/cmake-4.1/Modules/ExternalProject/gitclone.cmake.in
+C:/Program Files/CMake/share/cmake-4.1/Modules/ExternalProject/gitupdate.cmake.in
+C:/Program Files/CMake/share/cmake-4.1/Modules/ExternalProject/shared_internal_commands.cmake
+C:/Program Files/CMake/share/cmake-4.1/Modules/ExternalProject/stepscript.cmake.in
+C:/Program Files/CMake/share/cmake-4.1/Modules/FetchContent.cmake
+C:/Program Files/CMake/share/cmake-4.1/Modules/FindGit.cmake
+C:/Program Files/CMake/share/cmake-4.1/Modules/FindPackageHandleStandardArgs.cmake
+C:/Program Files/CMake/share/cmake-4.1/Modules/FindPackageMessage.cmake
+C:/Program Files/CMake/share/cmake-4.1/Modules/GNUInstallDirs.cmake
+C:/Program Files/CMake/share/cmake-4.1/Modules/WriteBasicConfigVersionFile.cmake
+C:/Users/Predator/Documents/contribute/Nuvio/build/_deps/libassert-src/CMakeLists.txt
+C:/Users/Predator/Documents/contribute/Nuvio/build/_deps/libassert-src/cmake/InstallRules.cmake
+C:/Users/Predator/Documents/contribute/Nuvio/build/_deps/libassert-src/cmake/OptionVariables.cmake
+C:/Users/Predator/Documents/contribute/Nuvio/build/_deps/libassert-src/cmake/PreventInSourceBuilds.cmake
+C:/Users/Predator/Documents/contribute/Nuvio/build/_deps/libassert-src/cmake/ProjectIsTopLevel.cmake
+C:/Users/Predator/Documents/contribute/Nuvio/build/_deps/libassert-src/cmake/in/libassert-config-cmake.in
+C:/Users/Predator/Documents/contribute/Nuvio/build/_deps/libassert-src/cmake/in/version-hpp.in

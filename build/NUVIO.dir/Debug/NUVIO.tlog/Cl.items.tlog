@@ -1,0 +1,16 @@
+C:\Users\Predator\Documents\contribute\Nuvio\src\core\nuvio.cpp;C:\Users\Predator\Documents\contribute\Nuvio\build\NUVIO.dir\Debug\nuvio.obj
+C:\Users\Predator\Documents\contribute\Nuvio\src\core\project\project_manager.cpp;C:\Users\Predator\Documents\contribute\Nuvio\build\NUVIO.dir\Debug\project_manager.obj
+C:\Users\Predator\Documents\contribute\Nuvio\src\core\project\projects.cpp;C:\Users\Predator\Documents\contribute\Nuvio\build\NUVIO.dir\Debug\projects.obj
+C:\Users\Predator\Documents\contribute\Nuvio\src\core\ui\components\registery.cpp;C:\Users\Predator\Documents\contribute\Nuvio\build\NUVIO.dir\Debug\registery.obj
+C:\Users\Predator\Documents\contribute\Nuvio\src\core\ui\test_comp.cpp;C:\Users\Predator\Documents\contribute\Nuvio\build\NUVIO.dir\Debug\test_comp.obj
+C:\Users\Predator\Documents\contribute\Nuvio\src\core\ui\ui.cpp;C:\Users\Predator\Documents\contribute\Nuvio\build\NUVIO.dir\Debug\ui.obj
+C:\Users\Predator\Documents\contribute\Nuvio\src\core\window\window_manager.cpp;C:\Users\Predator\Documents\contribute\Nuvio\build\NUVIO.dir\Debug\window_manager.obj
+C:\Users\Predator\Documents\contribute\Nuvio\src\main.cpp;C:\Users\Predator\Documents\contribute\Nuvio\build\NUVIO.dir\Debug\main.obj
+C:\Users\Predator\Documents\contribute\Nuvio\includes\external\imgui\backends\imgui_impl_glfw.cpp;C:\Users\Predator\Documents\contribute\Nuvio\build\NUVIO.dir\Debug\imgui_impl_glfw.obj
+C:\Users\Predator\Documents\contribute\Nuvio\includes\external\imgui\backends\imgui_impl_opengl3.cpp;C:\Users\Predator\Documents\contribute\Nuvio\build\NUVIO.dir\Debug\imgui_impl_opengl3.obj
+C:\Users\Predator\Documents\contribute\Nuvio\includes\external\imgui\imgui.cpp;C:\Users\Predator\Documents\contribute\Nuvio\build\NUVIO.dir\Debug\imgui.obj
+C:\Users\Predator\Documents\contribute\Nuvio\includes\external\imgui\imgui_demo.cpp;C:\Users\Predator\Documents\contribute\Nuvio\build\NUVIO.dir\Debug\imgui_demo.obj
+C:\Users\Predator\Documents\contribute\Nuvio\includes\external\imgui\imgui_draw.cpp;C:\Users\Predator\Documents\contribute\Nuvio\build\NUVIO.dir\Debug\imgui_draw.obj
+C:\Users\Predator\Documents\contribute\Nuvio\includes\external\imgui\imgui_tables.cpp;C:\Users\Predator\Documents\contribute\Nuvio\build\NUVIO.dir\Debug\imgui_tables.obj
+C:\Users\Predator\Documents\contribute\Nuvio\includes\external\imgui\imgui_widgets.cpp;C:\Users\Predator\Documents\contribute\Nuvio\build\NUVIO.dir\Debug\imgui_widgets.obj
+C:\Users\Predator\Documents\contribute\Nuvio\includes\external\glad\glad.c;C:\Users\Predator\Documents\contribute\Nuvio\build\NUVIO.dir\Debug\glad.obj

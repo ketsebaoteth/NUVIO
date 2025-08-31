@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\Predator\Documents\contribute\Nuvio\build\_deps\libassert-src\src\assert.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Predator\Documents\contribute\Nuvio\build\_deps\libassert-src\src\analysis.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Predator\Documents\contribute\Nuvio\build\_deps\libassert-src\src\utils.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Predator\Documents\contribute\Nuvio\build\_deps\libassert-src\src\stringification.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Predator\Documents\contribute\Nuvio\build\_deps\libassert-src\src\platform.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Predator\Documents\contribute\Nuvio\build\_deps\libassert-src\src\printing.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Predator\Documents\contribute\Nuvio\build\_deps\libassert-src\src\paths.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\Predator\Documents\contribute\Nuvio\build\_deps\libassert-src\src\tokenizer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C:\Users\Predator\Documents\contribute\Nuvio\build\_deps\libassert-src\include\libassert\assert.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="C:\Users\Predator\Documents\contribute\Nuvio\build\_deps\libassert-src\include\libassert\platform.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Predator\Documents\contribute\Nuvio\build\_deps\libassert-src\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{834C121A-40C9-330F-87EA-74E1A988D47F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{AE288E21-C0B7-35E6-B4ED-349F3E163A9F}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

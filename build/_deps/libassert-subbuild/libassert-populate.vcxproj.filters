@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Predator\Documents\contribute\Nuvio\build\_deps\libassert-subbuild\CMakeFiles\7cc16c27fe2c10d88417adf0de492afe\libassert-populate-mkdir.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\Predator\Documents\contribute\Nuvio\build\_deps\libassert-subbuild\CMakeFiles\7cc16c27fe2c10d88417adf0de492afe\libassert-populate-download.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\Predator\Documents\contribute\Nuvio\build\_deps\libassert-subbuild\CMakeFiles\7cc16c27fe2c10d88417adf0de492afe\libassert-populate-update.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\Predator\Documents\contribute\Nuvio\build\_deps\libassert-subbuild\CMakeFiles\7cc16c27fe2c10d88417adf0de492afe\libassert-populate-patch.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\Predator\Documents\contribute\Nuvio\build\_deps\libassert-subbuild\CMakeFiles\7cc16c27fe2c10d88417adf0de492afe\libassert-populate-configure.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\Predator\Documents\contribute\Nuvio\build\_deps\libassert-subbuild\CMakeFiles\7cc16c27fe2c10d88417adf0de492afe\libassert-populate-build.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\Predator\Documents\contribute\Nuvio\build\_deps\libassert-subbuild\CMakeFiles\7cc16c27fe2c10d88417adf0de492afe\libassert-populate-install.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\Predator\Documents\contribute\Nuvio\build\_deps\libassert-subbuild\CMakeFiles\7cc16c27fe2c10d88417adf0de492afe\libassert-populate-test.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\Predator\Documents\contribute\Nuvio\build\_deps\libassert-subbuild\CMakeFiles\c540853afdaee82e0f68873db9ce9a5f\libassert-populate-complete.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\Predator\Documents\contribute\Nuvio\build\_deps\libassert-subbuild\CMakeFiles\2dfc3494d598b99b3cb1c1a08869531f\libassert-populate.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\Predator\Documents\contribute\Nuvio\build\_deps\libassert-subbuild\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\Users\Predator\Documents\contribute\Nuvio\build\_deps\libassert-subbuild\CMakeFiles\libassert-populate" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{33363E74-F1F9-36EA-A608-00F5B7179631}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

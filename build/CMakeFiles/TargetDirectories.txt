@@ -1,0 +1,12 @@
+C:/Users/Predator/Documents/contribute/Nuvio/build/CMakeFiles/NUVIO.dir
+C:/Users/Predator/Documents/contribute/Nuvio/build/CMakeFiles/run.dir
+C:/Users/Predator/Documents/contribute/Nuvio/build/CMakeFiles/INSTALL.dir
+C:/Users/Predator/Documents/contribute/Nuvio/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/Predator/Documents/contribute/Nuvio/build/CMakeFiles/ZERO_CHECK.dir
+C:/Users/Predator/Documents/contribute/Nuvio/build/includes/external/glfw/CMakeFiles/uninstall.dir
+C:/Users/Predator/Documents/contribute/Nuvio/build/includes/external/glfw/CMakeFiles/INSTALL.dir
+C:/Users/Predator/Documents/contribute/Nuvio/build/includes/external/glfw/CMakeFiles/ALL_BUILD.dir
+C:/Users/Predator/Documents/contribute/Nuvio/build/includes/external/glfw/src/CMakeFiles/glfw.dir
+C:/Users/Predator/Documents/contribute/Nuvio/build/includes/external/glfw/src/CMakeFiles/update_mappings.dir
+C:/Users/Predator/Documents/contribute/Nuvio/build/includes/external/glfw/src/CMakeFiles/INSTALL.dir
+C:/Users/Predator/Documents/contribute/Nuvio/build/includes/external/glfw/docs/CMakeFiles/INSTALL.dir

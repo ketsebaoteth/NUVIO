@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Predator\Documents\contribute\Nuvio\build\CMakeFiles\4fa8aa6bca2d8a2b853442e2261ece33\uninstall.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\Predator\Documents\contribute\Nuvio\includes\external\glfw\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\Users\Predator\Documents\contribute\Nuvio\build\includes\external\glfw\CMakeFiles\uninstall" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{F6E27103-941A-394F-B82E-A19B7A0FFE3C}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

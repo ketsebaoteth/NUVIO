@@ -1,0 +1,10 @@
+{
+	"InstallScripts" : 
+	[
+		"C:/Users/Predator/Documents/contribute/Nuvio/build/cmake_install.cmake",
+		"C:/Users/Predator/Documents/contribute/Nuvio/build/includes/external/glfw/cmake_install.cmake",
+		"C:/Users/Predator/Documents/contribute/Nuvio/build/includes/external/glfw/src/cmake_install.cmake",
+		"C:/Users/Predator/Documents/contribute/Nuvio/build/includes/external/glfw/docs/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

@@ -1,0 +1,9 @@
+[submodule "includes/external/imgui"]
+	path = includes/external/imgui
+	url = https://github.com/ocornut/imgui.git
+[submodule "includes/external/glfw"]
+	path = includes/external/glfw
+	url = https://github.com/glfw/glfw.git
+[submodule "includes/external/libassert"]
+	path = includes/external/libassert
+	url = https://github.com/jeremy-rifkin/libassert.git
