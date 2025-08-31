@@ -22,6 +22,13 @@ add_subdirectory(${CMAKE_SOURCE_DIR}/includes/external/glfw)
 
 file(GLOB GLAD_SOURCES "${CMAKE_SOURCE_DIR}/includes/external/glad/*.c")
 
+# Disable pedantic warnings for GLAD on Linux (GLAD casts void* to function pointers)
+if(UNIX AND NOT APPLE) # Linux only
+    foreach(glad_file ${GLAD_SOURCES})
+        set_source_files_properties(${glad_file} PROPERTIES COMPILE_FLAGS "-Wno-pedantic")
+    endforeach()
+endif()
+
 # Recursively find all source files in src/
 file(GLOB_RECURSE PROJECT_SOURCES
     "${CMAKE_SOURCE_DIR}/src/*.cpp"
