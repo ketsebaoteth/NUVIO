@@ -5,7 +5,8 @@
 
 NUVIO_NAMESPACE_BEGIN
 
-void window_manager::create_window(std::string title, window_flags flags) {
+void window_manager::create_window(std::string title, window_flags flags)
+{
     m_flags = flags;
     //Initalize GLFW before anything
     glfwInit();

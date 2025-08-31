@@ -8,7 +8,9 @@ component get_test_component(){
 return  {
     "TestComponent",
     []() {
-        ImGui::Text("Hello from TestComponent!");
+        ImGui::Begin("Test Component");
+            ImGui::Text("Hello from TestComponent!");
+        ImGui::End();
     }
 };
 

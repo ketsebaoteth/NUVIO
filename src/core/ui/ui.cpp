@@ -9,13 +9,23 @@ NUVIO_NAMESPACE_BEGIN
 
 void UIManager::init() {
   IMGUI_CHECKVERSION();
-  GLFWmonitor* monitor = glfwGetPrimaryMonitor();
+  GLFWmonitor *monitor = glfwGetPrimaryMonitor();
   m_ui_scaler_factor = 1.3f;
   m_dpi_scale = ImGui_ImplGlfw_GetContentScaleForMonitor(monitor);
   m_dpi_scale *= m_ui_scaler_factor;
   ImGui::CreateContext();
   ImGuiIO &io = ImGui::GetIO();
-  //scale imgui based on monitor dpi
+  io.ConfigFlags |= ImGuiConfigFlags_DockingEnable;
+  io.ConfigFlags |= ImGuiConfigFlags_ViewportsEnable;
+
+  // Optional: tweak style for multi-viewports
+  if (io.ConfigFlags & ImGuiConfigFlags_ViewportsEnable) {
+    ImGuiStyle &style = ImGui::GetStyle();
+    style.WindowRounding = 0.0f;
+    style.Colors[ImGuiCol_WindowBg].w = 1.0f;
+  }
+
+  // scale imgui based on monitor dpi
   io.FontGlobalScale = m_dpi_scale;
   ImGui::GetStyle().ScaleAllSizes(m_dpi_scale);
   (void)io;
@@ -31,7 +41,7 @@ void UIManager::init() {
   nuvio::ui::RegisterAllComponents();
 }
 
-void UIManager::render() const{
+void UIManager::render() const {
   for (const auto &comp : mComponents) {
     if (comp.Render) {
       comp.Render();
@@ -43,9 +53,33 @@ void UIManager::begin_frame() {
   ImGui_ImplOpenGL3_NewFrame();
   ImGui_ImplGlfw_NewFrame();
   ImGui::NewFrame();
+
+  // Fullscreen dockspace window
+  static ImGuiDockNodeFlags dockspace_flags = ImGuiDockNodeFlags_None;
+  ImGuiWindowFlags window_flags =
+      ImGuiWindowFlags_MenuBar | ImGuiWindowFlags_NoDocking;
+
+  const ImGuiViewport *viewport = ImGui::GetMainViewport();
+  ImGui::SetNextWindowPos(viewport->Pos);
+  ImGui::SetNextWindowSize(viewport->Size);
+  ImGui::SetNextWindowViewport(viewport->ID);
+  ImGui::PushStyleVar(ImGuiStyleVar_WindowRounding, 0.0f);
+  ImGui::PushStyleVar(ImGuiStyleVar_WindowBorderSize, 0.0f);
+  window_flags |= ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoCollapse |
+                  ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoMove;
+  window_flags |=
+      ImGuiWindowFlags_NoBringToFrontOnFocus | ImGuiWindowFlags_NoNavFocus;
+
+  ImGui::Begin("DockSpace", nullptr, window_flags);
+  ImGui::PopStyleVar(2);
+
+  // Dockspace ID
+  ImGuiID dockspace_id = ImGui::GetID("MyDockSpace");
+  ImGui::DockSpace(dockspace_id, ImVec2(0.0f, 0.0f), dockspace_flags);
 }
 
 void UIManager::end_frame() {
+  ImGui::End();
   ImGui::Render();
 
   // Clear the framebuffer
@@ -54,6 +88,15 @@ void UIManager::end_frame() {
   glClear(GL_COLOR_BUFFER_BIT);
 
   ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
+
+  // Handle multiple OS windows
+  ImGuiIO &io = ImGui::GetIO();
+  if (io.ConfigFlags & ImGuiConfigFlags_ViewportsEnable) {
+    GLFWwindow *backup_current_context = glfwGetCurrentContext();
+    ImGui::UpdatePlatformWindows();
+    ImGui::RenderPlatformWindowsDefault();
+    glfwMakeContextCurrent(backup_current_context);
+  }
 }
 
 void UIManager::RegisterComponent(const nuvio::ui::component comp) {

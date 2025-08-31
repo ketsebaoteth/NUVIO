@@ -38,6 +38,7 @@ public:
     private:
         GLFWwindow* m_window;
         vec2<int> m_size;
+        std::string m_title;
         window_flags m_flags;
 };
 
