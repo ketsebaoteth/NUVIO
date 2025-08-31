@@ -3,6 +3,7 @@
 #include <unordered_map>
 #include "GLFW/glfw3.h"
 #include <vector>
+#include <algorithm>
 
 NUVIO_NAMESPACE_BEGIN
 
