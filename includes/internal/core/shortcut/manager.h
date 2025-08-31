@@ -1,7 +1,7 @@
 #pragma once
 #include "core/nuvio_namespaces.h"
 #include <unordered_map>
-#include "glfw/glfw3.h"
+#include "GLFW/glfw3.h"
 #include <vector>
 
 NUVIO_NAMESPACE_BEGIN
