@@ -14,6 +14,7 @@ NuvioApp::NuvioApp(int argc, char** argv) {
     nuvio::gWindowManager.set_window_size(1280, 720);
     nuvio::gWindowManager.create_window("Nuvio", WINDOW_FLAG_RESIZABLE | WINDOW_FLAG_MAXIMIZED);
     nuvio::gUIManager.init();
+    //set default theme for now
     nuvio::ui::gThemeManager.ApplyTheme("Default");
     // for now
     UNUSED(project_path);

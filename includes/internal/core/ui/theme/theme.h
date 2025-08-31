@@ -5,7 +5,6 @@
 #include <unordered_map>
 #include <vector>
 
-
 NUVIO_UI_NAMESPACE_BEGIN
 
 struct theme_data {
@@ -108,8 +107,23 @@ public:
   ThemeManager(const std::string &name, const theme_data &data)
       : m_themes{{name, data}} {};
 
+  /**
+   * Applies the specified theme.
+   * @param name The name of the theme to apply.
+   */
   void ApplyTheme(std::string name);
+
+  /**
+   * Loads a theme from a file.
+   * @param file_path The path to the theme file.
+   */
   void LoadTheme(const std::string &file_path);
+
+  /**
+   * Creates a new theme.
+   * @param name The name of the theme to create.
+   * @param theme_name The name of the theme to be saved.
+   */
   void SaveTheme(const std::string &folder_path,
                  const std::string &theme_name) const;
 

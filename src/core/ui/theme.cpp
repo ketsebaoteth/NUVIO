@@ -10,7 +10,7 @@ void ThemeManager::ApplyTheme(std::string name) {
     ImGuiStyle& style = ImGui::GetStyle();
 
     ImGuiIO& io = ImGui::GetIO();
-    io.Fonts->AddFontFromFileTTF(theme.DefaultFontPath.c_str(), 14.0f); // 18.0f is the font size
+    io.Fonts->AddFontFromFileTTF(theme.DefaultFontPath.c_str(), 14.0f);
 
     style.Alpha = theme.Alpha;
     style.DisabledAlpha = theme.DisabledAlpha;

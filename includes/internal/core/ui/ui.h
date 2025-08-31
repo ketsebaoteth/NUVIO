@@ -31,6 +31,10 @@ class UIManager {
          * Unregister an existing UI component
          */
         void UnregisterComponent(nuvio::ui::component* comp);
+        /**
+         * writes imgui config for docking positions if none exists
+         */
+        void WriteLayoutConfig();
 
         void Shutdown();
     private:
@@ -39,6 +43,7 @@ class UIManager {
         int m_width, m_height;
         float m_dpi_scale;
         float m_ui_scaler_factor;
+        std::string m_ini_path = "nuvio_ui.ini";
 };
 
 extern UIManager gUIManager;

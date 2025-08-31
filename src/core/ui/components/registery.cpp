@@ -4,8 +4,9 @@
 #include "core/nuvio_namespaces.h"
 
 //components includes start
-#include "core/ui/test.h"
 #include "core/ui/editor/navbar.h"
+#include "core/ui/editor/sidebar.h"
+#include "core/ui/editor/layers.h"
 //components includes end
 
 NUVIO_UI_NAMESPACE_BEGIN
@@ -13,8 +14,9 @@ NUVIO_UI_NAMESPACE_BEGIN
 // List of all UI components
 // add new components here for them to get added to
 std::vector<component> allComps = {
-    *ui::get_test_component(),
-    *ui::get_navbar_component()
+    *ui::get_navbar_component(),
+    *ui::get_sidebar_component(),
+    *ui::get_layers_component()
 };
 
 void RegisterAllComponents() {
