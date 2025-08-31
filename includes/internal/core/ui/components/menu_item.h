@@ -1,0 +1,21 @@
+#pragma once
+#include "core/nuvio_namespaces.h"
+#include <string>
+#include <vector>
+#include "core/ui/components/comp.h"
+
+NUVIO_UI_NAMESPACE_BEGIN
+
+struct menu_item {
+    std::string title;
+    std::string shortcut;
+    std::string tooltip_title;
+    std::string tooltip_desc;
+    std::string icon; // icon path relative to /assets/icons/
+    std::vector<menu_item> children;
+    void(*on_click)();
+    void(*on_hover)();
+    // add more event handlers if needed
+};
+
+NUVIO_UI_NAMESPACE_END

@@ -43,9 +43,7 @@ void UIManager::init() {
 
 void UIManager::render() const {
   for (const auto &comp : mComponents) {
-    if (comp.Render) {
-      comp.Render();
-    }
+      comp->Render();
   }
 }
 
@@ -99,14 +97,14 @@ void UIManager::end_frame() {
   }
 }
 
-void UIManager::RegisterComponent(const nuvio::ui::component comp) {
+void UIManager::RegisterComponent(nuvio::ui::component* comp) {
   mComponents.push_back(comp);
 }
 
-void UIManager::UnregisterComponent(nuvio::ui::component comp) {
+void UIManager::UnregisterComponent(nuvio::ui::component* comp) {
   auto it = std::remove_if(mComponents.begin(), mComponents.end(),
-                           [&](const nuvio::ui::component &c) {
-                             return c.unique_name == comp.unique_name;
+                           [&](const nuvio::ui::component* c) {
+                             return c->unique_name == comp->unique_name;
                            });
   mComponents.erase(it, mComponents.end());
 }

@@ -26,16 +26,16 @@ class UIManager {
         /**
          * Register a new UI component
          */
-        void RegisterComponent(const nuvio::ui::component comp);
+        void RegisterComponent(nuvio::ui::component* comp);
         /**
          * Unregister an existing UI component
          */
-        void UnregisterComponent(const nuvio::ui::component comp);
+        void UnregisterComponent(nuvio::ui::component* comp);
 
         void Shutdown();
     private:
         // List of registered UI components
-        std::vector<nuvio::ui::component> mComponents;
+        std::vector<nuvio::ui::component*> mComponents;
         int m_width, m_height;
         float m_dpi_scale;
         float m_ui_scaler_factor;

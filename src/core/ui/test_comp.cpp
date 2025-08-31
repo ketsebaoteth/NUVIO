@@ -4,16 +4,15 @@
 NUVIO_UI_NAMESPACE_BEGIN
 // Test component
 
-component get_test_component(){
-return  {
-    "TestComponent",
-    []() {
-        ImGui::Begin("Test Component");
+std::unique_ptr<component> get_test_component() {
+    return std::make_unique<component>(component{
+        "TestComponent",
+        []() {
+            ImGui::Begin("Test Component");
             ImGui::Text("Hello from TestComponent!");
-        ImGui::End();
-    }
-};
-
+            ImGui::End();
+        }
+    });
 }
 
 
