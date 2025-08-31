@@ -4,6 +4,7 @@
 #include "core/window/window_manager.h"
 #include "core/ui/ui.h"
 #include "core/ui/theme/theme.h"
+#include "core/shortcut/manager.h"
 
 NUVIO_NAMESPACE_BEGIN
 
@@ -28,6 +29,7 @@ void NuvioApp::run() {
         nuvio::gUIManager.end_frame();
         nuvio::gWindowManager.swap_buffers();
         nuvio::gWindowManager.poll_events();
+        nuvio::gShortcutManager.update();
     }
     nuvio::gWindowManager.destroy_window();
 }

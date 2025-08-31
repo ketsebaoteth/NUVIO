@@ -1,5 +1,6 @@
 #include "glad/glad.h"
 #include "core/window/window_manager.h"
+#include "core/shortcut/registery.h"
 #include <iostream>
 #include <cassert>
 
@@ -27,6 +28,9 @@ void window_manager::create_window(std::string title, window_flags flags)
     if(!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) {
         std::cerr << "Failed to initialize GLAD" << std::endl;
     }
+    //registers all shortcuts in shortcut registery
+    //look at core/shortcut/registery.cpp
+    nuvio::register_all_shortcuts();
 }
 
 void window_manager::destroy_window() {

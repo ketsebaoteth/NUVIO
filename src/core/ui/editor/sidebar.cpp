@@ -1,4 +1,5 @@
 #include "core/ui/editor/sidebar.h"
+#include "core/shortcut/manager.h"
 #include "imgui.h"
 
 NUVIO_UI_NAMESPACE_BEGIN
@@ -10,6 +11,7 @@ std::unique_ptr<component> get_sidebar_component() {
             ImGui::Begin("Sidebar");
             ImGui::Text("This is the sidebar");
             ImGui::End();
+            
         }
     });
 }
