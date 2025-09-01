@@ -7,6 +7,7 @@
 #include "core/ui/editor/navbar.h"
 #include "core/ui/editor/sidebar.h"
 #include "core/ui/editor/layers.h"
+#include "core/ui/editor/viewport.h"
 //components includes end
 
 NUVIO_UI_NAMESPACE_BEGIN
@@ -15,7 +16,8 @@ NUVIO_UI_NAMESPACE_BEGIN
 std::vector<component> allComps = {
     *ui::get_navbar_component(),
     *ui::get_sidebar_component(),
-    *ui::get_layers_component()
+    *ui::get_layers_component(),
+    *ui::get_viewport_component()
 };
 
 void RegisterAllComponents() {

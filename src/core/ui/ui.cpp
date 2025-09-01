@@ -147,22 +147,28 @@ Collapsed=0
 
 [Window][Sidebar]
 Pos=1992,40
-Size=557,967
+Size=557,972
 Collapsed=0
 DockId=0x00000003,0
 
 [Window][Layers]
-Pos=1992,1010
-Size=557,473
+Pos=1992,1015
+Size=557,468
 Collapsed=0
 DockId=0x00000004,0
 
+[Window][Viewport]
+Pos=10,40
+Size=1979,1443
+Collapsed=0
+DockId=0x00000001,0
+
 [Docking][Data]
 DockSpace     ID=0x14621557 Window=0x3DA2F1DE Pos=10,74 Size=2539,1443 Split=X Selected=0xC5D1E302
-  DockNode    ID=0x00000001 Parent=0x14621557 SizeRef=1979,1443 CentralNode=1
+  DockNode    ID=0x00000001 Parent=0x14621557 SizeRef=141,1443 CentralNode=1 Selected=0xC450F867
   DockNode    ID=0x00000002 Parent=0x14621557 SizeRef=557,1443 Split=Y Selected=0xFC96F9FE
-    DockNode  ID=0x00000003 Parent=0x00000002 SizeRef=557,967 Selected=0xFC96F9FE
-    DockNode  ID=0x00000004 Parent=0x00000002 SizeRef=557,473 Selected=0xCD8384B1
+    DockNode  ID=0x00000003 Parent=0x00000002 SizeRef=557,972 Selected=0xFC96F9FE
+    DockNode  ID=0x00000004 Parent=0x00000002 SizeRef=557,468 Selected=0xCD8384B1
 
 
 )";
