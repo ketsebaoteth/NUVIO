@@ -7,3 +7,6 @@
 #define NUVIO_UI_NAMESPACE_END } }
 
 #define UNUSED(x) (void)(x)
+
+#define REGISTER_COMPONENT(fn) \
+    static ComponentAutoRegister _autoReg_##fn(fn());

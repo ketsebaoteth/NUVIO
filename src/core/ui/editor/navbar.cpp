@@ -1,5 +1,7 @@
 #include "core/ui/editor/navbar.h"
 #include "imgui.h"
+#include "core/ui/components/registery.h"
+#include "core/nuvio_namespaces.h"
 
 
 NUVIO_UI_NAMESPACE_BEGIN
@@ -57,8 +59,11 @@ void render_navbar(){
 std::unique_ptr<component> get_navbar_component() {
     return std::make_unique<component>(component{
         "NavbarComponent",
-        []() { render_navbar(); }
+        []() { 
+            render_navbar();
+         }
     });
 }
+
 
 NUVIO_UI_NAMESPACE_END

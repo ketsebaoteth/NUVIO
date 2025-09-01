@@ -11,8 +11,7 @@
 
 NUVIO_UI_NAMESPACE_BEGIN
 
-// List of all UI components
-// add new components here for them to get added to
+// Register root UI components here
 std::vector<component> allComps = {
     *ui::get_navbar_component(),
     *ui::get_sidebar_component(),
