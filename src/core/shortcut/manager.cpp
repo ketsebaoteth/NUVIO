@@ -3,7 +3,7 @@
 
 NUVIO_NAMESPACE_BEGIN
 
-void ShortcutManager::update() {
+void ShortcutManager::process() {
   for (auto &_shortcut : mShortcuts) {
     bool modifier_pressed = true;
     for (auto &modifier : _shortcut.modifiers) {

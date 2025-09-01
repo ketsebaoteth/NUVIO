@@ -19,7 +19,7 @@ struct shortcut{
 
 class ShortcutManager {
     public:
-        void update();
+        void process();
         void register_shortcut(shortcut _shortcut);
         void unregister_shortcut(shortcut _shortcut);
     private:
