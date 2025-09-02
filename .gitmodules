@@ -7,3 +7,6 @@
 [submodule "includes/external/libassert"]
 	path = includes/external/libassert
 	url = https://github.com/jeremy-rifkin/libassert.git
+[submodule "external/Tracy"]
+	path = external/Tracy
+	url = https://github.com/wolfpld/tracy.git

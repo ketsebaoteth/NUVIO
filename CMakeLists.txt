@@ -47,6 +47,7 @@ add_executable(NUVIO
     ${PROJECT_HEADERS}
     ${IMGUI_SOURCES}
     ${GLAD_SOURCES}
+    ./profiling/Tracy/public/TracyClient.cpp
 )
 
 # Include directories
@@ -55,8 +56,24 @@ target_include_directories(NUVIO PRIVATE
     ${CMAKE_SOURCE_DIR}/includes/internal
     ${CMAKE_SOURCE_DIR}/includes/external/glfw/include
     ${CMAKE_SOURCE_DIR}/includes/external/imgui
+     ./profiling/Tracy/public
+    ./profiling/Tracy/public/tracy
 
 )
+
+target_include_directories(NUVIO PRIVATE
+    ./profiling/Tracy/public
+    ./profiling/Tracy/public/tracy
+)
+
+
+# Remove -Werror for TracyClient.cpp
+set_source_files_properties(
+    ./profiling/Tracy/public/TracyClient.cpp
+    PROPERTIES COMPILE_FLAGS "-w"
+)
+
+target_compile_definitions(NUVIO PRIVATE TRACY_ENABLE)
 
 
 if(MSVC)

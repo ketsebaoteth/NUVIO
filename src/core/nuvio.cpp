@@ -6,6 +6,8 @@
 #include "core/ui/ui.h"
 #include "core/ui/theme/theme.h"
 #include "core/shortcut/manager.h"
+//profiling
+#include "Tracy.hpp"
 
 NUVIO_NAMESPACE_BEGIN
 
@@ -28,6 +30,7 @@ NuvioApp::NuvioApp(int argc, char** argv) {
 }
 
 void NuvioApp::run() {
+	ZoneScoped;
     while(!nuvio::gWindowManager.should_close()){
         nuvio::gUIManager.begin_frame();
         nuvio::gUIManager.render();
