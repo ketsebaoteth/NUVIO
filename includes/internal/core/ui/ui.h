@@ -5,6 +5,8 @@
 
 NUVIO_NAMESPACE_BEGIN
 
+void showFrameTiming();
+
 class UIManager {
     public:
         /**
@@ -26,11 +28,11 @@ class UIManager {
         /**
          * Register a new UI component
          */
-        void RegisterComponent(nuvio::ui::component* comp);
+        void RegisterComponent(nuvio::ui::component&& comp);
         /**
          * Unregister an existing UI component
          */
-        void UnregisterComponent(nuvio::ui::component* comp);
+        void UnregisterComponent(const std::string& name);
         /**
          * writes imgui config for docking positions if none exists
          */
@@ -39,7 +41,7 @@ class UIManager {
         void Shutdown();
     private:
         // List of registered UI components
-        std::vector<nuvio::ui::component*> mComponents;
+        std::vector<nuvio::ui::component> mComponents;
         int m_width, m_height;
         float m_dpi_scale;
         float m_ui_scaler_factor;

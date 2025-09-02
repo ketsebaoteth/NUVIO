@@ -22,7 +22,7 @@ std::vector<component> allComps = {
 
 void RegisterAllComponents() {
     for (auto& comp : allComps) {
-        nuvio::gUIManager.RegisterComponent(&comp);
+        nuvio::gUIManager.RegisterComponent(std::move(comp));
     }
 }
 

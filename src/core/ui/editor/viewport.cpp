@@ -2,6 +2,7 @@
 #include "core/canvas/manager.h"
 #include "imgui.h"
 #include "glm/glm.hpp"
+#include "core/ui/ui.h"
 
 NUVIO_UI_NAMESPACE_BEGIN
 
@@ -10,6 +11,9 @@ component get_viewport_component() {
         "ViewportComponent",
         []() {
             ImGui::Begin("Viewport");
+
+            ImGui::Text("FPS: %.1f",ImGui::GetIO().Framerate);
+	    showFrameTiming();
             void* canvasTexture = reinterpret_cast<void*>(static_cast<intptr_t>(gCanvasManager.Render()));
             auto size = gCanvasManager.GetCanvasSize();
             //center horizontally and verticaly
