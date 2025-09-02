@@ -14,10 +14,10 @@ NUVIO_UI_NAMESPACE_BEGIN
 
 // Register root UI components here
 std::vector<component> allComps = {
-    *ui::get_navbar_component(),
-    *ui::get_sidebar_component(),
-    *ui::get_layers_component(),
-    *ui::get_viewport_component()
+    ui::get_navbar_component(),
+    ui::get_layers_component(),
+    ui::get_sidebar_component(),
+    ui::get_viewport_component()
 };
 
 void RegisterAllComponents() {

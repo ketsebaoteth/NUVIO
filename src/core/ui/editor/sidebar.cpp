@@ -4,8 +4,8 @@
 
 NUVIO_UI_NAMESPACE_BEGIN
 
-std::unique_ptr<component> get_sidebar_component() {
-    return std::make_unique<component>(component{
+component get_sidebar_component() {
+    return component{
         "Sidebar",
         [](){
             ImGui::Begin("Sidebar");
@@ -13,7 +13,7 @@ std::unique_ptr<component> get_sidebar_component() {
             ImGui::End();
             
         }
-    });
+    };
 }
 
 NUVIO_UI_NAMESPACE_END

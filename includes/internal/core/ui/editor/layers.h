@@ -5,6 +5,6 @@
 
 NUVIO_UI_NAMESPACE_BEGIN
 
-std::unique_ptr<component> get_layers_component();
+component get_layers_component();
 
 NUVIO_UI_NAMESPACE_END

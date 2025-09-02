@@ -8,7 +8,7 @@ NUVIO_UI_NAMESPACE_BEGIN
 
 void render_navbar();
 
-std::unique_ptr<component> get_navbar_component();
+component get_navbar_component();
 
 extern menu_item gNavbar;
 

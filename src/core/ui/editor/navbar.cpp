@@ -56,13 +56,13 @@ void render_navbar(){
     }
 }
 
-std::unique_ptr<component> get_navbar_component() {
-    return std::make_unique<component>(component{
+component get_navbar_component() {
+    return component{
         "NavbarComponent",
         []() { 
             render_navbar();
          }
-    });
+    };
 }
 
 

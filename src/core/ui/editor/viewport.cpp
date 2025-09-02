@@ -5,8 +5,8 @@
 
 NUVIO_UI_NAMESPACE_BEGIN
 
-std::unique_ptr<component> get_viewport_component() {
-    return std::make_unique<component>(component{
+component get_viewport_component() {
+    return component{
         "ViewportComponent",
         []() {
             ImGui::Begin("Viewport");
@@ -18,7 +18,7 @@ std::unique_ptr<component> get_viewport_component() {
             ImGui::Image(canvasTexture, ImVec2(static_cast<float>(size.x), static_cast<float>(size.y)), ImVec2(0,1), ImVec2(1,0));
             ImGui::End();
         }
-    });
+    };
 }
 
 NUVIO_UI_NAMESPACE_END
