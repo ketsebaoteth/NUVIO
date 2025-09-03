@@ -1,9 +1,11 @@
 #include "core/shortcut/manager.h"
 #include "GLFW/glfw3.h"
+#include "Tracy.hpp"
 
 NUVIO_NAMESPACE_BEGIN
 
 void ShortcutManager::process() {
+  ZoneScopedN("ShortcutManager::process");
   for (auto &_shortcut : mShortcuts) {
     bool modifier_pressed = true;
     for (auto &modifier : _shortcut.modifiers) {

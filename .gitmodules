@@ -8,5 +8,5 @@
 	path = includes/external/libassert
 	url = https://github.com/jeremy-rifkin/libassert.git
 [submodule "external/Tracy"]
-	path = external/Tracy
+	path = profiling/Tracy 
 	url = https://github.com/wolfpld/tracy.git

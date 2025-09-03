@@ -1,0 +1,22 @@
+# Hashes of file build rules.
+01f9c25b34a3be3c68367af248f64658 CMakeFiles/run
+ebe317aee3bd9f0195e22d638ec5bc89 includes/external/glfw/CMakeFiles/uninstall
+7026c60dd54aab8ade271ee3fd94d3bd includes/external/glfw/src/CMakeFiles/update_mappings
+8d96bf848528a77f31f3b98442ee4603 includes/external/glfw/src/fractional-scale-v1-client-protocol-code.h
+1e622478db5b7d564e1ebf1072fe1d81 includes/external/glfw/src/fractional-scale-v1-client-protocol.h
+c0b8780913531ec1ce00362e16fb16e9 includes/external/glfw/src/idle-inhibit-unstable-v1-client-protocol-code.h
+686d4d8a877fd2f49c2007925ed68b2b includes/external/glfw/src/idle-inhibit-unstable-v1-client-protocol.h
+e24f7c8880c4522c8e86aca4a89202d3 includes/external/glfw/src/pointer-constraints-unstable-v1-client-protocol-code.h
+85abba8b49667610d80a4856f7c32b1f includes/external/glfw/src/pointer-constraints-unstable-v1-client-protocol.h
+a5ccc01dff241dd5242316ceb5d669ad includes/external/glfw/src/relative-pointer-unstable-v1-client-protocol-code.h
+fa086091fba24c6cd9be9517e057bf1d includes/external/glfw/src/relative-pointer-unstable-v1-client-protocol.h
+2fe26702f5991878f07f25a14d806688 includes/external/glfw/src/viewporter-client-protocol-code.h
+a21cb6cf180249aaa86dee32110ee3ce includes/external/glfw/src/viewporter-client-protocol.h
+7bf99fb57eb626ae3c141218ac7ace56 includes/external/glfw/src/wayland-client-protocol-code.h
+401115dc8b446d844e2e65e811ec1bac includes/external/glfw/src/wayland-client-protocol.h
+1ac420e823a78163fb851dd4c2a6e1a5 includes/external/glfw/src/xdg-activation-v1-client-protocol-code.h
+a0a33483c1bf20fd4e61bfbf0c73e90c includes/external/glfw/src/xdg-activation-v1-client-protocol.h
+cf8791796b3e2331546de4082d42ceb0 includes/external/glfw/src/xdg-decoration-unstable-v1-client-protocol-code.h
+054ab0b490ec4ec7f91f27e4884c5ef9 includes/external/glfw/src/xdg-decoration-unstable-v1-client-protocol.h
+b30ddcbed26163aabe9a94a1c89b9a57 includes/external/glfw/src/xdg-shell-client-protocol-code.h
+40ce568d6b37712e451ee208dde0bae5 includes/external/glfw/src/xdg-shell-client-protocol.h

@@ -30,14 +30,15 @@ NuvioApp::NuvioApp(int argc, char** argv) {
 }
 
 void NuvioApp::run() {
-	ZoneScoped;
     while(!nuvio::gWindowManager.should_close()){
+	ZoneScopedN("main_render");
         nuvio::gUIManager.begin_frame();
         nuvio::gUIManager.render();
         nuvio::gUIManager.end_frame();
         nuvio::gWindowManager.swap_buffers();
         nuvio::gWindowManager.poll_events();
         nuvio::gShortcutManager.process();
+	FrameMark;
     }
     nuvio::gWindowManager.destroy_window();
 }

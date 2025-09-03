@@ -3,6 +3,7 @@
 #include "core/shortcut/registery.h"
 #include <iostream>
 #include <cassert>
+#include "Tracy.hpp"
 
 NUVIO_NAMESPACE_BEGIN
 
@@ -47,6 +48,7 @@ bool window_manager::should_close() const {
 }
 
 void window_manager::swap_buffers() const {
+    ZoneScopedN("window_manager::swap_buffers");
     assert(m_window && "Window must be created before buffers can be swapped");
     if (m_window)
         glfwSwapBuffers(m_window);

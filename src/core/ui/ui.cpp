@@ -6,30 +6,9 @@
 #include "imgui/imgui.h"
 #include <fstream>
 #include <algorithm>
-#include <vector>
-#include <numeric>
+#include "Tracy.hpp"
 
 NUVIO_NAMESPACE_BEGIN
-
-
-static std::vector<float> frame_times;
-static const int NUM_FRAMES = 120;
-
-void record_frame_time(float ms) {
-    if (frame_times.size() >= NUM_FRAMES)
-        frame_times.erase(frame_times.begin());
-    frame_times.push_back(ms);
-}
-
-void showFrameTiming() {
-    if (frame_times.empty()) return;
-    float min = *std::min_element(frame_times.begin(), frame_times.end());
-    float max = *std::max_element(frame_times.begin(), frame_times.end());
-    float avg = std::accumulate(frame_times.begin(), frame_times.end(), 0.0f) / frame_times.size();
-
-    ImGui::Text("Frame Time: min %.2f ms, avg %.2f ms, max %.2f ms", min, avg, max);
-    ImGui::PlotLines("Frame Times", frame_times.data(), frame_times.size(), 0, nullptr, 0.0f, 50.0f, ImVec2(0,80));
-}
 
 void UIManager::init() {
   IMGUI_CHECKVERSION();
@@ -75,16 +54,14 @@ void UIManager::init() {
 }
 
 void UIManager::render() const {
+	ZoneScopedN("UIManager::Render");
 	for (const auto &comp : mComponents) {
       comp.Render();
   }
-// In your main UI loop, after rendering:
-float ms = 1000.0f / ImGui::GetIO().Framerate;
-record_frame_time(ms);
-
 }
 
 void UIManager::begin_frame() {
+  ZoneScopedN("UIManager::begin_frame");
   ImGui_ImplOpenGL3_NewFrame();
   ImGui_ImplGlfw_NewFrame();
   ImGui::NewFrame();
@@ -115,6 +92,7 @@ void UIManager::begin_frame() {
 }
 
 void UIManager::end_frame() {
+  ZoneScopedN("UIManager::end_frame");
   ImGui::End();
   ImGui::Render();
 
@@ -136,15 +114,12 @@ void UIManager::end_frame() {
 }
 
 void UIManager::RegisterComponent(nuvio::ui::component&& comp) {
-  mComponents.push_back(std::move(comp));
+  ZoneScopedN("UIManager::RegisterComponent");
+  mComponents.push_back(comp);
 }
 
 void UIManager::UnregisterComponent(const std::string& name) {
-    auto it = std::remove_if(mComponents.begin(), mComponents.end(),
-        [&](const nuvio::ui::component& c) {
-            return c.unique_name == name;
-        });
-    mComponents.erase(it, mComponents.end());
+ UNUSED(name); 
 }
 
 void UIManager::WriteLayoutConfig(){
