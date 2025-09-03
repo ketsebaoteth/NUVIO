@@ -1,123 +1,117 @@
-# 🎨 Nuvio — Open Source Photo Editor
+# Nuvio
 
-> *"Edit without the drama."*
-
-Nuvio is an open‑source photo editor we’re building to be **fast**, **feature‑packed**, and **stable**.  
-No random crashes, no “oops, your work is gone” moments — just a tool you can trust to get the job done.
+Nuvio is a fast, crash-resistant raster editor focused on performance, stability, and a highly configurable, tactile UI that feels great to work with. Built for creators who value reliability and a smooth user experience.
 
 ---
 
-## 🚀 What We’re Aiming For
+## 💡 Mission
 
-- **Feature‑rich** editing tools for pros and hobbyists alike  
-- **Smooth performance** even on big projects  
-- **Cross‑platform** so you can work anywhere  
-- **Minimal bugs** — stability is a core feature, not an afterthought  
-- **Open source** so the community can shape its future  
+Nuvio’s mission has evolved:  
+**Performance, stability, and a tactile, configurable UI** are our top priorities. We want Nuvio to be a joy to use for creators of all kinds.
 
 ---
 
-## 🤝 Contributing
+## 🚀 Building Nuvio
 
-Pull requests?  
-If it looks good, works good, and doesn’t break stuff — we’ll probably merge it.  
-We’re not here to gatekeep, we’re here to build something awesome together.
+### Supported Platforms
 
-### 📦 Build on Linux
+- **Linux (Arch & Arch-based systems)**: Manually tested and building reliably.
+- **macOS**: _Not yet tested for build—contributions and reports welcome!_
+- **Windows**: Supported—see below for instructions.
 
-To build Nuvio on Linux (tested on Fedora), follow these steps:
+### Required Dependencies
 
----
+If you encounter missing library errors, try installing the dependency manually first.  
+Below are the most common installables we've needed on Arch/EndeavourOS. Your system may differ.
 
-#### 🛠️ 1. Install Dependencies
+<details>
+<summary>Common dependencies on Arch/EndeavourOS</summary>
 
-```bash
-sudo dnf install \
-  cmake \
-  gcc-c++ \
-  make \
-  mesa-libGL-devel \
-  mesa-libGLU-devel \
-  libX11-devel \
-  libXrandr-devel \
-  libXinerama-devel \
-  libXcursor-devel \
-  libXi-devel \
-  wayland-devel \
-  wayland-protocols-devel \
-  libxkbcommon-devel
+```
+sudo pacman -S base-devel cmake git gcc make pkgconf \
+libglvnd glew glfw-x11 mesa glm freetype2 libpng \
+zlib libjpeg-turbo libtiff libwebp openexr libspng \
+gtk3 tracy
 ```
 
-These packages cover:
-- CMake and build tools
-- OpenGL headers and libraries
-- GLFW’s X11 and Wayland backends
+</details>
 
----
+> **Tip:** Only install what’s missing. If a dependency is already present, you can skip it.
 
-#### 🧱 2. Clone the Repository
+### Build Instructions (Linux)
 
-```bash
-git clone --recurse-submodules https://github.com/yourusername/nuvio.git
-cd nuvio
-```
-
-Make sure to use `--recurse-submodules` to pull in GLFW and other dependencies.
-
----
-
-#### 🧪 3. Configure the Build
-
-```bash
-mkdir build
-cd build
-cmake .. -DCMAKE_BUILD_TYPE=Release
-```
-
-You can also use `Debug` or `RelWithDebInfo` depending on your needs.
-
----
-
-#### ⚙️ 4. Build the Project
-
-```bash
+```sh
+git clone https://github.com/ketsebaoteth/NUVIO.git
+cd NUVIO
+mkdir build && cd build
+cmake ..
 cmake --build .
 ```
 
-This will generate the `NUVIO` binary in your build directory.
+---
+
+### 🪟 Building on Windows
+
+Building on Windows is straightforward:
+
+1. Install [CMake](https://cmake.org/download/).
+2. Install a C++ distribution (MSVC is recommended, available via Visual Studio).
+3. Open a terminal in the repo directory:
+    ```sh
+    mkdir build
+    cd build
+    cmake ..
+    cmake --build .
+    ```
+4. Output binaries will be in the `build` directory.
 
 ---
 
-#### 🚀 5. Run Nuvio
+## 📑 Documentation
 
-```bash
-./NUVIO
+Nuvio’s docs use [VitePress](https://vitepress.dev/) but are built with [Bun](https://bun.sh/).
+
+To build and view docs locally:
+
+```sh
+cd docs
+bun install
+bun run docs:dev
 ```
 
-If you get a permission error:
-
-```bash
-chmod +x NUVIO
-./NUVIO
-```
+Docs will be served at [http://localhost:5173](http://localhost:5173).
 
 ---
 
-### 🧠 Notes
+## 🔥 Currently Working On
 
-- If you’re building on a non-Fedora distro, package names may differ (e.g. `apt install libgl1-mesa-dev` on Ubuntu).
-- The build system disables strict `-pedantic` warnings for GLAD on Linux to avoid function pointer casting errors.
-- CMake places the binary directly in the build directory — no `.exe` extension on Linux.
+We’re currently working on the **scene graph for the canvas renderer**—this is a backbone for rendering and managing complex layers and objects.
 
----
-
-## 📜 License
-
-[MIT License](LICENSE) — because creativity should be free.
+Stay tuned for progress updates!
 
 ---
 
-## ✨ Join the Journey
+## 📊 Profiling with Tracy
 
-We’re just getting started.  
-Follow along, throw us ideas, or jump in and help make Nuvio the most reliable open‑source photo editor out there.
+We use the [Tracy Profiler](https://github.com/wolfpld/tracy) for performance analysis.
+
+### Usage
+
+- Tracy integration is located in `profiling/tracy`.
+- To use Tracy:
+    1. Build Nuvio with profiling enabled (`-DNUVIO_ENABLE_TRACY=ON`).
+    2. Run the application.
+    3. Start the Tracy client to connect and visualize profiling data.
+
+See profiling/tracy for details.
+
+---
+
+## 💬 Contributing & Feedback
+
+We welcome contributions, bug reports, and feedback.  
+Please open an issue or pull request!
+
+---
+
+_Enjoy creating with Nuvio!_
