@@ -56,7 +56,7 @@ EQUALS = =
 CMAKE_SOURCE_DIR = /home/k/Documents/NUVIO
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/k/Documents/NUVIO/nuvio-test
+CMAKE_BINARY_DIR = /home/k/Documents/NUVIO
 
 # Utility rule file for run.
 
@@ -66,8 +66,8 @@ include CMakeFiles/run.dir/compiler_depend.make
 # Include the progress variables for this target.
 include CMakeFiles/run.dir/progress.make
 
-CMakeFiles/run: /home/k/Documents/NUVIO/build/NUVIO
-	cd /home/k/Documents/NUVIO/build/RelWithDebInfo && /home/k/Documents/NUVIO/nuvio-test/../build/RelWithDebInfo/NUVIO.exe
+CMakeFiles/run: /home/k/Documents/build/NUVIO
+	cd /home/k/Documents/build && /home/k/Documents/NUVIO/../build//NUVIO.exe
 
 CMakeFiles/run.dir/codegen:
 .PHONY : CMakeFiles/run.dir/codegen
@@ -85,6 +85,6 @@ CMakeFiles/run.dir/clean:
 .PHONY : CMakeFiles/run.dir/clean
 
 CMakeFiles/run.dir/depend:
-	cd /home/k/Documents/NUVIO/nuvio-test && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/k/Documents/NUVIO /home/k/Documents/NUVIO /home/k/Documents/NUVIO/nuvio-test /home/k/Documents/NUVIO/nuvio-test /home/k/Documents/NUVIO/nuvio-test/CMakeFiles/run.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/k/Documents/NUVIO && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/k/Documents/NUVIO /home/k/Documents/NUVIO /home/k/Documents/NUVIO /home/k/Documents/NUVIO /home/k/Documents/NUVIO/CMakeFiles/run.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/run.dir/depend
 

@@ -1,10 +1,10 @@
 {
 	"InstallScripts" : 
 	[
-		"/home/k/Documents/NUVIO/nuvio-test/cmake_install.cmake",
-		"/home/k/Documents/NUVIO/nuvio-test/includes/external/glfw/cmake_install.cmake",
-		"/home/k/Documents/NUVIO/nuvio-test/includes/external/glfw/src/cmake_install.cmake",
-		"/home/k/Documents/NUVIO/nuvio-test/includes/external/glfw/docs/cmake_install.cmake"
+		"/home/k/Documents/NUVIO/cmake_install.cmake",
+		"/home/k/Documents/NUVIO/includes/external/glfw/cmake_install.cmake",
+		"/home/k/Documents/NUVIO/includes/external/glfw/src/cmake_install.cmake",
+		"/home/k/Documents/NUVIO/includes/external/glfw/docs/cmake_install.cmake"
 	],
 	"Parallel" : false
 }

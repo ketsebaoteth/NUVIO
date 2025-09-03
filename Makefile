@@ -60,7 +60,7 @@ EQUALS = =
 CMAKE_SOURCE_DIR = /home/k/Documents/NUVIO
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/k/Documents/NUVIO/nuvio-test
+CMAKE_BINARY_DIR = /home/k/Documents/NUVIO
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -132,9 +132,9 @@ install/strip/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/k/Documents/NUVIO/nuvio-test/CMakeFiles /home/k/Documents/NUVIO/nuvio-test//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/k/Documents/NUVIO/CMakeFiles /home/k/Documents/NUVIO//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/k/Documents/NUVIO/nuvio-test/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/k/Documents/NUVIO/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -418,6 +418,30 @@ includes/external/imgui/imgui_widgets.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/NUVIO.dir/build.make CMakeFiles/NUVIO.dir/includes/external/imgui/imgui_widgets.cpp.s
 .PHONY : includes/external/imgui/imgui_widgets.cpp.s
 
+profiling/Tracy/public/TracyClient.o: profiling/Tracy/public/TracyClient.cpp.o
+.PHONY : profiling/Tracy/public/TracyClient.o
+
+# target to build an object file
+profiling/Tracy/public/TracyClient.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NUVIO.dir/build.make CMakeFiles/NUVIO.dir/profiling/Tracy/public/TracyClient.cpp.o
+.PHONY : profiling/Tracy/public/TracyClient.cpp.o
+
+profiling/Tracy/public/TracyClient.i: profiling/Tracy/public/TracyClient.cpp.i
+.PHONY : profiling/Tracy/public/TracyClient.i
+
+# target to preprocess a source file
+profiling/Tracy/public/TracyClient.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NUVIO.dir/build.make CMakeFiles/NUVIO.dir/profiling/Tracy/public/TracyClient.cpp.i
+.PHONY : profiling/Tracy/public/TracyClient.cpp.i
+
+profiling/Tracy/public/TracyClient.s: profiling/Tracy/public/TracyClient.cpp.s
+.PHONY : profiling/Tracy/public/TracyClient.s
+
+# target to generate assembly for a file
+profiling/Tracy/public/TracyClient.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/NUVIO.dir/build.make CMakeFiles/NUVIO.dir/profiling/Tracy/public/TracyClient.cpp.s
+.PHONY : profiling/Tracy/public/TracyClient.cpp.s
+
 src/core/canvas/manager.o: src/core/canvas/manager.cpp.o
 .PHONY : src/core/canvas/manager.o
 
@@ -441,30 +465,6 @@ src/core/canvas/manager.s: src/core/canvas/manager.cpp.s
 src/core/canvas/manager.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/NUVIO.dir/build.make CMakeFiles/NUVIO.dir/src/core/canvas/manager.cpp.s
 .PHONY : src/core/canvas/manager.cpp.s
-
-src/core/canvas/shapes/rectangle.o: src/core/canvas/shapes/rectangle.cpp.o
-.PHONY : src/core/canvas/shapes/rectangle.o
-
-# target to build an object file
-src/core/canvas/shapes/rectangle.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/NUVIO.dir/build.make CMakeFiles/NUVIO.dir/src/core/canvas/shapes/rectangle.cpp.o
-.PHONY : src/core/canvas/shapes/rectangle.cpp.o
-
-src/core/canvas/shapes/rectangle.i: src/core/canvas/shapes/rectangle.cpp.i
-.PHONY : src/core/canvas/shapes/rectangle.i
-
-# target to preprocess a source file
-src/core/canvas/shapes/rectangle.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/NUVIO.dir/build.make CMakeFiles/NUVIO.dir/src/core/canvas/shapes/rectangle.cpp.i
-.PHONY : src/core/canvas/shapes/rectangle.cpp.i
-
-src/core/canvas/shapes/rectangle.s: src/core/canvas/shapes/rectangle.cpp.s
-.PHONY : src/core/canvas/shapes/rectangle.s
-
-# target to generate assembly for a file
-src/core/canvas/shapes/rectangle.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/NUVIO.dir/build.make CMakeFiles/NUVIO.dir/src/core/canvas/shapes/rectangle.cpp.s
-.PHONY : src/core/canvas/shapes/rectangle.cpp.s
 
 src/core/nuvio.o: src/core/nuvio.cpp.o
 .PHONY : src/core/nuvio.o
@@ -867,12 +867,12 @@ help:
 	@echo "... includes/external/imgui/imgui_widgets.o"
 	@echo "... includes/external/imgui/imgui_widgets.i"
 	@echo "... includes/external/imgui/imgui_widgets.s"
+	@echo "... profiling/Tracy/public/TracyClient.o"
+	@echo "... profiling/Tracy/public/TracyClient.i"
+	@echo "... profiling/Tracy/public/TracyClient.s"
 	@echo "... src/core/canvas/manager.o"
 	@echo "... src/core/canvas/manager.i"
 	@echo "... src/core/canvas/manager.s"
-	@echo "... src/core/canvas/shapes/rectangle.o"
-	@echo "... src/core/canvas/shapes/rectangle.i"
-	@echo "... src/core/canvas/shapes/rectangle.s"
 	@echo "... src/core/nuvio.o"
 	@echo "... src/core/nuvio.i"
 	@echo "... src/core/nuvio.s"

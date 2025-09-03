@@ -3,17 +3,19 @@
 
 # compile C with /usr/bin/cc
 # compile CXX with /usr/bin/c++
-C_DEFINES = 
+C_DEFINES = -DTRACY_ENABLE
 
-C_INCLUDES = -I/home/k/Documents/NUVIO/includes/external -I/home/k/Documents/NUVIO/includes/internal -I/home/k/Documents/NUVIO/includes/external/glfw/include -I/home/k/Documents/NUVIO/includes/external/imgui
+C_INCLUDES = -I/home/k/Documents/NUVIO/includes/external -I/home/k/Documents/NUVIO/includes/internal -I/home/k/Documents/NUVIO/includes/external/glfw/include -I/home/k/Documents/NUVIO/includes/external/imgui -I/home/k/Documents/NUVIO/./profiling/Tracy/public -I/home/k/Documents/NUVIO/./profiling/Tracy/public/tracy
 
-C_FLAGS = -O2 -g -DNDEBUG -Wall -Wextra -Wpedantic -Werror
+C_FLAGS = -Wall -Wextra -Wpedantic -Werror
 
-CXX_DEFINES = 
+CXX_DEFINES = -DTRACY_ENABLE
 
-CXX_INCLUDES = -I/home/k/Documents/NUVIO/includes/external -I/home/k/Documents/NUVIO/includes/internal -I/home/k/Documents/NUVIO/includes/external/glfw/include -I/home/k/Documents/NUVIO/includes/external/imgui
+CXX_INCLUDES = -I/home/k/Documents/NUVIO/includes/external -I/home/k/Documents/NUVIO/includes/internal -I/home/k/Documents/NUVIO/includes/external/glfw/include -I/home/k/Documents/NUVIO/includes/external/imgui -I/home/k/Documents/NUVIO/./profiling/Tracy/public -I/home/k/Documents/NUVIO/./profiling/Tracy/public/tracy
 
-CXX_FLAGS = -O2 -g -DNDEBUG -std=gnu++17 -Wall -Wextra -Wpedantic -Werror
+CXX_FLAGS = -std=gnu++17 -Wall -Wextra -Wpedantic -Werror
 
 # Custom flags: CMakeFiles/NUVIO.dir/includes/external/glad/glad.c.o_FLAGS = -Wno-pedantic
+
+# Custom flags: CMakeFiles/NUVIO.dir/profiling/Tracy/public/TracyClient.cpp.o_FLAGS = -w
 

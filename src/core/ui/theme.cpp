@@ -9,8 +9,8 @@ void ThemeManager::ApplyTheme(std::string name) {
     theme_data& theme = m_themes[name];
     ImGuiStyle& style = ImGui::GetStyle();
 
-    ImGuiIO& io = ImGui::GetIO();
-    io.Fonts->AddFontFromFileTTF(theme.DefaultFontPath.c_str(), 14.0f);
+    // ImGuiIO& io = ImGui::GetIO();
+    // io.Fonts->AddFontFromFileTTF(theme.DefaultFontPath.c_str(), 14.0f);
 
     style.Alpha = theme.Alpha;
     style.DisabledAlpha = theme.DisabledAlpha;

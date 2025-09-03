@@ -16,8 +16,8 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/k/Documents/NUVIO/includes/external/imgui/imgui_draw.cpp" "CMakeFiles/NUVIO.dir/includes/external/imgui/imgui_draw.cpp.o" "gcc" "CMakeFiles/NUVIO.dir/includes/external/imgui/imgui_draw.cpp.o.d"
   "/home/k/Documents/NUVIO/includes/external/imgui/imgui_tables.cpp" "CMakeFiles/NUVIO.dir/includes/external/imgui/imgui_tables.cpp.o" "gcc" "CMakeFiles/NUVIO.dir/includes/external/imgui/imgui_tables.cpp.o.d"
   "/home/k/Documents/NUVIO/includes/external/imgui/imgui_widgets.cpp" "CMakeFiles/NUVIO.dir/includes/external/imgui/imgui_widgets.cpp.o" "gcc" "CMakeFiles/NUVIO.dir/includes/external/imgui/imgui_widgets.cpp.o.d"
+  "/home/k/Documents/NUVIO/profiling/Tracy/public/TracyClient.cpp" "CMakeFiles/NUVIO.dir/profiling/Tracy/public/TracyClient.cpp.o" "gcc" "CMakeFiles/NUVIO.dir/profiling/Tracy/public/TracyClient.cpp.o.d"
   "/home/k/Documents/NUVIO/src/core/canvas/manager.cpp" "CMakeFiles/NUVIO.dir/src/core/canvas/manager.cpp.o" "gcc" "CMakeFiles/NUVIO.dir/src/core/canvas/manager.cpp.o.d"
-  "/home/k/Documents/NUVIO/src/core/canvas/shapes/rectangle.cpp" "CMakeFiles/NUVIO.dir/src/core/canvas/shapes/rectangle.cpp.o" "gcc" "CMakeFiles/NUVIO.dir/src/core/canvas/shapes/rectangle.cpp.o.d"
   "/home/k/Documents/NUVIO/src/core/nuvio.cpp" "CMakeFiles/NUVIO.dir/src/core/nuvio.cpp.o" "gcc" "CMakeFiles/NUVIO.dir/src/core/nuvio.cpp.o.d"
   "/home/k/Documents/NUVIO/src/core/project/project_manager.cpp" "CMakeFiles/NUVIO.dir/src/core/project/project_manager.cpp.o" "gcc" "CMakeFiles/NUVIO.dir/src/core/project/project_manager.cpp.o.d"
   "/home/k/Documents/NUVIO/src/core/project/projects.cpp" "CMakeFiles/NUVIO.dir/src/core/project/projects.cpp.o" "gcc" "CMakeFiles/NUVIO.dir/src/core/project/projects.cpp.o.d"
@@ -33,7 +33,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/k/Documents/NUVIO/src/core/ui/ui.cpp" "CMakeFiles/NUVIO.dir/src/core/ui/ui.cpp.o" "gcc" "CMakeFiles/NUVIO.dir/src/core/ui/ui.cpp.o.d"
   "/home/k/Documents/NUVIO/src/core/window/window_manager.cpp" "CMakeFiles/NUVIO.dir/src/core/window/window_manager.cpp.o" "gcc" "CMakeFiles/NUVIO.dir/src/core/window/window_manager.cpp.o.d"
   "/home/k/Documents/NUVIO/src/main.cpp" "CMakeFiles/NUVIO.dir/src/main.cpp.o" "gcc" "CMakeFiles/NUVIO.dir/src/main.cpp.o.d"
-  "" "/home/k/Documents/NUVIO/build/NUVIO" "gcc" "CMakeFiles/NUVIO.dir/link.d"
+  "" "/home/k/Documents/build/NUVIO" "gcc" "CMakeFiles/NUVIO.dir/link.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

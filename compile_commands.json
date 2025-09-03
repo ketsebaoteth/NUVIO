@@ -1,0 +1,308 @@
+[
+{
+  "directory": "/home/k/Documents/NUVIO",
+  "command": "/usr/bin/c++ -DTRACY_ENABLE -I/home/k/Documents/NUVIO/includes/external -I/home/k/Documents/NUVIO/includes/internal -I/home/k/Documents/NUVIO/includes/external/glfw/include -I/home/k/Documents/NUVIO/includes/external/imgui -I/home/k/Documents/NUVIO/./profiling/Tracy/public -I/home/k/Documents/NUVIO/./profiling/Tracy/public/tracy -std=gnu++17 -Wall -Wextra -Wpedantic -Werror -o CMakeFiles/NUVIO.dir/src/core/canvas/manager.cpp.o -c /home/k/Documents/NUVIO/src/core/canvas/manager.cpp",
+  "file": "/home/k/Documents/NUVIO/src/core/canvas/manager.cpp",
+  "output": "CMakeFiles/NUVIO.dir/src/core/canvas/manager.cpp.o"
+},
+{
+  "directory": "/home/k/Documents/NUVIO",
+  "command": "/usr/bin/c++ -DTRACY_ENABLE -I/home/k/Documents/NUVIO/includes/external -I/home/k/Documents/NUVIO/includes/internal -I/home/k/Documents/NUVIO/includes/external/glfw/include -I/home/k/Documents/NUVIO/includes/external/imgui -I/home/k/Documents/NUVIO/./profiling/Tracy/public -I/home/k/Documents/NUVIO/./profiling/Tracy/public/tracy -std=gnu++17 -Wall -Wextra -Wpedantic -Werror -o CMakeFiles/NUVIO.dir/src/core/nuvio.cpp.o -c /home/k/Documents/NUVIO/src/core/nuvio.cpp",
+  "file": "/home/k/Documents/NUVIO/src/core/nuvio.cpp",
+  "output": "CMakeFiles/NUVIO.dir/src/core/nuvio.cpp.o"
+},
+{
+  "directory": "/home/k/Documents/NUVIO",
+  "command": "/usr/bin/c++ -DTRACY_ENABLE -I/home/k/Documents/NUVIO/includes/external -I/home/k/Documents/NUVIO/includes/internal -I/home/k/Documents/NUVIO/includes/external/glfw/include -I/home/k/Documents/NUVIO/includes/external/imgui -I/home/k/Documents/NUVIO/./profiling/Tracy/public -I/home/k/Documents/NUVIO/./profiling/Tracy/public/tracy -std=gnu++17 -Wall -Wextra -Wpedantic -Werror -o CMakeFiles/NUVIO.dir/src/core/project/project_manager.cpp.o -c /home/k/Documents/NUVIO/src/core/project/project_manager.cpp",
+  "file": "/home/k/Documents/NUVIO/src/core/project/project_manager.cpp",
+  "output": "CMakeFiles/NUVIO.dir/src/core/project/project_manager.cpp.o"
+},
+{
+  "directory": "/home/k/Documents/NUVIO",
+  "command": "/usr/bin/c++ -DTRACY_ENABLE -I/home/k/Documents/NUVIO/includes/external -I/home/k/Documents/NUVIO/includes/internal -I/home/k/Documents/NUVIO/includes/external/glfw/include -I/home/k/Documents/NUVIO/includes/external/imgui -I/home/k/Documents/NUVIO/./profiling/Tracy/public -I/home/k/Documents/NUVIO/./profiling/Tracy/public/tracy -std=gnu++17 -Wall -Wextra -Wpedantic -Werror -o CMakeFiles/NUVIO.dir/src/core/project/projects.cpp.o -c /home/k/Documents/NUVIO/src/core/project/projects.cpp",
+  "file": "/home/k/Documents/NUVIO/src/core/project/projects.cpp",
+  "output": "CMakeFiles/NUVIO.dir/src/core/project/projects.cpp.o"
+},
+{
+  "directory": "/home/k/Documents/NUVIO",
+  "command": "/usr/bin/c++ -DTRACY_ENABLE -I/home/k/Documents/NUVIO/includes/external -I/home/k/Documents/NUVIO/includes/internal -I/home/k/Documents/NUVIO/includes/external/glfw/include -I/home/k/Documents/NUVIO/includes/external/imgui -I/home/k/Documents/NUVIO/./profiling/Tracy/public -I/home/k/Documents/NUVIO/./profiling/Tracy/public/tracy -std=gnu++17 -Wall -Wextra -Wpedantic -Werror -o CMakeFiles/NUVIO.dir/src/core/shortcut/manager.cpp.o -c /home/k/Documents/NUVIO/src/core/shortcut/manager.cpp",
+  "file": "/home/k/Documents/NUVIO/src/core/shortcut/manager.cpp",
+  "output": "CMakeFiles/NUVIO.dir/src/core/shortcut/manager.cpp.o"
+},
+{
+  "directory": "/home/k/Documents/NUVIO",
+  "command": "/usr/bin/c++ -DTRACY_ENABLE -I/home/k/Documents/NUVIO/includes/external -I/home/k/Documents/NUVIO/includes/internal -I/home/k/Documents/NUVIO/includes/external/glfw/include -I/home/k/Documents/NUVIO/includes/external/imgui -I/home/k/Documents/NUVIO/./profiling/Tracy/public -I/home/k/Documents/NUVIO/./profiling/Tracy/public/tracy -std=gnu++17 -Wall -Wextra -Wpedantic -Werror -o CMakeFiles/NUVIO.dir/src/core/shortcut/registery.cpp.o -c /home/k/Documents/NUVIO/src/core/shortcut/registery.cpp",
+  "file": "/home/k/Documents/NUVIO/src/core/shortcut/registery.cpp",
+  "output": "CMakeFiles/NUVIO.dir/src/core/shortcut/registery.cpp.o"
+},
+{
+  "directory": "/home/k/Documents/NUVIO",
+  "command": "/usr/bin/c++ -DTRACY_ENABLE -I/home/k/Documents/NUVIO/includes/external -I/home/k/Documents/NUVIO/includes/internal -I/home/k/Documents/NUVIO/includes/external/glfw/include -I/home/k/Documents/NUVIO/includes/external/imgui -I/home/k/Documents/NUVIO/./profiling/Tracy/public -I/home/k/Documents/NUVIO/./profiling/Tracy/public/tracy -std=gnu++17 -Wall -Wextra -Wpedantic -Werror -o CMakeFiles/NUVIO.dir/src/core/ui/components/registery.cpp.o -c /home/k/Documents/NUVIO/src/core/ui/components/registery.cpp",
+  "file": "/home/k/Documents/NUVIO/src/core/ui/components/registery.cpp",
+  "output": "CMakeFiles/NUVIO.dir/src/core/ui/components/registery.cpp.o"
+},
+{
+  "directory": "/home/k/Documents/NUVIO",
+  "command": "/usr/bin/c++ -DTRACY_ENABLE -I/home/k/Documents/NUVIO/includes/external -I/home/k/Documents/NUVIO/includes/internal -I/home/k/Documents/NUVIO/includes/external/glfw/include -I/home/k/Documents/NUVIO/includes/external/imgui -I/home/k/Documents/NUVIO/./profiling/Tracy/public -I/home/k/Documents/NUVIO/./profiling/Tracy/public/tracy -std=gnu++17 -Wall -Wextra -Wpedantic -Werror -o CMakeFiles/NUVIO.dir/src/core/ui/editor/layers.cpp.o -c /home/k/Documents/NUVIO/src/core/ui/editor/layers.cpp",
+  "file": "/home/k/Documents/NUVIO/src/core/ui/editor/layers.cpp",
+  "output": "CMakeFiles/NUVIO.dir/src/core/ui/editor/layers.cpp.o"
+},
+{
+  "directory": "/home/k/Documents/NUVIO",
+  "command": "/usr/bin/c++ -DTRACY_ENABLE -I/home/k/Documents/NUVIO/includes/external -I/home/k/Documents/NUVIO/includes/internal -I/home/k/Documents/NUVIO/includes/external/glfw/include -I/home/k/Documents/NUVIO/includes/external/imgui -I/home/k/Documents/NUVIO/./profiling/Tracy/public -I/home/k/Documents/NUVIO/./profiling/Tracy/public/tracy -std=gnu++17 -Wall -Wextra -Wpedantic -Werror -o CMakeFiles/NUVIO.dir/src/core/ui/editor/navbar.cpp.o -c /home/k/Documents/NUVIO/src/core/ui/editor/navbar.cpp",
+  "file": "/home/k/Documents/NUVIO/src/core/ui/editor/navbar.cpp",
+  "output": "CMakeFiles/NUVIO.dir/src/core/ui/editor/navbar.cpp.o"
+},
+{
+  "directory": "/home/k/Documents/NUVIO",
+  "command": "/usr/bin/c++ -DTRACY_ENABLE -I/home/k/Documents/NUVIO/includes/external -I/home/k/Documents/NUVIO/includes/internal -I/home/k/Documents/NUVIO/includes/external/glfw/include -I/home/k/Documents/NUVIO/includes/external/imgui -I/home/k/Documents/NUVIO/./profiling/Tracy/public -I/home/k/Documents/NUVIO/./profiling/Tracy/public/tracy -std=gnu++17 -Wall -Wextra -Wpedantic -Werror -o CMakeFiles/NUVIO.dir/src/core/ui/editor/sidebar.cpp.o -c /home/k/Documents/NUVIO/src/core/ui/editor/sidebar.cpp",
+  "file": "/home/k/Documents/NUVIO/src/core/ui/editor/sidebar.cpp",
+  "output": "CMakeFiles/NUVIO.dir/src/core/ui/editor/sidebar.cpp.o"
+},
+{
+  "directory": "/home/k/Documents/NUVIO",
+  "command": "/usr/bin/c++ -DTRACY_ENABLE -I/home/k/Documents/NUVIO/includes/external -I/home/k/Documents/NUVIO/includes/internal -I/home/k/Documents/NUVIO/includes/external/glfw/include -I/home/k/Documents/NUVIO/includes/external/imgui -I/home/k/Documents/NUVIO/./profiling/Tracy/public -I/home/k/Documents/NUVIO/./profiling/Tracy/public/tracy -std=gnu++17 -Wall -Wextra -Wpedantic -Werror -o CMakeFiles/NUVIO.dir/src/core/ui/editor/viewport.cpp.o -c /home/k/Documents/NUVIO/src/core/ui/editor/viewport.cpp",
+  "file": "/home/k/Documents/NUVIO/src/core/ui/editor/viewport.cpp",
+  "output": "CMakeFiles/NUVIO.dir/src/core/ui/editor/viewport.cpp.o"
+},
+{
+  "directory": "/home/k/Documents/NUVIO",
+  "command": "/usr/bin/c++ -DTRACY_ENABLE -I/home/k/Documents/NUVIO/includes/external -I/home/k/Documents/NUVIO/includes/internal -I/home/k/Documents/NUVIO/includes/external/glfw/include -I/home/k/Documents/NUVIO/includes/external/imgui -I/home/k/Documents/NUVIO/./profiling/Tracy/public -I/home/k/Documents/NUVIO/./profiling/Tracy/public/tracy -std=gnu++17 -Wall -Wextra -Wpedantic -Werror -o CMakeFiles/NUVIO.dir/src/core/ui/test_comp.cpp.o -c /home/k/Documents/NUVIO/src/core/ui/test_comp.cpp",
+  "file": "/home/k/Documents/NUVIO/src/core/ui/test_comp.cpp",
+  "output": "CMakeFiles/NUVIO.dir/src/core/ui/test_comp.cpp.o"
+},
+{
+  "directory": "/home/k/Documents/NUVIO",
+  "command": "/usr/bin/c++ -DTRACY_ENABLE -I/home/k/Documents/NUVIO/includes/external -I/home/k/Documents/NUVIO/includes/internal -I/home/k/Documents/NUVIO/includes/external/glfw/include -I/home/k/Documents/NUVIO/includes/external/imgui -I/home/k/Documents/NUVIO/./profiling/Tracy/public -I/home/k/Documents/NUVIO/./profiling/Tracy/public/tracy -std=gnu++17 -Wall -Wextra -Wpedantic -Werror -o CMakeFiles/NUVIO.dir/src/core/ui/theme.cpp.o -c /home/k/Documents/NUVIO/src/core/ui/theme.cpp",
+  "file": "/home/k/Documents/NUVIO/src/core/ui/theme.cpp",
+  "output": "CMakeFiles/NUVIO.dir/src/core/ui/theme.cpp.o"
+},
+{
+  "directory": "/home/k/Documents/NUVIO",
+  "command": "/usr/bin/c++ -DTRACY_ENABLE -I/home/k/Documents/NUVIO/includes/external -I/home/k/Documents/NUVIO/includes/internal -I/home/k/Documents/NUVIO/includes/external/glfw/include -I/home/k/Documents/NUVIO/includes/external/imgui -I/home/k/Documents/NUVIO/./profiling/Tracy/public -I/home/k/Documents/NUVIO/./profiling/Tracy/public/tracy -std=gnu++17 -Wall -Wextra -Wpedantic -Werror -o CMakeFiles/NUVIO.dir/src/core/ui/ui.cpp.o -c /home/k/Documents/NUVIO/src/core/ui/ui.cpp",
+  "file": "/home/k/Documents/NUVIO/src/core/ui/ui.cpp",
+  "output": "CMakeFiles/NUVIO.dir/src/core/ui/ui.cpp.o"
+},
+{
+  "directory": "/home/k/Documents/NUVIO",
+  "command": "/usr/bin/c++ -DTRACY_ENABLE -I/home/k/Documents/NUVIO/includes/external -I/home/k/Documents/NUVIO/includes/internal -I/home/k/Documents/NUVIO/includes/external/glfw/include -I/home/k/Documents/NUVIO/includes/external/imgui -I/home/k/Documents/NUVIO/./profiling/Tracy/public -I/home/k/Documents/NUVIO/./profiling/Tracy/public/tracy -std=gnu++17 -Wall -Wextra -Wpedantic -Werror -o CMakeFiles/NUVIO.dir/src/core/window/window_manager.cpp.o -c /home/k/Documents/NUVIO/src/core/window/window_manager.cpp",
+  "file": "/home/k/Documents/NUVIO/src/core/window/window_manager.cpp",
+  "output": "CMakeFiles/NUVIO.dir/src/core/window/window_manager.cpp.o"
+},
+{
+  "directory": "/home/k/Documents/NUVIO",
+  "command": "/usr/bin/c++ -DTRACY_ENABLE -I/home/k/Documents/NUVIO/includes/external -I/home/k/Documents/NUVIO/includes/internal -I/home/k/Documents/NUVIO/includes/external/glfw/include -I/home/k/Documents/NUVIO/includes/external/imgui -I/home/k/Documents/NUVIO/./profiling/Tracy/public -I/home/k/Documents/NUVIO/./profiling/Tracy/public/tracy -std=gnu++17 -Wall -Wextra -Wpedantic -Werror -o CMakeFiles/NUVIO.dir/src/main.cpp.o -c /home/k/Documents/NUVIO/src/main.cpp",
+  "file": "/home/k/Documents/NUVIO/src/main.cpp",
+  "output": "CMakeFiles/NUVIO.dir/src/main.cpp.o"
+},
+{
+  "directory": "/home/k/Documents/NUVIO",
+  "command": "/usr/bin/c++ -DTRACY_ENABLE -I/home/k/Documents/NUVIO/includes/external -I/home/k/Documents/NUVIO/includes/internal -I/home/k/Documents/NUVIO/includes/external/glfw/include -I/home/k/Documents/NUVIO/includes/external/imgui -I/home/k/Documents/NUVIO/./profiling/Tracy/public -I/home/k/Documents/NUVIO/./profiling/Tracy/public/tracy -std=gnu++17 -Wall -Wextra -Wpedantic -Werror -o CMakeFiles/NUVIO.dir/includes/external/imgui/backends/imgui_impl_glfw.cpp.o -c /home/k/Documents/NUVIO/includes/external/imgui/backends/imgui_impl_glfw.cpp",
+  "file": "/home/k/Documents/NUVIO/includes/external/imgui/backends/imgui_impl_glfw.cpp",
+  "output": "CMakeFiles/NUVIO.dir/includes/external/imgui/backends/imgui_impl_glfw.cpp.o"
+},
+{
+  "directory": "/home/k/Documents/NUVIO",
+  "command": "/usr/bin/c++ -DTRACY_ENABLE -I/home/k/Documents/NUVIO/includes/external -I/home/k/Documents/NUVIO/includes/internal -I/home/k/Documents/NUVIO/includes/external/glfw/include -I/home/k/Documents/NUVIO/includes/external/imgui -I/home/k/Documents/NUVIO/./profiling/Tracy/public -I/home/k/Documents/NUVIO/./profiling/Tracy/public/tracy -std=gnu++17 -Wall -Wextra -Wpedantic -Werror -o CMakeFiles/NUVIO.dir/includes/external/imgui/backends/imgui_impl_opengl3.cpp.o -c /home/k/Documents/NUVIO/includes/external/imgui/backends/imgui_impl_opengl3.cpp",
+  "file": "/home/k/Documents/NUVIO/includes/external/imgui/backends/imgui_impl_opengl3.cpp",
+  "output": "CMakeFiles/NUVIO.dir/includes/external/imgui/backends/imgui_impl_opengl3.cpp.o"
+},
+{
+  "directory": "/home/k/Documents/NUVIO",
+  "command": "/usr/bin/c++ -DTRACY_ENABLE -I/home/k/Documents/NUVIO/includes/external -I/home/k/Documents/NUVIO/includes/internal -I/home/k/Documents/NUVIO/includes/external/glfw/include -I/home/k/Documents/NUVIO/includes/external/imgui -I/home/k/Documents/NUVIO/./profiling/Tracy/public -I/home/k/Documents/NUVIO/./profiling/Tracy/public/tracy -std=gnu++17 -Wall -Wextra -Wpedantic -Werror -o CMakeFiles/NUVIO.dir/includes/external/imgui/imgui.cpp.o -c /home/k/Documents/NUVIO/includes/external/imgui/imgui.cpp",
+  "file": "/home/k/Documents/NUVIO/includes/external/imgui/imgui.cpp",
+  "output": "CMakeFiles/NUVIO.dir/includes/external/imgui/imgui.cpp.o"
+},
+{
+  "directory": "/home/k/Documents/NUVIO",
+  "command": "/usr/bin/c++ -DTRACY_ENABLE -I/home/k/Documents/NUVIO/includes/external -I/home/k/Documents/NUVIO/includes/internal -I/home/k/Documents/NUVIO/includes/external/glfw/include -I/home/k/Documents/NUVIO/includes/external/imgui -I/home/k/Documents/NUVIO/./profiling/Tracy/public -I/home/k/Documents/NUVIO/./profiling/Tracy/public/tracy -std=gnu++17 -Wall -Wextra -Wpedantic -Werror -o CMakeFiles/NUVIO.dir/includes/external/imgui/imgui_demo.cpp.o -c /home/k/Documents/NUVIO/includes/external/imgui/imgui_demo.cpp",
+  "file": "/home/k/Documents/NUVIO/includes/external/imgui/imgui_demo.cpp",
+  "output": "CMakeFiles/NUVIO.dir/includes/external/imgui/imgui_demo.cpp.o"
+},
+{
+  "directory": "/home/k/Documents/NUVIO",
+  "command": "/usr/bin/c++ -DTRACY_ENABLE -I/home/k/Documents/NUVIO/includes/external -I/home/k/Documents/NUVIO/includes/internal -I/home/k/Documents/NUVIO/includes/external/glfw/include -I/home/k/Documents/NUVIO/includes/external/imgui -I/home/k/Documents/NUVIO/./profiling/Tracy/public -I/home/k/Documents/NUVIO/./profiling/Tracy/public/tracy -std=gnu++17 -Wall -Wextra -Wpedantic -Werror -o CMakeFiles/NUVIO.dir/includes/external/imgui/imgui_draw.cpp.o -c /home/k/Documents/NUVIO/includes/external/imgui/imgui_draw.cpp",
+  "file": "/home/k/Documents/NUVIO/includes/external/imgui/imgui_draw.cpp",
+  "output": "CMakeFiles/NUVIO.dir/includes/external/imgui/imgui_draw.cpp.o"
+},
+{
+  "directory": "/home/k/Documents/NUVIO",
+  "command": "/usr/bin/c++ -DTRACY_ENABLE -I/home/k/Documents/NUVIO/includes/external -I/home/k/Documents/NUVIO/includes/internal -I/home/k/Documents/NUVIO/includes/external/glfw/include -I/home/k/Documents/NUVIO/includes/external/imgui -I/home/k/Documents/NUVIO/./profiling/Tracy/public -I/home/k/Documents/NUVIO/./profiling/Tracy/public/tracy -std=gnu++17 -Wall -Wextra -Wpedantic -Werror -o CMakeFiles/NUVIO.dir/includes/external/imgui/imgui_tables.cpp.o -c /home/k/Documents/NUVIO/includes/external/imgui/imgui_tables.cpp",
+  "file": "/home/k/Documents/NUVIO/includes/external/imgui/imgui_tables.cpp",
+  "output": "CMakeFiles/NUVIO.dir/includes/external/imgui/imgui_tables.cpp.o"
+},
+{
+  "directory": "/home/k/Documents/NUVIO",
+  "command": "/usr/bin/c++ -DTRACY_ENABLE -I/home/k/Documents/NUVIO/includes/external -I/home/k/Documents/NUVIO/includes/internal -I/home/k/Documents/NUVIO/includes/external/glfw/include -I/home/k/Documents/NUVIO/includes/external/imgui -I/home/k/Documents/NUVIO/./profiling/Tracy/public -I/home/k/Documents/NUVIO/./profiling/Tracy/public/tracy -std=gnu++17 -Wall -Wextra -Wpedantic -Werror -o CMakeFiles/NUVIO.dir/includes/external/imgui/imgui_widgets.cpp.o -c /home/k/Documents/NUVIO/includes/external/imgui/imgui_widgets.cpp",
+  "file": "/home/k/Documents/NUVIO/includes/external/imgui/imgui_widgets.cpp",
+  "output": "CMakeFiles/NUVIO.dir/includes/external/imgui/imgui_widgets.cpp.o"
+},
+{
+  "directory": "/home/k/Documents/NUVIO",
+  "command": "/usr/bin/cc -DTRACY_ENABLE -I/home/k/Documents/NUVIO/includes/external -I/home/k/Documents/NUVIO/includes/internal -I/home/k/Documents/NUVIO/includes/external/glfw/include -I/home/k/Documents/NUVIO/includes/external/imgui -I/home/k/Documents/NUVIO/./profiling/Tracy/public -I/home/k/Documents/NUVIO/./profiling/Tracy/public/tracy -Wall -Wextra -Wpedantic -Werror -Wno-pedantic -o CMakeFiles/NUVIO.dir/includes/external/glad/glad.c.o -c /home/k/Documents/NUVIO/includes/external/glad/glad.c",
+  "file": "/home/k/Documents/NUVIO/includes/external/glad/glad.c",
+  "output": "CMakeFiles/NUVIO.dir/includes/external/glad/glad.c.o"
+},
+{
+  "directory": "/home/k/Documents/NUVIO",
+  "command": "/usr/bin/c++ -DTRACY_ENABLE -I/home/k/Documents/NUVIO/includes/external -I/home/k/Documents/NUVIO/includes/internal -I/home/k/Documents/NUVIO/includes/external/glfw/include -I/home/k/Documents/NUVIO/includes/external/imgui -I/home/k/Documents/NUVIO/./profiling/Tracy/public -I/home/k/Documents/NUVIO/./profiling/Tracy/public/tracy -std=gnu++17 -Wall -Wextra -Wpedantic -Werror -w -o CMakeFiles/NUVIO.dir/profiling/Tracy/public/TracyClient.cpp.o -c /home/k/Documents/NUVIO/profiling/Tracy/public/TracyClient.cpp",
+  "file": "/home/k/Documents/NUVIO/profiling/Tracy/public/TracyClient.cpp",
+  "output": "CMakeFiles/NUVIO.dir/profiling/Tracy/public/TracyClient.cpp.o"
+},
+{
+  "directory": "/home/k/Documents/NUVIO/includes/external/glfw/src",
+  "command": "/usr/bin/cc -DHAVE_MEMFD_CREATE -D_DEFAULT_SOURCE -D_GLFW_WAYLAND -D_GLFW_X11 -I/home/k/Documents/NUVIO/includes/external/glfw/include -I/home/k/Documents/NUVIO/includes/external/glfw/src -std=c99 -fPIC -Wall -o CMakeFiles/glfw.dir/context.c.o -c /home/k/Documents/NUVIO/includes/external/glfw/src/context.c",
+  "file": "/home/k/Documents/NUVIO/includes/external/glfw/src/context.c",
+  "output": "includes/external/glfw/src/CMakeFiles/glfw.dir/context.c.o"
+},
+{
+  "directory": "/home/k/Documents/NUVIO/includes/external/glfw/src",
+  "command": "/usr/bin/cc -DHAVE_MEMFD_CREATE -D_DEFAULT_SOURCE -D_GLFW_WAYLAND -D_GLFW_X11 -I/home/k/Documents/NUVIO/includes/external/glfw/include -I/home/k/Documents/NUVIO/includes/external/glfw/src -std=c99 -fPIC -Wall -o CMakeFiles/glfw.dir/init.c.o -c /home/k/Documents/NUVIO/includes/external/glfw/src/init.c",
+  "file": "/home/k/Documents/NUVIO/includes/external/glfw/src/init.c",
+  "output": "includes/external/glfw/src/CMakeFiles/glfw.dir/init.c.o"
+},
+{
+  "directory": "/home/k/Documents/NUVIO/includes/external/glfw/src",
+  "command": "/usr/bin/cc -DHAVE_MEMFD_CREATE -D_DEFAULT_SOURCE -D_GLFW_WAYLAND -D_GLFW_X11 -I/home/k/Documents/NUVIO/includes/external/glfw/include -I/home/k/Documents/NUVIO/includes/external/glfw/src -std=c99 -fPIC -Wall -o CMakeFiles/glfw.dir/input.c.o -c /home/k/Documents/NUVIO/includes/external/glfw/src/input.c",
+  "file": "/home/k/Documents/NUVIO/includes/external/glfw/src/input.c",
+  "output": "includes/external/glfw/src/CMakeFiles/glfw.dir/input.c.o"
+},
+{
+  "directory": "/home/k/Documents/NUVIO/includes/external/glfw/src",
+  "command": "/usr/bin/cc -DHAVE_MEMFD_CREATE -D_DEFAULT_SOURCE -D_GLFW_WAYLAND -D_GLFW_X11 -I/home/k/Documents/NUVIO/includes/external/glfw/include -I/home/k/Documents/NUVIO/includes/external/glfw/src -std=c99 -fPIC -Wall -o CMakeFiles/glfw.dir/monitor.c.o -c /home/k/Documents/NUVIO/includes/external/glfw/src/monitor.c",
+  "file": "/home/k/Documents/NUVIO/includes/external/glfw/src/monitor.c",
+  "output": "includes/external/glfw/src/CMakeFiles/glfw.dir/monitor.c.o"
+},
+{
+  "directory": "/home/k/Documents/NUVIO/includes/external/glfw/src",
+  "command": "/usr/bin/cc -DHAVE_MEMFD_CREATE -D_DEFAULT_SOURCE -D_GLFW_WAYLAND -D_GLFW_X11 -I/home/k/Documents/NUVIO/includes/external/glfw/include -I/home/k/Documents/NUVIO/includes/external/glfw/src -std=c99 -fPIC -Wall -o CMakeFiles/glfw.dir/platform.c.o -c /home/k/Documents/NUVIO/includes/external/glfw/src/platform.c",
+  "file": "/home/k/Documents/NUVIO/includes/external/glfw/src/platform.c",
+  "output": "includes/external/glfw/src/CMakeFiles/glfw.dir/platform.c.o"
+},
+{
+  "directory": "/home/k/Documents/NUVIO/includes/external/glfw/src",
+  "command": "/usr/bin/cc -DHAVE_MEMFD_CREATE -D_DEFAULT_SOURCE -D_GLFW_WAYLAND -D_GLFW_X11 -I/home/k/Documents/NUVIO/includes/external/glfw/include -I/home/k/Documents/NUVIO/includes/external/glfw/src -std=c99 -fPIC -Wall -o CMakeFiles/glfw.dir/vulkan.c.o -c /home/k/Documents/NUVIO/includes/external/glfw/src/vulkan.c",
+  "file": "/home/k/Documents/NUVIO/includes/external/glfw/src/vulkan.c",
+  "output": "includes/external/glfw/src/CMakeFiles/glfw.dir/vulkan.c.o"
+},
+{
+  "directory": "/home/k/Documents/NUVIO/includes/external/glfw/src",
+  "command": "/usr/bin/cc -DHAVE_MEMFD_CREATE -D_DEFAULT_SOURCE -D_GLFW_WAYLAND -D_GLFW_X11 -I/home/k/Documents/NUVIO/includes/external/glfw/include -I/home/k/Documents/NUVIO/includes/external/glfw/src -std=c99 -fPIC -Wall -o CMakeFiles/glfw.dir/window.c.o -c /home/k/Documents/NUVIO/includes/external/glfw/src/window.c",
+  "file": "/home/k/Documents/NUVIO/includes/external/glfw/src/window.c",
+  "output": "includes/external/glfw/src/CMakeFiles/glfw.dir/window.c.o"
+},
+{
+  "directory": "/home/k/Documents/NUVIO/includes/external/glfw/src",
+  "command": "/usr/bin/cc -DHAVE_MEMFD_CREATE -D_DEFAULT_SOURCE -D_GLFW_WAYLAND -D_GLFW_X11 -I/home/k/Documents/NUVIO/includes/external/glfw/include -I/home/k/Documents/NUVIO/includes/external/glfw/src -std=c99 -fPIC -Wall -o CMakeFiles/glfw.dir/egl_context.c.o -c /home/k/Documents/NUVIO/includes/external/glfw/src/egl_context.c",
+  "file": "/home/k/Documents/NUVIO/includes/external/glfw/src/egl_context.c",
+  "output": "includes/external/glfw/src/CMakeFiles/glfw.dir/egl_context.c.o"
+},
+{
+  "directory": "/home/k/Documents/NUVIO/includes/external/glfw/src",
+  "command": "/usr/bin/cc -DHAVE_MEMFD_CREATE -D_DEFAULT_SOURCE -D_GLFW_WAYLAND -D_GLFW_X11 -I/home/k/Documents/NUVIO/includes/external/glfw/include -I/home/k/Documents/NUVIO/includes/external/glfw/src -std=c99 -fPIC -Wall -o CMakeFiles/glfw.dir/osmesa_context.c.o -c /home/k/Documents/NUVIO/includes/external/glfw/src/osmesa_context.c",
+  "file": "/home/k/Documents/NUVIO/includes/external/glfw/src/osmesa_context.c",
+  "output": "includes/external/glfw/src/CMakeFiles/glfw.dir/osmesa_context.c.o"
+},
+{
+  "directory": "/home/k/Documents/NUVIO/includes/external/glfw/src",
+  "command": "/usr/bin/cc -DHAVE_MEMFD_CREATE -D_DEFAULT_SOURCE -D_GLFW_WAYLAND -D_GLFW_X11 -I/home/k/Documents/NUVIO/includes/external/glfw/include -I/home/k/Documents/NUVIO/includes/external/glfw/src -std=c99 -fPIC -Wall -o CMakeFiles/glfw.dir/null_init.c.o -c /home/k/Documents/NUVIO/includes/external/glfw/src/null_init.c",
+  "file": "/home/k/Documents/NUVIO/includes/external/glfw/src/null_init.c",
+  "output": "includes/external/glfw/src/CMakeFiles/glfw.dir/null_init.c.o"
+},
+{
+  "directory": "/home/k/Documents/NUVIO/includes/external/glfw/src",
+  "command": "/usr/bin/cc -DHAVE_MEMFD_CREATE -D_DEFAULT_SOURCE -D_GLFW_WAYLAND -D_GLFW_X11 -I/home/k/Documents/NUVIO/includes/external/glfw/include -I/home/k/Documents/NUVIO/includes/external/glfw/src -std=c99 -fPIC -Wall -o CMakeFiles/glfw.dir/null_monitor.c.o -c /home/k/Documents/NUVIO/includes/external/glfw/src/null_monitor.c",
+  "file": "/home/k/Documents/NUVIO/includes/external/glfw/src/null_monitor.c",
+  "output": "includes/external/glfw/src/CMakeFiles/glfw.dir/null_monitor.c.o"
+},
+{
+  "directory": "/home/k/Documents/NUVIO/includes/external/glfw/src",
+  "command": "/usr/bin/cc -DHAVE_MEMFD_CREATE -D_DEFAULT_SOURCE -D_GLFW_WAYLAND -D_GLFW_X11 -I/home/k/Documents/NUVIO/includes/external/glfw/include -I/home/k/Documents/NUVIO/includes/external/glfw/src -std=c99 -fPIC -Wall -o CMakeFiles/glfw.dir/null_window.c.o -c /home/k/Documents/NUVIO/includes/external/glfw/src/null_window.c",
+  "file": "/home/k/Documents/NUVIO/includes/external/glfw/src/null_window.c",
+  "output": "includes/external/glfw/src/CMakeFiles/glfw.dir/null_window.c.o"
+},
+{
+  "directory": "/home/k/Documents/NUVIO/includes/external/glfw/src",
+  "command": "/usr/bin/cc -DHAVE_MEMFD_CREATE -D_DEFAULT_SOURCE -D_GLFW_WAYLAND -D_GLFW_X11 -I/home/k/Documents/NUVIO/includes/external/glfw/include -I/home/k/Documents/NUVIO/includes/external/glfw/src -std=c99 -fPIC -Wall -o CMakeFiles/glfw.dir/null_joystick.c.o -c /home/k/Documents/NUVIO/includes/external/glfw/src/null_joystick.c",
+  "file": "/home/k/Documents/NUVIO/includes/external/glfw/src/null_joystick.c",
+  "output": "includes/external/glfw/src/CMakeFiles/glfw.dir/null_joystick.c.o"
+},
+{
+  "directory": "/home/k/Documents/NUVIO/includes/external/glfw/src",
+  "command": "/usr/bin/cc -DHAVE_MEMFD_CREATE -D_DEFAULT_SOURCE -D_GLFW_WAYLAND -D_GLFW_X11 -I/home/k/Documents/NUVIO/includes/external/glfw/include -I/home/k/Documents/NUVIO/includes/external/glfw/src -std=c99 -fPIC -Wall -o CMakeFiles/glfw.dir/posix_module.c.o -c /home/k/Documents/NUVIO/includes/external/glfw/src/posix_module.c",
+  "file": "/home/k/Documents/NUVIO/includes/external/glfw/src/posix_module.c",
+  "output": "includes/external/glfw/src/CMakeFiles/glfw.dir/posix_module.c.o"
+},
+{
+  "directory": "/home/k/Documents/NUVIO/includes/external/glfw/src",
+  "command": "/usr/bin/cc -DHAVE_MEMFD_CREATE -D_DEFAULT_SOURCE -D_GLFW_WAYLAND -D_GLFW_X11 -I/home/k/Documents/NUVIO/includes/external/glfw/include -I/home/k/Documents/NUVIO/includes/external/glfw/src -std=c99 -fPIC -Wall -o CMakeFiles/glfw.dir/posix_time.c.o -c /home/k/Documents/NUVIO/includes/external/glfw/src/posix_time.c",
+  "file": "/home/k/Documents/NUVIO/includes/external/glfw/src/posix_time.c",
+  "output": "includes/external/glfw/src/CMakeFiles/glfw.dir/posix_time.c.o"
+},
+{
+  "directory": "/home/k/Documents/NUVIO/includes/external/glfw/src",
+  "command": "/usr/bin/cc -DHAVE_MEMFD_CREATE -D_DEFAULT_SOURCE -D_GLFW_WAYLAND -D_GLFW_X11 -I/home/k/Documents/NUVIO/includes/external/glfw/include -I/home/k/Documents/NUVIO/includes/external/glfw/src -std=c99 -fPIC -Wall -o CMakeFiles/glfw.dir/posix_thread.c.o -c /home/k/Documents/NUVIO/includes/external/glfw/src/posix_thread.c",
+  "file": "/home/k/Documents/NUVIO/includes/external/glfw/src/posix_thread.c",
+  "output": "includes/external/glfw/src/CMakeFiles/glfw.dir/posix_thread.c.o"
+},
+{
+  "directory": "/home/k/Documents/NUVIO/includes/external/glfw/src",
+  "command": "/usr/bin/cc -DHAVE_MEMFD_CREATE -D_DEFAULT_SOURCE -D_GLFW_WAYLAND -D_GLFW_X11 -I/home/k/Documents/NUVIO/includes/external/glfw/include -I/home/k/Documents/NUVIO/includes/external/glfw/src -std=c99 -fPIC -Wall -o CMakeFiles/glfw.dir/x11_init.c.o -c /home/k/Documents/NUVIO/includes/external/glfw/src/x11_init.c",
+  "file": "/home/k/Documents/NUVIO/includes/external/glfw/src/x11_init.c",
+  "output": "includes/external/glfw/src/CMakeFiles/glfw.dir/x11_init.c.o"
+},
+{
+  "directory": "/home/k/Documents/NUVIO/includes/external/glfw/src",
+  "command": "/usr/bin/cc -DHAVE_MEMFD_CREATE -D_DEFAULT_SOURCE -D_GLFW_WAYLAND -D_GLFW_X11 -I/home/k/Documents/NUVIO/includes/external/glfw/include -I/home/k/Documents/NUVIO/includes/external/glfw/src -std=c99 -fPIC -Wall -o CMakeFiles/glfw.dir/x11_monitor.c.o -c /home/k/Documents/NUVIO/includes/external/glfw/src/x11_monitor.c",
+  "file": "/home/k/Documents/NUVIO/includes/external/glfw/src/x11_monitor.c",
+  "output": "includes/external/glfw/src/CMakeFiles/glfw.dir/x11_monitor.c.o"
+},
+{
+  "directory": "/home/k/Documents/NUVIO/includes/external/glfw/src",
+  "command": "/usr/bin/cc -DHAVE_MEMFD_CREATE -D_DEFAULT_SOURCE -D_GLFW_WAYLAND -D_GLFW_X11 -I/home/k/Documents/NUVIO/includes/external/glfw/include -I/home/k/Documents/NUVIO/includes/external/glfw/src -std=c99 -fPIC -Wall -o CMakeFiles/glfw.dir/x11_window.c.o -c /home/k/Documents/NUVIO/includes/external/glfw/src/x11_window.c",
+  "file": "/home/k/Documents/NUVIO/includes/external/glfw/src/x11_window.c",
+  "output": "includes/external/glfw/src/CMakeFiles/glfw.dir/x11_window.c.o"
+},
+{
+  "directory": "/home/k/Documents/NUVIO/includes/external/glfw/src",
+  "command": "/usr/bin/cc -DHAVE_MEMFD_CREATE -D_DEFAULT_SOURCE -D_GLFW_WAYLAND -D_GLFW_X11 -I/home/k/Documents/NUVIO/includes/external/glfw/include -I/home/k/Documents/NUVIO/includes/external/glfw/src -std=c99 -fPIC -Wall -o CMakeFiles/glfw.dir/xkb_unicode.c.o -c /home/k/Documents/NUVIO/includes/external/glfw/src/xkb_unicode.c",
+  "file": "/home/k/Documents/NUVIO/includes/external/glfw/src/xkb_unicode.c",
+  "output": "includes/external/glfw/src/CMakeFiles/glfw.dir/xkb_unicode.c.o"
+},
+{
+  "directory": "/home/k/Documents/NUVIO/includes/external/glfw/src",
+  "command": "/usr/bin/cc -DHAVE_MEMFD_CREATE -D_DEFAULT_SOURCE -D_GLFW_WAYLAND -D_GLFW_X11 -I/home/k/Documents/NUVIO/includes/external/glfw/include -I/home/k/Documents/NUVIO/includes/external/glfw/src -std=c99 -fPIC -Wall -o CMakeFiles/glfw.dir/glx_context.c.o -c /home/k/Documents/NUVIO/includes/external/glfw/src/glx_context.c",
+  "file": "/home/k/Documents/NUVIO/includes/external/glfw/src/glx_context.c",
+  "output": "includes/external/glfw/src/CMakeFiles/glfw.dir/glx_context.c.o"
+},
+{
+  "directory": "/home/k/Documents/NUVIO/includes/external/glfw/src",
+  "command": "/usr/bin/cc -DHAVE_MEMFD_CREATE -D_DEFAULT_SOURCE -D_GLFW_WAYLAND -D_GLFW_X11 -I/home/k/Documents/NUVIO/includes/external/glfw/include -I/home/k/Documents/NUVIO/includes/external/glfw/src -std=c99 -fPIC -Wall -o CMakeFiles/glfw.dir/wl_init.c.o -c /home/k/Documents/NUVIO/includes/external/glfw/src/wl_init.c",
+  "file": "/home/k/Documents/NUVIO/includes/external/glfw/src/wl_init.c",
+  "output": "includes/external/glfw/src/CMakeFiles/glfw.dir/wl_init.c.o"
+},
+{
+  "directory": "/home/k/Documents/NUVIO/includes/external/glfw/src",
+  "command": "/usr/bin/cc -DHAVE_MEMFD_CREATE -D_DEFAULT_SOURCE -D_GLFW_WAYLAND -D_GLFW_X11 -I/home/k/Documents/NUVIO/includes/external/glfw/include -I/home/k/Documents/NUVIO/includes/external/glfw/src -std=c99 -fPIC -Wall -o CMakeFiles/glfw.dir/wl_monitor.c.o -c /home/k/Documents/NUVIO/includes/external/glfw/src/wl_monitor.c",
+  "file": "/home/k/Documents/NUVIO/includes/external/glfw/src/wl_monitor.c",
+  "output": "includes/external/glfw/src/CMakeFiles/glfw.dir/wl_monitor.c.o"
+},
+{
+  "directory": "/home/k/Documents/NUVIO/includes/external/glfw/src",
+  "command": "/usr/bin/cc -DHAVE_MEMFD_CREATE -D_DEFAULT_SOURCE -D_GLFW_WAYLAND -D_GLFW_X11 -I/home/k/Documents/NUVIO/includes/external/glfw/include -I/home/k/Documents/NUVIO/includes/external/glfw/src -std=c99 -fPIC -Wall -o CMakeFiles/glfw.dir/wl_window.c.o -c /home/k/Documents/NUVIO/includes/external/glfw/src/wl_window.c",
+  "file": "/home/k/Documents/NUVIO/includes/external/glfw/src/wl_window.c",
+  "output": "includes/external/glfw/src/CMakeFiles/glfw.dir/wl_window.c.o"
+},
+{
+  "directory": "/home/k/Documents/NUVIO/includes/external/glfw/src",
+  "command": "/usr/bin/cc -DHAVE_MEMFD_CREATE -D_DEFAULT_SOURCE -D_GLFW_WAYLAND -D_GLFW_X11 -I/home/k/Documents/NUVIO/includes/external/glfw/include -I/home/k/Documents/NUVIO/includes/external/glfw/src -std=c99 -fPIC -Wall -o CMakeFiles/glfw.dir/linux_joystick.c.o -c /home/k/Documents/NUVIO/includes/external/glfw/src/linux_joystick.c",
+  "file": "/home/k/Documents/NUVIO/includes/external/glfw/src/linux_joystick.c",
+  "output": "includes/external/glfw/src/CMakeFiles/glfw.dir/linux_joystick.c.o"
+},
+{
+  "directory": "/home/k/Documents/NUVIO/includes/external/glfw/src",
+  "command": "/usr/bin/cc -DHAVE_MEMFD_CREATE -D_DEFAULT_SOURCE -D_GLFW_WAYLAND -D_GLFW_X11 -I/home/k/Documents/NUVIO/includes/external/glfw/include -I/home/k/Documents/NUVIO/includes/external/glfw/src -std=c99 -fPIC -Wall -o CMakeFiles/glfw.dir/posix_poll.c.o -c /home/k/Documents/NUVIO/includes/external/glfw/src/posix_poll.c",
+  "file": "/home/k/Documents/NUVIO/includes/external/glfw/src/posix_poll.c",
+  "output": "includes/external/glfw/src/CMakeFiles/glfw.dir/posix_poll.c.o"
+}
+]

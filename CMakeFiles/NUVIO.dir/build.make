@@ -56,7 +56,7 @@ EQUALS = =
 CMAKE_SOURCE_DIR = /home/k/Documents/NUVIO
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/k/Documents/NUVIO/nuvio-test
+CMAKE_BINARY_DIR = /home/k/Documents/NUVIO
 
 # Include any dependencies generated for this target.
 include CMakeFiles/NUVIO.dir/depend.make
@@ -73,9 +73,9 @@ CMakeFiles/NUVIO.dir/codegen:
 .PHONY : CMakeFiles/NUVIO.dir/codegen
 
 CMakeFiles/NUVIO.dir/src/core/canvas/manager.cpp.o: CMakeFiles/NUVIO.dir/flags.make
-CMakeFiles/NUVIO.dir/src/core/canvas/manager.cpp.o: /home/k/Documents/NUVIO/src/core/canvas/manager.cpp
+CMakeFiles/NUVIO.dir/src/core/canvas/manager.cpp.o: src/core/canvas/manager.cpp
 CMakeFiles/NUVIO.dir/src/core/canvas/manager.cpp.o: CMakeFiles/NUVIO.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/k/Documents/NUVIO/nuvio-test/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/NUVIO.dir/src/core/canvas/manager.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/k/Documents/NUVIO/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/NUVIO.dir/src/core/canvas/manager.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/NUVIO.dir/src/core/canvas/manager.cpp.o -MF CMakeFiles/NUVIO.dir/src/core/canvas/manager.cpp.o.d -o CMakeFiles/NUVIO.dir/src/core/canvas/manager.cpp.o -c /home/k/Documents/NUVIO/src/core/canvas/manager.cpp
 
 CMakeFiles/NUVIO.dir/src/core/canvas/manager.cpp.i: cmake_force
@@ -86,24 +86,10 @@ CMakeFiles/NUVIO.dir/src/core/canvas/manager.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/NUVIO.dir/src/core/canvas/manager.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/k/Documents/NUVIO/src/core/canvas/manager.cpp -o CMakeFiles/NUVIO.dir/src/core/canvas/manager.cpp.s
 
-CMakeFiles/NUVIO.dir/src/core/canvas/shapes/rectangle.cpp.o: CMakeFiles/NUVIO.dir/flags.make
-CMakeFiles/NUVIO.dir/src/core/canvas/shapes/rectangle.cpp.o: /home/k/Documents/NUVIO/src/core/canvas/shapes/rectangle.cpp
-CMakeFiles/NUVIO.dir/src/core/canvas/shapes/rectangle.cpp.o: CMakeFiles/NUVIO.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/k/Documents/NUVIO/nuvio-test/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/NUVIO.dir/src/core/canvas/shapes/rectangle.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/NUVIO.dir/src/core/canvas/shapes/rectangle.cpp.o -MF CMakeFiles/NUVIO.dir/src/core/canvas/shapes/rectangle.cpp.o.d -o CMakeFiles/NUVIO.dir/src/core/canvas/shapes/rectangle.cpp.o -c /home/k/Documents/NUVIO/src/core/canvas/shapes/rectangle.cpp
-
-CMakeFiles/NUVIO.dir/src/core/canvas/shapes/rectangle.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/NUVIO.dir/src/core/canvas/shapes/rectangle.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/k/Documents/NUVIO/src/core/canvas/shapes/rectangle.cpp > CMakeFiles/NUVIO.dir/src/core/canvas/shapes/rectangle.cpp.i
-
-CMakeFiles/NUVIO.dir/src/core/canvas/shapes/rectangle.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/NUVIO.dir/src/core/canvas/shapes/rectangle.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/k/Documents/NUVIO/src/core/canvas/shapes/rectangle.cpp -o CMakeFiles/NUVIO.dir/src/core/canvas/shapes/rectangle.cpp.s
-
 CMakeFiles/NUVIO.dir/src/core/nuvio.cpp.o: CMakeFiles/NUVIO.dir/flags.make
-CMakeFiles/NUVIO.dir/src/core/nuvio.cpp.o: /home/k/Documents/NUVIO/src/core/nuvio.cpp
+CMakeFiles/NUVIO.dir/src/core/nuvio.cpp.o: src/core/nuvio.cpp
 CMakeFiles/NUVIO.dir/src/core/nuvio.cpp.o: CMakeFiles/NUVIO.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/k/Documents/NUVIO/nuvio-test/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/NUVIO.dir/src/core/nuvio.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/k/Documents/NUVIO/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/NUVIO.dir/src/core/nuvio.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/NUVIO.dir/src/core/nuvio.cpp.o -MF CMakeFiles/NUVIO.dir/src/core/nuvio.cpp.o.d -o CMakeFiles/NUVIO.dir/src/core/nuvio.cpp.o -c /home/k/Documents/NUVIO/src/core/nuvio.cpp
 
 CMakeFiles/NUVIO.dir/src/core/nuvio.cpp.i: cmake_force
@@ -115,9 +101,9 @@ CMakeFiles/NUVIO.dir/src/core/nuvio.cpp.s: cmake_force
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/k/Documents/NUVIO/src/core/nuvio.cpp -o CMakeFiles/NUVIO.dir/src/core/nuvio.cpp.s
 
 CMakeFiles/NUVIO.dir/src/core/project/project_manager.cpp.o: CMakeFiles/NUVIO.dir/flags.make
-CMakeFiles/NUVIO.dir/src/core/project/project_manager.cpp.o: /home/k/Documents/NUVIO/src/core/project/project_manager.cpp
+CMakeFiles/NUVIO.dir/src/core/project/project_manager.cpp.o: src/core/project/project_manager.cpp
 CMakeFiles/NUVIO.dir/src/core/project/project_manager.cpp.o: CMakeFiles/NUVIO.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/k/Documents/NUVIO/nuvio-test/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/NUVIO.dir/src/core/project/project_manager.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/k/Documents/NUVIO/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/NUVIO.dir/src/core/project/project_manager.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/NUVIO.dir/src/core/project/project_manager.cpp.o -MF CMakeFiles/NUVIO.dir/src/core/project/project_manager.cpp.o.d -o CMakeFiles/NUVIO.dir/src/core/project/project_manager.cpp.o -c /home/k/Documents/NUVIO/src/core/project/project_manager.cpp
 
 CMakeFiles/NUVIO.dir/src/core/project/project_manager.cpp.i: cmake_force
@@ -129,9 +115,9 @@ CMakeFiles/NUVIO.dir/src/core/project/project_manager.cpp.s: cmake_force
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/k/Documents/NUVIO/src/core/project/project_manager.cpp -o CMakeFiles/NUVIO.dir/src/core/project/project_manager.cpp.s
 
 CMakeFiles/NUVIO.dir/src/core/project/projects.cpp.o: CMakeFiles/NUVIO.dir/flags.make
-CMakeFiles/NUVIO.dir/src/core/project/projects.cpp.o: /home/k/Documents/NUVIO/src/core/project/projects.cpp
+CMakeFiles/NUVIO.dir/src/core/project/projects.cpp.o: src/core/project/projects.cpp
 CMakeFiles/NUVIO.dir/src/core/project/projects.cpp.o: CMakeFiles/NUVIO.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/k/Documents/NUVIO/nuvio-test/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/NUVIO.dir/src/core/project/projects.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/k/Documents/NUVIO/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/NUVIO.dir/src/core/project/projects.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/NUVIO.dir/src/core/project/projects.cpp.o -MF CMakeFiles/NUVIO.dir/src/core/project/projects.cpp.o.d -o CMakeFiles/NUVIO.dir/src/core/project/projects.cpp.o -c /home/k/Documents/NUVIO/src/core/project/projects.cpp
 
 CMakeFiles/NUVIO.dir/src/core/project/projects.cpp.i: cmake_force
@@ -143,9 +129,9 @@ CMakeFiles/NUVIO.dir/src/core/project/projects.cpp.s: cmake_force
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/k/Documents/NUVIO/src/core/project/projects.cpp -o CMakeFiles/NUVIO.dir/src/core/project/projects.cpp.s
 
 CMakeFiles/NUVIO.dir/src/core/shortcut/manager.cpp.o: CMakeFiles/NUVIO.dir/flags.make
-CMakeFiles/NUVIO.dir/src/core/shortcut/manager.cpp.o: /home/k/Documents/NUVIO/src/core/shortcut/manager.cpp
+CMakeFiles/NUVIO.dir/src/core/shortcut/manager.cpp.o: src/core/shortcut/manager.cpp
 CMakeFiles/NUVIO.dir/src/core/shortcut/manager.cpp.o: CMakeFiles/NUVIO.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/k/Documents/NUVIO/nuvio-test/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/NUVIO.dir/src/core/shortcut/manager.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/k/Documents/NUVIO/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/NUVIO.dir/src/core/shortcut/manager.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/NUVIO.dir/src/core/shortcut/manager.cpp.o -MF CMakeFiles/NUVIO.dir/src/core/shortcut/manager.cpp.o.d -o CMakeFiles/NUVIO.dir/src/core/shortcut/manager.cpp.o -c /home/k/Documents/NUVIO/src/core/shortcut/manager.cpp
 
 CMakeFiles/NUVIO.dir/src/core/shortcut/manager.cpp.i: cmake_force
@@ -157,9 +143,9 @@ CMakeFiles/NUVIO.dir/src/core/shortcut/manager.cpp.s: cmake_force
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/k/Documents/NUVIO/src/core/shortcut/manager.cpp -o CMakeFiles/NUVIO.dir/src/core/shortcut/manager.cpp.s
 
 CMakeFiles/NUVIO.dir/src/core/shortcut/registery.cpp.o: CMakeFiles/NUVIO.dir/flags.make
-CMakeFiles/NUVIO.dir/src/core/shortcut/registery.cpp.o: /home/k/Documents/NUVIO/src/core/shortcut/registery.cpp
+CMakeFiles/NUVIO.dir/src/core/shortcut/registery.cpp.o: src/core/shortcut/registery.cpp
 CMakeFiles/NUVIO.dir/src/core/shortcut/registery.cpp.o: CMakeFiles/NUVIO.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/k/Documents/NUVIO/nuvio-test/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/NUVIO.dir/src/core/shortcut/registery.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/k/Documents/NUVIO/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/NUVIO.dir/src/core/shortcut/registery.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/NUVIO.dir/src/core/shortcut/registery.cpp.o -MF CMakeFiles/NUVIO.dir/src/core/shortcut/registery.cpp.o.d -o CMakeFiles/NUVIO.dir/src/core/shortcut/registery.cpp.o -c /home/k/Documents/NUVIO/src/core/shortcut/registery.cpp
 
 CMakeFiles/NUVIO.dir/src/core/shortcut/registery.cpp.i: cmake_force
@@ -171,9 +157,9 @@ CMakeFiles/NUVIO.dir/src/core/shortcut/registery.cpp.s: cmake_force
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/k/Documents/NUVIO/src/core/shortcut/registery.cpp -o CMakeFiles/NUVIO.dir/src/core/shortcut/registery.cpp.s
 
 CMakeFiles/NUVIO.dir/src/core/ui/components/registery.cpp.o: CMakeFiles/NUVIO.dir/flags.make
-CMakeFiles/NUVIO.dir/src/core/ui/components/registery.cpp.o: /home/k/Documents/NUVIO/src/core/ui/components/registery.cpp
+CMakeFiles/NUVIO.dir/src/core/ui/components/registery.cpp.o: src/core/ui/components/registery.cpp
 CMakeFiles/NUVIO.dir/src/core/ui/components/registery.cpp.o: CMakeFiles/NUVIO.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/k/Documents/NUVIO/nuvio-test/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/NUVIO.dir/src/core/ui/components/registery.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/k/Documents/NUVIO/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/NUVIO.dir/src/core/ui/components/registery.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/NUVIO.dir/src/core/ui/components/registery.cpp.o -MF CMakeFiles/NUVIO.dir/src/core/ui/components/registery.cpp.o.d -o CMakeFiles/NUVIO.dir/src/core/ui/components/registery.cpp.o -c /home/k/Documents/NUVIO/src/core/ui/components/registery.cpp
 
 CMakeFiles/NUVIO.dir/src/core/ui/components/registery.cpp.i: cmake_force
@@ -185,9 +171,9 @@ CMakeFiles/NUVIO.dir/src/core/ui/components/registery.cpp.s: cmake_force
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/k/Documents/NUVIO/src/core/ui/components/registery.cpp -o CMakeFiles/NUVIO.dir/src/core/ui/components/registery.cpp.s
 
 CMakeFiles/NUVIO.dir/src/core/ui/editor/layers.cpp.o: CMakeFiles/NUVIO.dir/flags.make
-CMakeFiles/NUVIO.dir/src/core/ui/editor/layers.cpp.o: /home/k/Documents/NUVIO/src/core/ui/editor/layers.cpp
+CMakeFiles/NUVIO.dir/src/core/ui/editor/layers.cpp.o: src/core/ui/editor/layers.cpp
 CMakeFiles/NUVIO.dir/src/core/ui/editor/layers.cpp.o: CMakeFiles/NUVIO.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/k/Documents/NUVIO/nuvio-test/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/NUVIO.dir/src/core/ui/editor/layers.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/k/Documents/NUVIO/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/NUVIO.dir/src/core/ui/editor/layers.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/NUVIO.dir/src/core/ui/editor/layers.cpp.o -MF CMakeFiles/NUVIO.dir/src/core/ui/editor/layers.cpp.o.d -o CMakeFiles/NUVIO.dir/src/core/ui/editor/layers.cpp.o -c /home/k/Documents/NUVIO/src/core/ui/editor/layers.cpp
 
 CMakeFiles/NUVIO.dir/src/core/ui/editor/layers.cpp.i: cmake_force
@@ -199,9 +185,9 @@ CMakeFiles/NUVIO.dir/src/core/ui/editor/layers.cpp.s: cmake_force
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/k/Documents/NUVIO/src/core/ui/editor/layers.cpp -o CMakeFiles/NUVIO.dir/src/core/ui/editor/layers.cpp.s
 
 CMakeFiles/NUVIO.dir/src/core/ui/editor/navbar.cpp.o: CMakeFiles/NUVIO.dir/flags.make
-CMakeFiles/NUVIO.dir/src/core/ui/editor/navbar.cpp.o: /home/k/Documents/NUVIO/src/core/ui/editor/navbar.cpp
+CMakeFiles/NUVIO.dir/src/core/ui/editor/navbar.cpp.o: src/core/ui/editor/navbar.cpp
 CMakeFiles/NUVIO.dir/src/core/ui/editor/navbar.cpp.o: CMakeFiles/NUVIO.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/k/Documents/NUVIO/nuvio-test/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/NUVIO.dir/src/core/ui/editor/navbar.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/k/Documents/NUVIO/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/NUVIO.dir/src/core/ui/editor/navbar.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/NUVIO.dir/src/core/ui/editor/navbar.cpp.o -MF CMakeFiles/NUVIO.dir/src/core/ui/editor/navbar.cpp.o.d -o CMakeFiles/NUVIO.dir/src/core/ui/editor/navbar.cpp.o -c /home/k/Documents/NUVIO/src/core/ui/editor/navbar.cpp
 
 CMakeFiles/NUVIO.dir/src/core/ui/editor/navbar.cpp.i: cmake_force
@@ -213,9 +199,9 @@ CMakeFiles/NUVIO.dir/src/core/ui/editor/navbar.cpp.s: cmake_force
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/k/Documents/NUVIO/src/core/ui/editor/navbar.cpp -o CMakeFiles/NUVIO.dir/src/core/ui/editor/navbar.cpp.s
 
 CMakeFiles/NUVIO.dir/src/core/ui/editor/sidebar.cpp.o: CMakeFiles/NUVIO.dir/flags.make
-CMakeFiles/NUVIO.dir/src/core/ui/editor/sidebar.cpp.o: /home/k/Documents/NUVIO/src/core/ui/editor/sidebar.cpp
+CMakeFiles/NUVIO.dir/src/core/ui/editor/sidebar.cpp.o: src/core/ui/editor/sidebar.cpp
 CMakeFiles/NUVIO.dir/src/core/ui/editor/sidebar.cpp.o: CMakeFiles/NUVIO.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/k/Documents/NUVIO/nuvio-test/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/NUVIO.dir/src/core/ui/editor/sidebar.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/k/Documents/NUVIO/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/NUVIO.dir/src/core/ui/editor/sidebar.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/NUVIO.dir/src/core/ui/editor/sidebar.cpp.o -MF CMakeFiles/NUVIO.dir/src/core/ui/editor/sidebar.cpp.o.d -o CMakeFiles/NUVIO.dir/src/core/ui/editor/sidebar.cpp.o -c /home/k/Documents/NUVIO/src/core/ui/editor/sidebar.cpp
 
 CMakeFiles/NUVIO.dir/src/core/ui/editor/sidebar.cpp.i: cmake_force
@@ -227,9 +213,9 @@ CMakeFiles/NUVIO.dir/src/core/ui/editor/sidebar.cpp.s: cmake_force
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/k/Documents/NUVIO/src/core/ui/editor/sidebar.cpp -o CMakeFiles/NUVIO.dir/src/core/ui/editor/sidebar.cpp.s
 
 CMakeFiles/NUVIO.dir/src/core/ui/editor/viewport.cpp.o: CMakeFiles/NUVIO.dir/flags.make
-CMakeFiles/NUVIO.dir/src/core/ui/editor/viewport.cpp.o: /home/k/Documents/NUVIO/src/core/ui/editor/viewport.cpp
+CMakeFiles/NUVIO.dir/src/core/ui/editor/viewport.cpp.o: src/core/ui/editor/viewport.cpp
 CMakeFiles/NUVIO.dir/src/core/ui/editor/viewport.cpp.o: CMakeFiles/NUVIO.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/k/Documents/NUVIO/nuvio-test/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/NUVIO.dir/src/core/ui/editor/viewport.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/k/Documents/NUVIO/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/NUVIO.dir/src/core/ui/editor/viewport.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/NUVIO.dir/src/core/ui/editor/viewport.cpp.o -MF CMakeFiles/NUVIO.dir/src/core/ui/editor/viewport.cpp.o.d -o CMakeFiles/NUVIO.dir/src/core/ui/editor/viewport.cpp.o -c /home/k/Documents/NUVIO/src/core/ui/editor/viewport.cpp
 
 CMakeFiles/NUVIO.dir/src/core/ui/editor/viewport.cpp.i: cmake_force
@@ -241,9 +227,9 @@ CMakeFiles/NUVIO.dir/src/core/ui/editor/viewport.cpp.s: cmake_force
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/k/Documents/NUVIO/src/core/ui/editor/viewport.cpp -o CMakeFiles/NUVIO.dir/src/core/ui/editor/viewport.cpp.s
 
 CMakeFiles/NUVIO.dir/src/core/ui/test_comp.cpp.o: CMakeFiles/NUVIO.dir/flags.make
-CMakeFiles/NUVIO.dir/src/core/ui/test_comp.cpp.o: /home/k/Documents/NUVIO/src/core/ui/test_comp.cpp
+CMakeFiles/NUVIO.dir/src/core/ui/test_comp.cpp.o: src/core/ui/test_comp.cpp
 CMakeFiles/NUVIO.dir/src/core/ui/test_comp.cpp.o: CMakeFiles/NUVIO.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/k/Documents/NUVIO/nuvio-test/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/NUVIO.dir/src/core/ui/test_comp.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/k/Documents/NUVIO/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/NUVIO.dir/src/core/ui/test_comp.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/NUVIO.dir/src/core/ui/test_comp.cpp.o -MF CMakeFiles/NUVIO.dir/src/core/ui/test_comp.cpp.o.d -o CMakeFiles/NUVIO.dir/src/core/ui/test_comp.cpp.o -c /home/k/Documents/NUVIO/src/core/ui/test_comp.cpp
 
 CMakeFiles/NUVIO.dir/src/core/ui/test_comp.cpp.i: cmake_force
@@ -255,9 +241,9 @@ CMakeFiles/NUVIO.dir/src/core/ui/test_comp.cpp.s: cmake_force
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/k/Documents/NUVIO/src/core/ui/test_comp.cpp -o CMakeFiles/NUVIO.dir/src/core/ui/test_comp.cpp.s
 
 CMakeFiles/NUVIO.dir/src/core/ui/theme.cpp.o: CMakeFiles/NUVIO.dir/flags.make
-CMakeFiles/NUVIO.dir/src/core/ui/theme.cpp.o: /home/k/Documents/NUVIO/src/core/ui/theme.cpp
+CMakeFiles/NUVIO.dir/src/core/ui/theme.cpp.o: src/core/ui/theme.cpp
 CMakeFiles/NUVIO.dir/src/core/ui/theme.cpp.o: CMakeFiles/NUVIO.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/k/Documents/NUVIO/nuvio-test/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/NUVIO.dir/src/core/ui/theme.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/k/Documents/NUVIO/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/NUVIO.dir/src/core/ui/theme.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/NUVIO.dir/src/core/ui/theme.cpp.o -MF CMakeFiles/NUVIO.dir/src/core/ui/theme.cpp.o.d -o CMakeFiles/NUVIO.dir/src/core/ui/theme.cpp.o -c /home/k/Documents/NUVIO/src/core/ui/theme.cpp
 
 CMakeFiles/NUVIO.dir/src/core/ui/theme.cpp.i: cmake_force
@@ -269,9 +255,9 @@ CMakeFiles/NUVIO.dir/src/core/ui/theme.cpp.s: cmake_force
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/k/Documents/NUVIO/src/core/ui/theme.cpp -o CMakeFiles/NUVIO.dir/src/core/ui/theme.cpp.s
 
 CMakeFiles/NUVIO.dir/src/core/ui/ui.cpp.o: CMakeFiles/NUVIO.dir/flags.make
-CMakeFiles/NUVIO.dir/src/core/ui/ui.cpp.o: /home/k/Documents/NUVIO/src/core/ui/ui.cpp
+CMakeFiles/NUVIO.dir/src/core/ui/ui.cpp.o: src/core/ui/ui.cpp
 CMakeFiles/NUVIO.dir/src/core/ui/ui.cpp.o: CMakeFiles/NUVIO.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/k/Documents/NUVIO/nuvio-test/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/NUVIO.dir/src/core/ui/ui.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/k/Documents/NUVIO/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/NUVIO.dir/src/core/ui/ui.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/NUVIO.dir/src/core/ui/ui.cpp.o -MF CMakeFiles/NUVIO.dir/src/core/ui/ui.cpp.o.d -o CMakeFiles/NUVIO.dir/src/core/ui/ui.cpp.o -c /home/k/Documents/NUVIO/src/core/ui/ui.cpp
 
 CMakeFiles/NUVIO.dir/src/core/ui/ui.cpp.i: cmake_force
@@ -283,9 +269,9 @@ CMakeFiles/NUVIO.dir/src/core/ui/ui.cpp.s: cmake_force
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/k/Documents/NUVIO/src/core/ui/ui.cpp -o CMakeFiles/NUVIO.dir/src/core/ui/ui.cpp.s
 
 CMakeFiles/NUVIO.dir/src/core/window/window_manager.cpp.o: CMakeFiles/NUVIO.dir/flags.make
-CMakeFiles/NUVIO.dir/src/core/window/window_manager.cpp.o: /home/k/Documents/NUVIO/src/core/window/window_manager.cpp
+CMakeFiles/NUVIO.dir/src/core/window/window_manager.cpp.o: src/core/window/window_manager.cpp
 CMakeFiles/NUVIO.dir/src/core/window/window_manager.cpp.o: CMakeFiles/NUVIO.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/k/Documents/NUVIO/nuvio-test/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/NUVIO.dir/src/core/window/window_manager.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/k/Documents/NUVIO/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/NUVIO.dir/src/core/window/window_manager.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/NUVIO.dir/src/core/window/window_manager.cpp.o -MF CMakeFiles/NUVIO.dir/src/core/window/window_manager.cpp.o.d -o CMakeFiles/NUVIO.dir/src/core/window/window_manager.cpp.o -c /home/k/Documents/NUVIO/src/core/window/window_manager.cpp
 
 CMakeFiles/NUVIO.dir/src/core/window/window_manager.cpp.i: cmake_force
@@ -297,9 +283,9 @@ CMakeFiles/NUVIO.dir/src/core/window/window_manager.cpp.s: cmake_force
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/k/Documents/NUVIO/src/core/window/window_manager.cpp -o CMakeFiles/NUVIO.dir/src/core/window/window_manager.cpp.s
 
 CMakeFiles/NUVIO.dir/src/main.cpp.o: CMakeFiles/NUVIO.dir/flags.make
-CMakeFiles/NUVIO.dir/src/main.cpp.o: /home/k/Documents/NUVIO/src/main.cpp
+CMakeFiles/NUVIO.dir/src/main.cpp.o: src/main.cpp
 CMakeFiles/NUVIO.dir/src/main.cpp.o: CMakeFiles/NUVIO.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/k/Documents/NUVIO/nuvio-test/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/NUVIO.dir/src/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/k/Documents/NUVIO/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/NUVIO.dir/src/main.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/NUVIO.dir/src/main.cpp.o -MF CMakeFiles/NUVIO.dir/src/main.cpp.o.d -o CMakeFiles/NUVIO.dir/src/main.cpp.o -c /home/k/Documents/NUVIO/src/main.cpp
 
 CMakeFiles/NUVIO.dir/src/main.cpp.i: cmake_force
@@ -311,9 +297,9 @@ CMakeFiles/NUVIO.dir/src/main.cpp.s: cmake_force
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/k/Documents/NUVIO/src/main.cpp -o CMakeFiles/NUVIO.dir/src/main.cpp.s
 
 CMakeFiles/NUVIO.dir/includes/external/imgui/backends/imgui_impl_glfw.cpp.o: CMakeFiles/NUVIO.dir/flags.make
-CMakeFiles/NUVIO.dir/includes/external/imgui/backends/imgui_impl_glfw.cpp.o: /home/k/Documents/NUVIO/includes/external/imgui/backends/imgui_impl_glfw.cpp
+CMakeFiles/NUVIO.dir/includes/external/imgui/backends/imgui_impl_glfw.cpp.o: includes/external/imgui/backends/imgui_impl_glfw.cpp
 CMakeFiles/NUVIO.dir/includes/external/imgui/backends/imgui_impl_glfw.cpp.o: CMakeFiles/NUVIO.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/k/Documents/NUVIO/nuvio-test/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/NUVIO.dir/includes/external/imgui/backends/imgui_impl_glfw.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/k/Documents/NUVIO/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/NUVIO.dir/includes/external/imgui/backends/imgui_impl_glfw.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/NUVIO.dir/includes/external/imgui/backends/imgui_impl_glfw.cpp.o -MF CMakeFiles/NUVIO.dir/includes/external/imgui/backends/imgui_impl_glfw.cpp.o.d -o CMakeFiles/NUVIO.dir/includes/external/imgui/backends/imgui_impl_glfw.cpp.o -c /home/k/Documents/NUVIO/includes/external/imgui/backends/imgui_impl_glfw.cpp
 
 CMakeFiles/NUVIO.dir/includes/external/imgui/backends/imgui_impl_glfw.cpp.i: cmake_force
@@ -325,9 +311,9 @@ CMakeFiles/NUVIO.dir/includes/external/imgui/backends/imgui_impl_glfw.cpp.s: cma
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/k/Documents/NUVIO/includes/external/imgui/backends/imgui_impl_glfw.cpp -o CMakeFiles/NUVIO.dir/includes/external/imgui/backends/imgui_impl_glfw.cpp.s
 
 CMakeFiles/NUVIO.dir/includes/external/imgui/backends/imgui_impl_opengl3.cpp.o: CMakeFiles/NUVIO.dir/flags.make
-CMakeFiles/NUVIO.dir/includes/external/imgui/backends/imgui_impl_opengl3.cpp.o: /home/k/Documents/NUVIO/includes/external/imgui/backends/imgui_impl_opengl3.cpp
+CMakeFiles/NUVIO.dir/includes/external/imgui/backends/imgui_impl_opengl3.cpp.o: includes/external/imgui/backends/imgui_impl_opengl3.cpp
 CMakeFiles/NUVIO.dir/includes/external/imgui/backends/imgui_impl_opengl3.cpp.o: CMakeFiles/NUVIO.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/k/Documents/NUVIO/nuvio-test/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/NUVIO.dir/includes/external/imgui/backends/imgui_impl_opengl3.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/k/Documents/NUVIO/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/NUVIO.dir/includes/external/imgui/backends/imgui_impl_opengl3.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/NUVIO.dir/includes/external/imgui/backends/imgui_impl_opengl3.cpp.o -MF CMakeFiles/NUVIO.dir/includes/external/imgui/backends/imgui_impl_opengl3.cpp.o.d -o CMakeFiles/NUVIO.dir/includes/external/imgui/backends/imgui_impl_opengl3.cpp.o -c /home/k/Documents/NUVIO/includes/external/imgui/backends/imgui_impl_opengl3.cpp
 
 CMakeFiles/NUVIO.dir/includes/external/imgui/backends/imgui_impl_opengl3.cpp.i: cmake_force
@@ -339,9 +325,9 @@ CMakeFiles/NUVIO.dir/includes/external/imgui/backends/imgui_impl_opengl3.cpp.s: 
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/k/Documents/NUVIO/includes/external/imgui/backends/imgui_impl_opengl3.cpp -o CMakeFiles/NUVIO.dir/includes/external/imgui/backends/imgui_impl_opengl3.cpp.s
 
 CMakeFiles/NUVIO.dir/includes/external/imgui/imgui.cpp.o: CMakeFiles/NUVIO.dir/flags.make
-CMakeFiles/NUVIO.dir/includes/external/imgui/imgui.cpp.o: /home/k/Documents/NUVIO/includes/external/imgui/imgui.cpp
+CMakeFiles/NUVIO.dir/includes/external/imgui/imgui.cpp.o: includes/external/imgui/imgui.cpp
 CMakeFiles/NUVIO.dir/includes/external/imgui/imgui.cpp.o: CMakeFiles/NUVIO.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/k/Documents/NUVIO/nuvio-test/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/NUVIO.dir/includes/external/imgui/imgui.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/k/Documents/NUVIO/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/NUVIO.dir/includes/external/imgui/imgui.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/NUVIO.dir/includes/external/imgui/imgui.cpp.o -MF CMakeFiles/NUVIO.dir/includes/external/imgui/imgui.cpp.o.d -o CMakeFiles/NUVIO.dir/includes/external/imgui/imgui.cpp.o -c /home/k/Documents/NUVIO/includes/external/imgui/imgui.cpp
 
 CMakeFiles/NUVIO.dir/includes/external/imgui/imgui.cpp.i: cmake_force
@@ -353,9 +339,9 @@ CMakeFiles/NUVIO.dir/includes/external/imgui/imgui.cpp.s: cmake_force
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/k/Documents/NUVIO/includes/external/imgui/imgui.cpp -o CMakeFiles/NUVIO.dir/includes/external/imgui/imgui.cpp.s
 
 CMakeFiles/NUVIO.dir/includes/external/imgui/imgui_demo.cpp.o: CMakeFiles/NUVIO.dir/flags.make
-CMakeFiles/NUVIO.dir/includes/external/imgui/imgui_demo.cpp.o: /home/k/Documents/NUVIO/includes/external/imgui/imgui_demo.cpp
+CMakeFiles/NUVIO.dir/includes/external/imgui/imgui_demo.cpp.o: includes/external/imgui/imgui_demo.cpp
 CMakeFiles/NUVIO.dir/includes/external/imgui/imgui_demo.cpp.o: CMakeFiles/NUVIO.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/k/Documents/NUVIO/nuvio-test/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/NUVIO.dir/includes/external/imgui/imgui_demo.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/k/Documents/NUVIO/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/NUVIO.dir/includes/external/imgui/imgui_demo.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/NUVIO.dir/includes/external/imgui/imgui_demo.cpp.o -MF CMakeFiles/NUVIO.dir/includes/external/imgui/imgui_demo.cpp.o.d -o CMakeFiles/NUVIO.dir/includes/external/imgui/imgui_demo.cpp.o -c /home/k/Documents/NUVIO/includes/external/imgui/imgui_demo.cpp
 
 CMakeFiles/NUVIO.dir/includes/external/imgui/imgui_demo.cpp.i: cmake_force
@@ -367,9 +353,9 @@ CMakeFiles/NUVIO.dir/includes/external/imgui/imgui_demo.cpp.s: cmake_force
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/k/Documents/NUVIO/includes/external/imgui/imgui_demo.cpp -o CMakeFiles/NUVIO.dir/includes/external/imgui/imgui_demo.cpp.s
 
 CMakeFiles/NUVIO.dir/includes/external/imgui/imgui_draw.cpp.o: CMakeFiles/NUVIO.dir/flags.make
-CMakeFiles/NUVIO.dir/includes/external/imgui/imgui_draw.cpp.o: /home/k/Documents/NUVIO/includes/external/imgui/imgui_draw.cpp
+CMakeFiles/NUVIO.dir/includes/external/imgui/imgui_draw.cpp.o: includes/external/imgui/imgui_draw.cpp
 CMakeFiles/NUVIO.dir/includes/external/imgui/imgui_draw.cpp.o: CMakeFiles/NUVIO.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/k/Documents/NUVIO/nuvio-test/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/NUVIO.dir/includes/external/imgui/imgui_draw.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/k/Documents/NUVIO/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/NUVIO.dir/includes/external/imgui/imgui_draw.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/NUVIO.dir/includes/external/imgui/imgui_draw.cpp.o -MF CMakeFiles/NUVIO.dir/includes/external/imgui/imgui_draw.cpp.o.d -o CMakeFiles/NUVIO.dir/includes/external/imgui/imgui_draw.cpp.o -c /home/k/Documents/NUVIO/includes/external/imgui/imgui_draw.cpp
 
 CMakeFiles/NUVIO.dir/includes/external/imgui/imgui_draw.cpp.i: cmake_force
@@ -381,9 +367,9 @@ CMakeFiles/NUVIO.dir/includes/external/imgui/imgui_draw.cpp.s: cmake_force
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/k/Documents/NUVIO/includes/external/imgui/imgui_draw.cpp -o CMakeFiles/NUVIO.dir/includes/external/imgui/imgui_draw.cpp.s
 
 CMakeFiles/NUVIO.dir/includes/external/imgui/imgui_tables.cpp.o: CMakeFiles/NUVIO.dir/flags.make
-CMakeFiles/NUVIO.dir/includes/external/imgui/imgui_tables.cpp.o: /home/k/Documents/NUVIO/includes/external/imgui/imgui_tables.cpp
+CMakeFiles/NUVIO.dir/includes/external/imgui/imgui_tables.cpp.o: includes/external/imgui/imgui_tables.cpp
 CMakeFiles/NUVIO.dir/includes/external/imgui/imgui_tables.cpp.o: CMakeFiles/NUVIO.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/k/Documents/NUVIO/nuvio-test/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/NUVIO.dir/includes/external/imgui/imgui_tables.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/k/Documents/NUVIO/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/NUVIO.dir/includes/external/imgui/imgui_tables.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/NUVIO.dir/includes/external/imgui/imgui_tables.cpp.o -MF CMakeFiles/NUVIO.dir/includes/external/imgui/imgui_tables.cpp.o.d -o CMakeFiles/NUVIO.dir/includes/external/imgui/imgui_tables.cpp.o -c /home/k/Documents/NUVIO/includes/external/imgui/imgui_tables.cpp
 
 CMakeFiles/NUVIO.dir/includes/external/imgui/imgui_tables.cpp.i: cmake_force
@@ -395,9 +381,9 @@ CMakeFiles/NUVIO.dir/includes/external/imgui/imgui_tables.cpp.s: cmake_force
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/k/Documents/NUVIO/includes/external/imgui/imgui_tables.cpp -o CMakeFiles/NUVIO.dir/includes/external/imgui/imgui_tables.cpp.s
 
 CMakeFiles/NUVIO.dir/includes/external/imgui/imgui_widgets.cpp.o: CMakeFiles/NUVIO.dir/flags.make
-CMakeFiles/NUVIO.dir/includes/external/imgui/imgui_widgets.cpp.o: /home/k/Documents/NUVIO/includes/external/imgui/imgui_widgets.cpp
+CMakeFiles/NUVIO.dir/includes/external/imgui/imgui_widgets.cpp.o: includes/external/imgui/imgui_widgets.cpp
 CMakeFiles/NUVIO.dir/includes/external/imgui/imgui_widgets.cpp.o: CMakeFiles/NUVIO.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/k/Documents/NUVIO/nuvio-test/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/NUVIO.dir/includes/external/imgui/imgui_widgets.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/k/Documents/NUVIO/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/NUVIO.dir/includes/external/imgui/imgui_widgets.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/NUVIO.dir/includes/external/imgui/imgui_widgets.cpp.o -MF CMakeFiles/NUVIO.dir/includes/external/imgui/imgui_widgets.cpp.o.d -o CMakeFiles/NUVIO.dir/includes/external/imgui/imgui_widgets.cpp.o -c /home/k/Documents/NUVIO/includes/external/imgui/imgui_widgets.cpp
 
 CMakeFiles/NUVIO.dir/includes/external/imgui/imgui_widgets.cpp.i: cmake_force
@@ -409,9 +395,9 @@ CMakeFiles/NUVIO.dir/includes/external/imgui/imgui_widgets.cpp.s: cmake_force
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/k/Documents/NUVIO/includes/external/imgui/imgui_widgets.cpp -o CMakeFiles/NUVIO.dir/includes/external/imgui/imgui_widgets.cpp.s
 
 CMakeFiles/NUVIO.dir/includes/external/glad/glad.c.o: CMakeFiles/NUVIO.dir/flags.make
-CMakeFiles/NUVIO.dir/includes/external/glad/glad.c.o: /home/k/Documents/NUVIO/includes/external/glad/glad.c
+CMakeFiles/NUVIO.dir/includes/external/glad/glad.c.o: includes/external/glad/glad.c
 CMakeFiles/NUVIO.dir/includes/external/glad/glad.c.o: CMakeFiles/NUVIO.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/k/Documents/NUVIO/nuvio-test/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building C object CMakeFiles/NUVIO.dir/includes/external/glad/glad.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/k/Documents/NUVIO/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building C object CMakeFiles/NUVIO.dir/includes/external/glad/glad.c.o"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Wno-pedantic -MD -MT CMakeFiles/NUVIO.dir/includes/external/glad/glad.c.o -MF CMakeFiles/NUVIO.dir/includes/external/glad/glad.c.o.d -o CMakeFiles/NUVIO.dir/includes/external/glad/glad.c.o -c /home/k/Documents/NUVIO/includes/external/glad/glad.c
 
 CMakeFiles/NUVIO.dir/includes/external/glad/glad.c.i: cmake_force
@@ -422,10 +408,23 @@ CMakeFiles/NUVIO.dir/includes/external/glad/glad.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/NUVIO.dir/includes/external/glad/glad.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -Wno-pedantic -S /home/k/Documents/NUVIO/includes/external/glad/glad.c -o CMakeFiles/NUVIO.dir/includes/external/glad/glad.c.s
 
+CMakeFiles/NUVIO.dir/profiling/Tracy/public/TracyClient.cpp.o: CMakeFiles/NUVIO.dir/flags.make
+CMakeFiles/NUVIO.dir/profiling/Tracy/public/TracyClient.cpp.o: profiling/Tracy/public/TracyClient.cpp
+CMakeFiles/NUVIO.dir/profiling/Tracy/public/TracyClient.cpp.o: CMakeFiles/NUVIO.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/k/Documents/NUVIO/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/NUVIO.dir/profiling/Tracy/public/TracyClient.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -w -MD -MT CMakeFiles/NUVIO.dir/profiling/Tracy/public/TracyClient.cpp.o -MF CMakeFiles/NUVIO.dir/profiling/Tracy/public/TracyClient.cpp.o.d -o CMakeFiles/NUVIO.dir/profiling/Tracy/public/TracyClient.cpp.o -c /home/k/Documents/NUVIO/profiling/Tracy/public/TracyClient.cpp
+
+CMakeFiles/NUVIO.dir/profiling/Tracy/public/TracyClient.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/NUVIO.dir/profiling/Tracy/public/TracyClient.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -w -E /home/k/Documents/NUVIO/profiling/Tracy/public/TracyClient.cpp > CMakeFiles/NUVIO.dir/profiling/Tracy/public/TracyClient.cpp.i
+
+CMakeFiles/NUVIO.dir/profiling/Tracy/public/TracyClient.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/NUVIO.dir/profiling/Tracy/public/TracyClient.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -w -S /home/k/Documents/NUVIO/profiling/Tracy/public/TracyClient.cpp -o CMakeFiles/NUVIO.dir/profiling/Tracy/public/TracyClient.cpp.s
+
 # Object files for target NUVIO
 NUVIO_OBJECTS = \
 "CMakeFiles/NUVIO.dir/src/core/canvas/manager.cpp.o" \
-"CMakeFiles/NUVIO.dir/src/core/canvas/shapes/rectangle.cpp.o" \
 "CMakeFiles/NUVIO.dir/src/core/nuvio.cpp.o" \
 "CMakeFiles/NUVIO.dir/src/core/project/project_manager.cpp.o" \
 "CMakeFiles/NUVIO.dir/src/core/project/projects.cpp.o" \
@@ -448,49 +447,50 @@ NUVIO_OBJECTS = \
 "CMakeFiles/NUVIO.dir/includes/external/imgui/imgui_draw.cpp.o" \
 "CMakeFiles/NUVIO.dir/includes/external/imgui/imgui_tables.cpp.o" \
 "CMakeFiles/NUVIO.dir/includes/external/imgui/imgui_widgets.cpp.o" \
-"CMakeFiles/NUVIO.dir/includes/external/glad/glad.c.o"
+"CMakeFiles/NUVIO.dir/includes/external/glad/glad.c.o" \
+"CMakeFiles/NUVIO.dir/profiling/Tracy/public/TracyClient.cpp.o"
 
 # External object files for target NUVIO
 NUVIO_EXTERNAL_OBJECTS =
 
-/home/k/Documents/NUVIO/build/NUVIO: CMakeFiles/NUVIO.dir/src/core/canvas/manager.cpp.o
-/home/k/Documents/NUVIO/build/NUVIO: CMakeFiles/NUVIO.dir/src/core/canvas/shapes/rectangle.cpp.o
-/home/k/Documents/NUVIO/build/NUVIO: CMakeFiles/NUVIO.dir/src/core/nuvio.cpp.o
-/home/k/Documents/NUVIO/build/NUVIO: CMakeFiles/NUVIO.dir/src/core/project/project_manager.cpp.o
-/home/k/Documents/NUVIO/build/NUVIO: CMakeFiles/NUVIO.dir/src/core/project/projects.cpp.o
-/home/k/Documents/NUVIO/build/NUVIO: CMakeFiles/NUVIO.dir/src/core/shortcut/manager.cpp.o
-/home/k/Documents/NUVIO/build/NUVIO: CMakeFiles/NUVIO.dir/src/core/shortcut/registery.cpp.o
-/home/k/Documents/NUVIO/build/NUVIO: CMakeFiles/NUVIO.dir/src/core/ui/components/registery.cpp.o
-/home/k/Documents/NUVIO/build/NUVIO: CMakeFiles/NUVIO.dir/src/core/ui/editor/layers.cpp.o
-/home/k/Documents/NUVIO/build/NUVIO: CMakeFiles/NUVIO.dir/src/core/ui/editor/navbar.cpp.o
-/home/k/Documents/NUVIO/build/NUVIO: CMakeFiles/NUVIO.dir/src/core/ui/editor/sidebar.cpp.o
-/home/k/Documents/NUVIO/build/NUVIO: CMakeFiles/NUVIO.dir/src/core/ui/editor/viewport.cpp.o
-/home/k/Documents/NUVIO/build/NUVIO: CMakeFiles/NUVIO.dir/src/core/ui/test_comp.cpp.o
-/home/k/Documents/NUVIO/build/NUVIO: CMakeFiles/NUVIO.dir/src/core/ui/theme.cpp.o
-/home/k/Documents/NUVIO/build/NUVIO: CMakeFiles/NUVIO.dir/src/core/ui/ui.cpp.o
-/home/k/Documents/NUVIO/build/NUVIO: CMakeFiles/NUVIO.dir/src/core/window/window_manager.cpp.o
-/home/k/Documents/NUVIO/build/NUVIO: CMakeFiles/NUVIO.dir/src/main.cpp.o
-/home/k/Documents/NUVIO/build/NUVIO: CMakeFiles/NUVIO.dir/includes/external/imgui/backends/imgui_impl_glfw.cpp.o
-/home/k/Documents/NUVIO/build/NUVIO: CMakeFiles/NUVIO.dir/includes/external/imgui/backends/imgui_impl_opengl3.cpp.o
-/home/k/Documents/NUVIO/build/NUVIO: CMakeFiles/NUVIO.dir/includes/external/imgui/imgui.cpp.o
-/home/k/Documents/NUVIO/build/NUVIO: CMakeFiles/NUVIO.dir/includes/external/imgui/imgui_demo.cpp.o
-/home/k/Documents/NUVIO/build/NUVIO: CMakeFiles/NUVIO.dir/includes/external/imgui/imgui_draw.cpp.o
-/home/k/Documents/NUVIO/build/NUVIO: CMakeFiles/NUVIO.dir/includes/external/imgui/imgui_tables.cpp.o
-/home/k/Documents/NUVIO/build/NUVIO: CMakeFiles/NUVIO.dir/includes/external/imgui/imgui_widgets.cpp.o
-/home/k/Documents/NUVIO/build/NUVIO: CMakeFiles/NUVIO.dir/includes/external/glad/glad.c.o
-/home/k/Documents/NUVIO/build/NUVIO: CMakeFiles/NUVIO.dir/build.make
-/home/k/Documents/NUVIO/build/NUVIO: CMakeFiles/NUVIO.dir/compiler_depend.ts
-/home/k/Documents/NUVIO/build/NUVIO: includes/external/glfw/src/libglfw3.a
-/home/k/Documents/NUVIO/build/NUVIO: /usr/lib/librt.a
-/home/k/Documents/NUVIO/build/NUVIO: /usr/lib/libm.so
-/home/k/Documents/NUVIO/build/NUVIO: /usr/lib/libGLX.so
-/home/k/Documents/NUVIO/build/NUVIO: /usr/lib/libOpenGL.so
-/home/k/Documents/NUVIO/build/NUVIO: CMakeFiles/NUVIO.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/k/Documents/NUVIO/nuvio-test/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Linking CXX executable /home/k/Documents/NUVIO/build/NUVIO"
+/home/k/Documents/build/NUVIO: CMakeFiles/NUVIO.dir/src/core/canvas/manager.cpp.o
+/home/k/Documents/build/NUVIO: CMakeFiles/NUVIO.dir/src/core/nuvio.cpp.o
+/home/k/Documents/build/NUVIO: CMakeFiles/NUVIO.dir/src/core/project/project_manager.cpp.o
+/home/k/Documents/build/NUVIO: CMakeFiles/NUVIO.dir/src/core/project/projects.cpp.o
+/home/k/Documents/build/NUVIO: CMakeFiles/NUVIO.dir/src/core/shortcut/manager.cpp.o
+/home/k/Documents/build/NUVIO: CMakeFiles/NUVIO.dir/src/core/shortcut/registery.cpp.o
+/home/k/Documents/build/NUVIO: CMakeFiles/NUVIO.dir/src/core/ui/components/registery.cpp.o
+/home/k/Documents/build/NUVIO: CMakeFiles/NUVIO.dir/src/core/ui/editor/layers.cpp.o
+/home/k/Documents/build/NUVIO: CMakeFiles/NUVIO.dir/src/core/ui/editor/navbar.cpp.o
+/home/k/Documents/build/NUVIO: CMakeFiles/NUVIO.dir/src/core/ui/editor/sidebar.cpp.o
+/home/k/Documents/build/NUVIO: CMakeFiles/NUVIO.dir/src/core/ui/editor/viewport.cpp.o
+/home/k/Documents/build/NUVIO: CMakeFiles/NUVIO.dir/src/core/ui/test_comp.cpp.o
+/home/k/Documents/build/NUVIO: CMakeFiles/NUVIO.dir/src/core/ui/theme.cpp.o
+/home/k/Documents/build/NUVIO: CMakeFiles/NUVIO.dir/src/core/ui/ui.cpp.o
+/home/k/Documents/build/NUVIO: CMakeFiles/NUVIO.dir/src/core/window/window_manager.cpp.o
+/home/k/Documents/build/NUVIO: CMakeFiles/NUVIO.dir/src/main.cpp.o
+/home/k/Documents/build/NUVIO: CMakeFiles/NUVIO.dir/includes/external/imgui/backends/imgui_impl_glfw.cpp.o
+/home/k/Documents/build/NUVIO: CMakeFiles/NUVIO.dir/includes/external/imgui/backends/imgui_impl_opengl3.cpp.o
+/home/k/Documents/build/NUVIO: CMakeFiles/NUVIO.dir/includes/external/imgui/imgui.cpp.o
+/home/k/Documents/build/NUVIO: CMakeFiles/NUVIO.dir/includes/external/imgui/imgui_demo.cpp.o
+/home/k/Documents/build/NUVIO: CMakeFiles/NUVIO.dir/includes/external/imgui/imgui_draw.cpp.o
+/home/k/Documents/build/NUVIO: CMakeFiles/NUVIO.dir/includes/external/imgui/imgui_tables.cpp.o
+/home/k/Documents/build/NUVIO: CMakeFiles/NUVIO.dir/includes/external/imgui/imgui_widgets.cpp.o
+/home/k/Documents/build/NUVIO: CMakeFiles/NUVIO.dir/includes/external/glad/glad.c.o
+/home/k/Documents/build/NUVIO: CMakeFiles/NUVIO.dir/profiling/Tracy/public/TracyClient.cpp.o
+/home/k/Documents/build/NUVIO: CMakeFiles/NUVIO.dir/build.make
+/home/k/Documents/build/NUVIO: CMakeFiles/NUVIO.dir/compiler_depend.ts
+/home/k/Documents/build/NUVIO: includes/external/glfw/src/libglfw3.a
+/home/k/Documents/build/NUVIO: /usr/lib/librt.a
+/home/k/Documents/build/NUVIO: /usr/lib/libm.so
+/home/k/Documents/build/NUVIO: /usr/lib/libGLX.so
+/home/k/Documents/build/NUVIO: /usr/lib/libOpenGL.so
+/home/k/Documents/build/NUVIO: CMakeFiles/NUVIO.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/k/Documents/NUVIO/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Linking CXX executable /home/k/Documents/build/NUVIO"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/NUVIO.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-CMakeFiles/NUVIO.dir/build: /home/k/Documents/NUVIO/build/NUVIO
+CMakeFiles/NUVIO.dir/build: /home/k/Documents/build/NUVIO
 .PHONY : CMakeFiles/NUVIO.dir/build
 
 CMakeFiles/NUVIO.dir/clean:
@@ -498,6 +498,6 @@ CMakeFiles/NUVIO.dir/clean:
 .PHONY : CMakeFiles/NUVIO.dir/clean
 
 CMakeFiles/NUVIO.dir/depend:
-	cd /home/k/Documents/NUVIO/nuvio-test && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/k/Documents/NUVIO /home/k/Documents/NUVIO /home/k/Documents/NUVIO/nuvio-test /home/k/Documents/NUVIO/nuvio-test /home/k/Documents/NUVIO/nuvio-test/CMakeFiles/NUVIO.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /home/k/Documents/NUVIO && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/k/Documents/NUVIO /home/k/Documents/NUVIO /home/k/Documents/NUVIO /home/k/Documents/NUVIO /home/k/Documents/NUVIO/CMakeFiles/NUVIO.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/NUVIO.dir/depend
 
