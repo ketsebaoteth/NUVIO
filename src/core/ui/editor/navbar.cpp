@@ -32,7 +32,29 @@ menu_item gNavbar = {
             {},
             []() { /* Save file logic */ },
             []() { /* Show tooltip */ }
-        }
+        },
+       menu_item{
+          "Export",
+          "CTRL+E",
+          "Export File",
+          "write image to a file in different formats",
+          "",
+          {
+            menu_item{
+            "Save",
+            "Ctrl+S",
+            "Save File",
+            "Save the current file",
+            "save_icon.png",
+            {},
+            []() { /* Save file logic */ },
+            []() { /* Show tooltip */ }
+            },
+          },
+          []() { /* Save file logic */ },
+          []() { /* Show tooltip */ }
+
+        } 
     },
     []() { /* Navbar click logic */ },
     []() { /* Show tooltip */ }

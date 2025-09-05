@@ -86,6 +86,19 @@ add_custom_target(run
     WORKING_DIRECTORY "${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/$<CONFIG>"
 )
 
+#--post-build--
+add_custom_command(
+    TARGET NUVIO POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy_directory
+            ${CMAKE_SOURCE_DIR}/assets $<TARGET_FILE_DIR:NUVIO>/assets
+)
+# For shaders:
+add_custom_command(
+    TARGET NUVIO POST_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy_directory
+            ${CMAKE_SOURCE_DIR}/shaders $<TARGET_FILE_DIR:NUVIO>/shaders
+)
+
 target_link_libraries(NUVIO PRIVATE glfw OpenGL::GL)
 
 # set c++ standard

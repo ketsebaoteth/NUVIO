@@ -4,6 +4,7 @@
 #include "glad/glad.h"
 #include <vector>
 #include "core/canvas/irenderable.h"
+#include "core/canvas/shader.h"
 
 NUVIO_NAMESPACE_BEGIN
 
@@ -12,7 +13,6 @@ NUVIO_NAMESPACE_BEGIN
  */
 class CanvasManager {
 public:
-
     void Init(int width, int height);
     void Shutdown();
 
@@ -55,7 +55,7 @@ private:
     // -- for opengl --
     GLuint mFramebuffer;
     GLuint mFramebufferTexture;
-    GLuint mShaderProgram;
+    canvas::shader mShader; 
     GLuint mVao;
     GLuint mVbo;
     GLuint mEbo;

@@ -13,7 +13,8 @@ struct theme_data {
   // disable clang-format wraps abnormally
   // clang-format off
   //we will need a more better path handling
-    std::string DefaultFontPath = "../../assets/fonts/inter/static/Inter_24pt-Regular.ttf";
+    std::string DefaultFontPath = "./assets/fonts/inter/static/Inter_24pt-Regular.ttf";
+    float DefaultFontSize = 10.0f;
     float Alpha = 1.0f;
 	float DisabledAlpha = 0.3f;
 	ImVec2 WindowPadding = ImVec2(10.1f, 10.1f);

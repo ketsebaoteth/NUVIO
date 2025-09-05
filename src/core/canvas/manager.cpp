@@ -2,45 +2,9 @@
 #include <cassert>
 #include <cstdio>
 #include <iostream>
+#include "core/canvas/shader.h"
 
 NUVIO_NAMESPACE_BEGIN
-
-GLuint CompileShader(GLenum type, const char* source) {
-    GLuint shader = glCreateShader(type);
-    glShaderSource(shader, 1, &source, nullptr);
-    glCompileShader(shader);
-
-    // Optional: error checking
-    GLint success;
-    glGetShaderiv(shader, GL_COMPILE_STATUS, &success);
-    if (!success) {
-        char infoLog[512];
-        glGetShaderInfoLog(shader, 512, nullptr, infoLog);
-        std::cerr << "Shader compilation error: " << infoLog << std::endl;
-    }
-    return shader;
-}
-
-GLuint CreateShaderProgram(const char* vertSrc, const char* fragSrc) {
-    GLuint vertexShader = CompileShader(GL_VERTEX_SHADER, vertSrc);
-    GLuint fragmentShader = CompileShader(GL_FRAGMENT_SHADER, fragSrc);
-    GLuint program = glCreateProgram();
-    glAttachShader(program, vertexShader);
-    glAttachShader(program, fragmentShader);
-    glLinkProgram(program);
-
-    // Optional: error checking
-    GLint success;
-    glGetProgramiv(program, GL_LINK_STATUS, &success);
-    if (!success) {
-        char infoLog[512];
-        glGetProgramInfoLog(program, 512, nullptr, infoLog);
-        std::cerr << "Program linking error: " << infoLog << std::endl;
-    }
-    glDeleteShader(vertexShader);
-    glDeleteShader(fragmentShader);
-    return program;
-}
 
 void CanvasManager::Init(int width, int height) {
     assert(width > 0 && height > 0 && "Width and Height must be greater than 0");
@@ -66,7 +30,8 @@ void CanvasManager::Init(int width, int height) {
 
     //unbind buffer
     glBindFramebuffer(GL_FRAMEBUFFER, 0);
-    
+    //create shader
+    mShader = canvas::shader("shaders/default_vertex.glsl","shaders/default_fragment.glsl");
     //create vao
     glGenVertexArrays(1,&mVao);
     glBindVertexArray(mVao);
@@ -97,37 +62,22 @@ void CanvasManager::Init(int width, int height) {
     glVertexAttribPointer(2, 4, GL_FLOAT, GL_FALSE, stride, (void*)offsetof(canvas::vertex, color));
     glEnableVertexAttribArray(2);
 
-    //shaders for testing
-    const char* vertexShaderSource = R"(
-#version 330 core
-layout(location = 0) in vec3 inPos;
-layout(location = 1) in vec2 inUV;
-layout(location = 2) in vec4 inColor;
 
-out vec4 vertColor;
-
-void main() {
-    gl_Position = vec4(inPos, 1.0);
-    vertColor = inColor;
-}
-)";
-
-    const char* fragmentShaderSource = R"(
-#version 330 core
-in vec4 vertColor;
-out vec4 FragColor;
-
-void main() {
-    FragColor = vertColor;
-}
-    )";
-
-  mShaderProgram = CreateShaderProgram(vertexShaderSource, fragmentShaderSource);
-    
 }
 
 void CanvasManager::Shutdown() {
-    // Cleanup code
+    // Unbind everything just in case
+    glBindFramebuffer(GL_FRAMEBUFFER, 0);
+    glBindVertexArray(0);
+    glBindBuffer(GL_ARRAY_BUFFER, 0);
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
+
+    // Delete OpenGL resources if they exist
+    if (mVao) glDeleteVertexArrays(1, &mVao);
+    if (mVbo) glDeleteBuffers(1, &mVbo);
+    if (mEbo) glDeleteBuffers(1, &mEbo);
+    if (mFramebuffer) glDeleteFramebuffers(1, &mFramebuffer);
+    if (mCanvasTexture) glDeleteTextures(1, &mCanvasTexture);
 }
 
 GLuint CanvasManager::Render() {
@@ -138,7 +88,7 @@ GLuint CanvasManager::Render() {
     glClearColor(mCanvasBackgroundColor.r,mCanvasBackgroundColor.g,mCanvasBackgroundColor.b,mCanvasBackgroundColor.a);
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-    glUseProgram(mShaderProgram);
+    glUseProgram(mShader.ID);
     //main rendering
     for(const auto& layer : mLayers){
       for(const auto& renderable : layer){
