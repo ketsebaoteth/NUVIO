@@ -64,7 +64,17 @@ void render_navbar(){
     if (ImGui::BeginMainMenuBar()) {
         if (ImGui::BeginMenu(gNavbar.title.c_str())) {
             for (const auto& item : gNavbar.children) {
-                if (ImGui::MenuItem(item.title.c_str(), item.shortcut.c_str())) {
+                if(item.children.size()!=0){
+                  if(ImGui::BeginMenu(item.title.c_str())){
+                    for(const auto& subitem : item.children){
+                      if(ImGui::MenuItem(subitem.title.c_str(),subitem.shortcut.c_str())){
+                          if(subitem.on_click) subitem.on_click();
+                      }
+                    }
+                    ImGui::EndMenu();
+                  }
+                }
+                else if(ImGui::MenuItem(item.title.c_str(), item.shortcut.c_str())) {
                     if (item.on_click) item.on_click();
                 }
                 if (ImGui::IsItemHovered() && item.on_hover) {
