@@ -4,7 +4,7 @@
 #include <cstdint>
 #include <vector>
 
-NUVIO_NAMESPACE_BEGIN
+NUVIO_CANVAS_NAMESPACE_BEGIN
 
 struct vertex{
   glm::vec3 position;
@@ -22,8 +22,9 @@ struct RenderData{
 
 
 class Irenderable {
-  virtual RenderData getRenderData() const = 0;
+public:
+  virtual RenderData get_render_data() const = 0;
   ~Irenderable() = default;
 };
 
-NUVIO_NAMESPACE_END
+NUVIO_CANVAS_NAMESPACE_END

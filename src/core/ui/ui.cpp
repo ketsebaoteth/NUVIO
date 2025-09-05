@@ -19,7 +19,7 @@ void UIManager::init() {
     WriteLayoutConfig();
   }
   GLFWmonitor *monitor = glfwGetPrimaryMonitor();
-  m_ui_scaler_factor = 1.3f;
+  m_ui_scaler_factor = 1.1f;
   m_dpi_scale = ImGui_ImplGlfw_GetContentScaleForMonitor(monitor);
   m_dpi_scale *= m_ui_scaler_factor;
   

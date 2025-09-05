@@ -1,8 +1,6 @@
 cmake_minimum_required(VERSION 3.16)
 project(NUVIO)
 
-
-
 # Set output directory
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/../build)
 
@@ -90,8 +88,8 @@ add_custom_target(run
 
 target_link_libraries(NUVIO PRIVATE glfw OpenGL::GL)
 
-# Set C++ standard (optional, but recommended)
+# set c++ standard
 set_target_properties(NUVIO PROPERTIES
-    CXX_STANDARD 17
+    CXX_STANDARD 23
     CXX_STANDARD_REQUIRED YES
 )
