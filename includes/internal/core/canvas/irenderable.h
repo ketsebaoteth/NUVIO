@@ -1,3 +1,4 @@
+#pragma once
 #include "core/nuvio_namespaces.h"
 #include "glm/fwd.hpp"
 #include "glm/glm.hpp"
@@ -20,11 +21,16 @@ struct RenderData{
   glm::vec4 color;
 };
 
+enum class RenderableType{
+  RECTANGLE
+};
 
 class Irenderable {
 public:
+  virtual RenderableType get_type() const = 0;
   virtual RenderData get_render_data() const = 0;
-  ~Irenderable() = default;
+  virtual ~Irenderable() = default;
+  RenderableType type;
 };
 
 NUVIO_CANVAS_NAMESPACE_END

@@ -6,11 +6,12 @@
 
 NUVIO_CANVAS_NAMESPACE_BEGIN
 
-class Rectangle : Irenderable{
+class Rectangle : public Irenderable{
 public:
   Rectangle(glm::vec2 pos, glm::vec2 size);
   Rect get_rect();
   RenderData get_render_data() const override;
+  RenderableType get_type() const override;
 private:
   Rect mRect;
 };

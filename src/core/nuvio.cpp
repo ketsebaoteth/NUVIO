@@ -1,4 +1,5 @@
 #include "core/nuvio.hpp"
+#include "core/canvas/components/rectangle.h"
 #include "core/dna/project.h"
 #include "core/dna/project_manager.h"
 #include "core/canvas/manager.h"
@@ -20,7 +21,11 @@ NuvioApp::NuvioApp(int argc, char** argv) {
     //initalizaers
     nuvio::gUIManager.init();
     nuvio::gCanvasManager.Init(1000,600);
-    nuvio::gCanvasManager.SetCanvasBackgroundColor({1.0f,0.0f,0.0f,1.0f});
+    nuvio::gCanvasManager.SetCanvasBackgroundColor({1.0f,1.0f,1.0f,1.0f});
+    nuvio::canvas::Rectangle* testrect = new canvas::Rectangle({-0.5f,-0.5f},{1.0f,1.0f});
+    std::vector<nuvio::canvas::Irenderable*> l1;
+    nuvio::gCanvasManager.AppendLayer(l1);
+    nuvio::gCanvasManager.AppendRenderable(testrect,0);
     //set default theme for now
     nuvio::ui::gThemeManager.ApplyTheme("Default");
 

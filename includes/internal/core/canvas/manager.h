@@ -2,6 +2,8 @@
 #include "core/nuvio_namespaces.h"
 #include "glm/glm.hpp"
 #include "glad/glad.h"
+#include <vector>
+#include "core/canvas/irenderable.h"
 
 NUVIO_NAMESPACE_BEGIN
 
@@ -26,7 +28,12 @@ public:
      */
     glm::vec2 GetCanvasSize();
     glm::vec2 GetCanvasPosition();
-
+    /**
+     *
+     * canvas layer and renderable insertion
+     */
+    void AppendLayer(std::vector<canvas::Irenderable*> Layer);
+    void AppendRenderable(canvas::Irenderable* renderable,int index);
     /**
      * Canvas Drawing Functions
      */
@@ -40,12 +47,18 @@ private:
     glm::vec2 mCanvasPosition;
     glm::vec2 mCanvasSize;
     glm::vec4 mCanvasBackgroundColor;
+
+    std::vector<std::vector<canvas::Irenderable*>> mLayers;
     // -- canvas properties --
 
 
     // -- for opengl --
     GLuint mFramebuffer;
     GLuint mFramebufferTexture;
+    GLuint mShaderProgram;
+    GLuint mVao;
+    GLuint mVbo;
+    GLuint mEbo;
 
     GLuint mCanvasTexture;
     // -- for opengl --
