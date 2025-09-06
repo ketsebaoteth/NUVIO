@@ -8,98 +8,103 @@
 NUVIO_UI_NAMESPACE_BEGIN
 
 struct theme_data {
-  // default theme is ugly as fuck for now
+  // Sharp, dark "shadcn" inspired ImGui style - no rounding, subtle grayscale
+  // shades
 
-  // disable clang-format wraps abnormally
-  // clang-format off
-  //we will need a more better path handling
-    std::string DefaultFontPath = "./assets/fonts/inter/static/Inter_24pt-Regular.ttf";
-    float DefaultFontSize = 10.0f;
-    float Alpha = 1.0f;
-	float DisabledAlpha = 0.3f;
-	ImVec2 WindowPadding = ImVec2(10.1f, 10.1f);
-	float WindowRounding = 10.3f;
-	float WindowBorderSize = 1.0f;
-	ImVec2 WindowMinSize = ImVec2(20.0f, 32.0f);
-	ImVec2 WindowTitleAlign = ImVec2(0.5f, 0.5f);
-	ImGuiDir WindowMenuButtonPosition = ImGuiDir_Right;
-	float ChildRounding = 8;
-	float ChildBorderSize = 1.0f;
-	float PopupRounding = 10;
-	float PopupBorderSize = 1.0f;
-	ImVec2 FramePadding = ImVec2(20.0f, 1.5f);
-	float FrameRounding = 4.8f;
-	float FrameBorderSize = 0.0f;
-	ImVec2 ItemSpacing = ImVec2(9.7f, 5.3f);
-	ImVec2 ItemInnerSpacing = ImVec2(5.4f, 9.3f);
-	ImVec2 CellPadding = ImVec2(7.9f, 2.0f);
-	float IndentSpacing = 10.7f;
-	float ColumnsMinSpacing = 6.0f;
-	float ScrollbarSize = 12.10000038146973f;
-	float ScrollbarRounding = 20.0f;
-	float GrabMinSize = 10.0f;
-	float GrabRounding = 4.5;
-	float TabRounding = 4.0f;
-	float TabBorderSize = 0.0f;
-	float TabMinWidthForCloseButton = 0.0f;
-	ImGuiDir ColorButtonPosition = ImGuiDir_Right;
-	ImVec2 ButtonTextAlign = ImVec2(0.5f, 0.5f);
-	ImVec2 SelectableTextAlign = ImVec2(0.0f, 0.0f);
+  // Font
+  std::string DefaultFontPath =
+      "./assets/fonts/inter/static/Inter_24pt-Regular.ttf";
+  float DefaultFontSize = 12.0f;
 
-    ImVec4 ImGuiCol_Text = ImVec4(1.0f, 1.0f, 1.0f, 1.0f);
-	ImVec4 ImGuiCol_TextDisabled = ImVec4(1.0f, 1.0f, 1.0f, 0.3991416096687317f);
-	ImVec4 ImGuiCol_WindowBg = ImVec4(0.03921568766236305f, 0.03921568766236305f, 0.03921568766236305f, 0.9399999976158142f);
-	ImVec4 ImGuiCol_ChildBg = ImVec4(0.0f, 0.0f, 0.0f, 0.0f);
-	ImVec4 ImGuiCol_PopupBg = ImVec4(0.05098039284348488f, 0.05098039284348488f, 0.05098039284348488f, 0.9399999976158142f);
-	ImVec4 ImGuiCol_Border = ImVec4(0.4274509847164154f, 0.4274509847164154f, 0.4980392158031464f, 0.5f);
-	ImVec4 ImGuiCol_BorderShadow = ImVec4(0.0f, 0.0f, 0.0f, 0.0f);
-	ImVec4 ImGuiCol_FrameBg = ImVec4(0.0f, 0.0f, 0.0f, 0.4206008315086365f);
-	ImVec4 ImGuiCol_FrameBgHovered = ImVec4(0.1411764770746231f, 0.1411764770746231f, 0.1411764770746231f, 0.4000000059604645f);
-	ImVec4 ImGuiCol_FrameBgActive = ImVec4(0.2313725501298904f, 0.2313725501298904f, 0.2313725501298904f, 0.8626609444618225f);
-	ImVec4 ImGuiCol_TitleBg = ImVec4(0.0f, 0.0f, 0.0f, 1.0f);
-	ImVec4 ImGuiCol_TitleBgActive = ImVec4(0.09411764889955521f, 0.09411764889955521f, 0.09411764889955521f, 1.0f);
-	ImVec4 ImGuiCol_TitleBgCollapsed = ImVec4(0.0f, 0.0f, 0.0f, 0.2918455004692078f);
-	ImVec4 ImGuiCol_MenuBarBg = ImVec4(0.1372549086809158f, 0.1372549086809158f, 0.1372549086809158f, 1.0f);
-	ImVec4 ImGuiCol_ScrollbarBg = ImVec4(0.01960784383118153f, 0.01960784383118153f, 0.01960784383118153f, 0.5299999713897705f);
-	ImVec4 ImGuiCol_ScrollbarGrab = ImVec4(0.3098039329051971f, 0.3098039329051971f, 0.3098039329051971f, 1.0f);
-	ImVec4 ImGuiCol_ScrollbarGrabHovered = ImVec4(0.407843142747879f, 0.407843142747879f, 0.407843142747879f, 1.0f);
-	ImVec4 ImGuiCol_ScrollbarGrabActive = ImVec4(0.5098039507865906f, 0.5098039507865906f, 0.5098039507865906f, 1.0f);
-	ImVec4 ImGuiCol_CheckMark = ImVec4(0.9803921580314636f, 0.2588235437870026f, 0.2588235437870026f, 1.0f);
-	ImVec4 ImGuiCol_SliderGrab = ImVec4(1.0f, 1.0f, 1.0f, 1.0f);
-	ImVec4 ImGuiCol_SliderGrabActive = ImVec4(0.2588235437870026f, 0.5882353186607361f, 0.9803921580314636f, 1.0f);
-	ImVec4 ImGuiCol_Button = ImVec4(0.0f, 0.0f, 0.0f, 0.5793991088867188f);
-	ImVec4 ImGuiCol_ButtonHovered = ImVec4(0.09803921729326248f, 0.09803921729326248f, 0.09803921729326248f, 1.0f);
-	ImVec4 ImGuiCol_ButtonActive = ImVec4(1.0f, 0.2313725501298904f, 0.2313725501298904f, 1.0f);
-	ImVec4 ImGuiCol_Header = ImVec4(0.0f, 0.0f, 0.0f, 0.454935610294342f);
-	ImVec4 ImGuiCol_HeaderHovered = ImVec4(0.1803921610116959f, 0.1803921610116959f, 0.1803921610116959f, 0.800000011920929f);
-	ImVec4 ImGuiCol_HeaderActive = ImVec4(0.9764705896377563f, 0.2588235437870026f, 0.2588235437870026f, 1.0f);
-	ImVec4 ImGuiCol_Separator = ImVec4(0.0f, 0.0f, 0.0f, 0.5f);
-	ImVec4 ImGuiCol_SeparatorHovered = ImVec4(0.09803921729326248f, 0.4000000059604645f, 0.7490196228027344f, 0.7799999713897705f);
-	ImVec4 ImGuiCol_SeparatorActive = ImVec4(0.09803921729326248f, 0.4000000059604645f, 0.7490196228027344f, 1.0f);
-	ImVec4 ImGuiCol_ResizeGrip = ImVec4(0.2588235437870026f, 0.5882353186607361f, 0.9764705896377563f, 0.2000000029802322f);
-	ImVec4 ImGuiCol_ResizeGripHovered = ImVec4(0.2588235437870026f, 0.5882353186607361f, 0.9764705896377563f, 0.6700000166893005f);
-	ImVec4 ImGuiCol_ResizeGripActive = ImVec4(0.2588235437870026f, 0.5882353186607361f, 0.9764705896377563f, 0.949999988079071f);
-	ImVec4 ImGuiCol_Tab = ImVec4(0.105882354080677f, 0.105882354080677f, 0.105882354080677f, 1.0f);
-	ImVec4 ImGuiCol_TabHovered = ImVec4(1.0f, 0.364705890417099f, 0.6745098233222961f, 0.800000011920929f);
-	ImVec4 ImGuiCol_TabActive = ImVec4(1.0f, 0.2235294133424759f, 0.2235294133424759f, 1.0f);
-	ImVec4 ImGuiCol_TabUnfocused = ImVec4(0.1098039224743843f, 0.168627455830574f, 0.239215686917305f, 0.9724000096321106f);
-	ImVec4 ImGuiCol_TabUnfocusedActive = ImVec4(0.1333333402872086f, 0.2588235437870026f, 0.4235294163227081f, 1.0f);
-	ImVec4 ImGuiCol_PlotLines = ImVec4(1.0f, 1.0f, 1.0f, 1.0f);
-	ImVec4 ImGuiCol_PlotLinesHovered = ImVec4(1.0f, 0.4274509847164154f, 0.3490196168422699f, 1.0f);
-	ImVec4 ImGuiCol_PlotHistogram = ImVec4(1.0f, 0.2156862765550613f, 0.2156862765550613f, 1.0f);
-	ImVec4 ImGuiCol_PlotHistogramHovered = ImVec4(1.0f, 0.2156862765550613f, 0.6980392336845398f, 1.0f);
-	ImVec4 ImGuiCol_TableHeaderBg = ImVec4(1.0f, 0.2352941185235977f, 0.2352941185235977f, 1.0f);
-	ImVec4 ImGuiCol_TableBorderStrong = ImVec4(1.0f, 0.3176470696926117f, 0.3176470696926117f, 1.0f);
-	ImVec4 ImGuiCol_TableBorderLight = ImVec4(1.0f, 0.5647059082984924f, 0.5647059082984924f, 0.3690987229347229f);
-	ImVec4 ImGuiCol_TableRowBg = ImVec4(0.7254902124404907f, 0.3372549116611481f, 1.0f, 0.0f);
-	ImVec4 ImGuiCol_TableRowBgAlt = ImVec4(1.0f, 0.2745098173618317f, 0.2745098173618317f, 0.1115880012512207f);
-	ImVec4 ImGuiCol_TextSelectedBg = ImVec4(0.9764705896377563f, 0.2588235437870026f, 0.2588235437870026f, 1.0f);
-	ImVec4 ImGuiCol_DragDropTarget = ImVec4(1.0f, 1.0f, 0.0f, 0.8999999761581421f);
-	ImVec4 ImGuiCol_NavHighlight = ImVec4(0.0f, 0.0f, 0.0f, 0.6437768340110779f);
-	ImVec4 ImGuiCol_NavWindowingHighlight = ImVec4(1.0f, 1.0f, 1.0f, 0.4678111672401428f);
-	ImVec4 ImGuiCol_NavWindowingDimBg = ImVec4(0.0f, 0.0f, 0.0f, 0.733905553817749f);
-	ImVec4 ImGuiCol_ModalWindowDimBg = ImVec4(0.0f, 0.0f, 0.0f, 0.7982832789421082f);
-  // clang-format on
+  // Layout
+  float Alpha = 1.0f;
+  float DisabledAlpha = 0.4f;
+  ImVec2 WindowPadding = ImVec2(12.0f, 12.0f);
+  float WindowRounding = 0.0f;
+  float WindowBorderSize = 1.0f;
+  ImVec2 WindowMinSize = ImVec2(24.0f, 32.0f);
+  ImVec2 WindowTitleAlign = ImVec2(0.0f, 0.5f);
+  ImGuiDir WindowMenuButtonPosition = ImGuiDir_Right;
+  float ChildRounding = 0.0f;
+  float ChildBorderSize = 1.0f;
+  float PopupRounding = 0.0f;
+  float PopupBorderSize = 1.0f;
+  ImVec2 FramePadding = ImVec2(10.0f, 4.0f);
+  float FrameRounding = 0.0f;
+  float FrameBorderSize = 1.0f;
+  ImVec2 ItemSpacing = ImVec2(8.0f, 6.0f);
+  ImVec2 ItemInnerSpacing = ImVec2(6.0f, 5.0f);
+  ImVec2 CellPadding = ImVec2(6.0f, 4.0f);
+  float IndentSpacing = 12.0f;
+  float ColumnsMinSpacing = 8.0f;
+  float ScrollbarSize = 14.0f;
+  float ScrollbarRounding = 0.0f;
+  float GrabMinSize = 10.0f;
+  float GrabRounding = 0.0f;
+  float TabRounding = 0.0f;
+  float TabBorderSize = 1.0f;
+  float TabMinWidthForCloseButton = 0.0f;
+  ImGuiDir ColorButtonPosition = ImGuiDir_Right;
+  ImVec2 ButtonTextAlign = ImVec2(0.5f, 0.5f);
+  ImVec2 SelectableTextAlign = ImVec2(0.0f, 0.5f);
+
+  // Dark gray "shadcn" palette
+  ImVec4 ImGuiCol_Text = ImVec4(0.92f, 0.92f, 0.95f, 1.00f);
+  ImVec4 ImGuiCol_TextDisabled = ImVec4(0.43f, 0.45f, 0.53f, 1.00f);
+  ImVec4 ImGuiCol_WindowBg = ImVec4(0.12f, 0.13f, 0.15f, 1.00f);
+  ImVec4 ImGuiCol_ChildBg = ImVec4(0.14f, 0.14f, 0.16f, 1.00f);
+  ImVec4 ImGuiCol_PopupBg = ImVec4(0.17f, 0.17f, 0.18f, 0.98f);
+  ImVec4 ImGuiCol_Border = ImVec4(0.18f, 0.19f, 0.21f, 1.00f);
+  ImVec4 ImGuiCol_BorderShadow = ImVec4(0.00f, 0.00f, 0.00f, 0.00f);
+  ImVec4 ImGuiCol_FrameBg = ImVec4(0.18f, 0.19f, 0.21f, 1.00f);
+  ImVec4 ImGuiCol_FrameBgHovered = ImVec4(0.23f, 0.24f, 0.26f, 1.00f);
+  ImVec4 ImGuiCol_FrameBgActive = ImVec4(0.22f, 0.23f, 0.26f, 1.00f);
+  ImVec4 ImGuiCol_TitleBg = ImVec4(0.16f, 0.17f, 0.19f, 1.00f);
+  ImVec4 ImGuiCol_TitleBgActive = ImVec4(0.20f, 0.21f, 0.23f, 1.00f);
+  ImVec4 ImGuiCol_TitleBgCollapsed = ImVec4(0.10f, 0.10f, 0.11f, 0.75f);
+  ImVec4 ImGuiCol_MenuBarBg = ImVec4(0.16f, 0.17f, 0.19f, 1.00f);
+  ImVec4 ImGuiCol_ScrollbarBg = ImVec4(0.13f, 0.13f, 0.14f, 0.54f);
+  ImVec4 ImGuiCol_ScrollbarGrab = ImVec4(0.26f, 0.27f, 0.29f, 0.98f);
+  ImVec4 ImGuiCol_ScrollbarGrabHovered = ImVec4(0.32f, 0.33f, 0.36f, 0.98f);
+  ImVec4 ImGuiCol_ScrollbarGrabActive = ImVec4(0.37f, 0.39f, 0.43f, 0.98f);
+  ImVec4 ImGuiCol_CheckMark = ImVec4(0.44f, 0.50f, 0.98f, 1.00f);
+  ImVec4 ImGuiCol_SliderGrab = ImVec4(0.44f, 0.50f, 0.98f, 0.60f);
+  ImVec4 ImGuiCol_SliderGrabActive = ImVec4(0.44f, 0.50f, 0.98f, 1.00f);
+  ImVec4 ImGuiCol_Button = ImVec4(0.18f, 0.19f, 0.21f, 1.00f);
+  ImVec4 ImGuiCol_ButtonHovered = ImVec4(0.23f, 0.24f, 0.26f, 1.00f);
+  ImVec4 ImGuiCol_ButtonActive = ImVec4(0.22f, 0.23f, 0.26f, 1.00f);
+  ImVec4 ImGuiCol_Header = ImVec4(0.18f, 0.19f, 0.21f, 1.00f);
+  ImVec4 ImGuiCol_HeaderHovered = ImVec4(0.23f, 0.24f, 0.26f, 1.00f);
+  ImVec4 ImGuiCol_HeaderActive = ImVec4(0.22f, 0.23f, 0.26f, 1.00f);
+  ImVec4 ImGuiCol_Separator = ImVec4(0.18f, 0.19f, 0.21f, 1.00f);
+  ImVec4 ImGuiCol_SeparatorHovered = ImVec4(0.32f, 0.33f, 0.36f, 1.00f);
+  ImVec4 ImGuiCol_SeparatorActive = ImVec4(0.44f, 0.50f, 0.98f, 1.00f);
+  ImVec4 ImGuiCol_ResizeGrip = ImVec4(0.26f, 0.27f, 0.29f, 0.30f);
+  ImVec4 ImGuiCol_ResizeGripHovered = ImVec4(0.32f, 0.33f, 0.36f, 0.50f);
+  ImVec4 ImGuiCol_ResizeGripActive = ImVec4(0.44f, 0.50f, 0.98f, 0.70f);
+  ImVec4 ImGuiCol_Tab = ImVec4(0.14f, 0.15f, 0.17f, 1.00f);
+  ImVec4 ImGuiCol_TabHovered = ImVec4(0.23f, 0.24f, 0.26f, 1.00f);
+  ImVec4 ImGuiCol_TabActive = ImVec4(0.20f, 0.21f, 0.23f, 1.00f);
+  ImVec4 ImGuiCol_TabUnfocused = ImVec4(0.10f, 0.10f, 0.11f, 1.00f);
+  ImVec4 ImGuiCol_TabUnfocusedActive = ImVec4(0.16f, 0.17f, 0.19f, 1.00f);
+  ImVec4 ImGuiCol_PlotLines = ImVec4(0.53f, 0.53f, 0.53f, 1.00f);
+  ImVec4 ImGuiCol_PlotLinesHovered = ImVec4(0.64f, 0.64f, 0.64f, 1.00f);
+  ImVec4 ImGuiCol_PlotHistogram = ImVec4(0.44f, 0.50f, 0.98f, 1.00f);
+  ImVec4 ImGuiCol_PlotHistogramHovered = ImVec4(0.64f, 0.64f, 0.64f, 1.00f);
+  ImVec4 ImGuiCol_TableHeaderBg = ImVec4(0.16f, 0.17f, 0.19f, 1.00f);
+  ImVec4 ImGuiCol_TableBorderStrong = ImVec4(0.18f, 0.19f, 0.21f, 1.00f);
+  ImVec4 ImGuiCol_TableBorderLight = ImVec4(0.23f, 0.24f, 0.26f, 1.00f);
+  ImVec4 ImGuiCol_TableRowBg = ImVec4(0.12f, 0.13f, 0.15f, 1.00f);
+  ImVec4 ImGuiCol_TableRowBgAlt = ImVec4(0.14f, 0.14f, 0.16f, 1.00f);
+  ImVec4 ImGuiCol_TextSelectedBg = ImVec4(0.44f, 0.50f, 0.98f, 0.30f);
+  ImVec4 ImGuiCol_DragDropTarget = ImVec4(0.44f, 0.50f, 0.98f, 0.90f);
+  ImVec4 ImGuiCol_NavHighlight = ImVec4(0.44f, 0.50f, 0.98f, 1.00f);
+  ImVec4 ImGuiCol_NavWindowingHighlight = ImVec4(0.44f, 0.50f, 0.98f, 0.70f);
+  ImVec4 ImGuiCol_NavWindowingDimBg = ImVec4(0.12f, 0.13f, 0.15f, 0.45f);
+  ImVec4 ImGuiCol_ModalWindowDimBg = ImVec4(0.12f, 0.13f, 0.15f, 0.70f);
+  ImVec4 ImGuiCol_DockingPreview = ImVec4(0.44f, 0.50f, 0.98f, 0.70f); 
+  // This style aims for a modern, sharp, neutral look — no roundness, clear
+  // edges, and subtle grayscale contrast.  // clang-format on
 };
 
 class ThemeManager {

@@ -1,4 +1,5 @@
 #include "core/ui/theme/theme.h"
+#include "imgui.h"
 
 NUVIO_UI_NAMESPACE_BEGIN
 
@@ -97,6 +98,7 @@ void ThemeManager::ApplyTheme(std::string name) {
     colors[ImGuiCol_NavWindowingHighlight] = theme.ImGuiCol_NavWindowingHighlight;
     colors[ImGuiCol_NavWindowingDimBg] = theme.ImGuiCol_NavWindowingDimBg;
     colors[ImGuiCol_ModalWindowDimBg] = theme.ImGuiCol_ModalWindowDimBg;
+    colors[ImGuiCol_DockingPreview] = theme.ImGuiCol_DockingPreview;
     // Add more ImGuiCol_* assignments as needed for your theme_data
 }
 
