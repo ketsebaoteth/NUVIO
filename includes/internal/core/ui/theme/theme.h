@@ -76,7 +76,7 @@ struct theme_data {
   ImVec4 ImGuiCol_Header = ImVec4(0.18f, 0.19f, 0.21f, 1.00f);
   ImVec4 ImGuiCol_HeaderHovered = ImVec4(0.23f, 0.24f, 0.26f, 1.00f);
   ImVec4 ImGuiCol_HeaderActive = ImVec4(0.22f, 0.23f, 0.26f, 1.00f);
-  ImVec4 ImGuiCol_Separator = ImVec4(0.18f, 0.19f, 0.21f, 1.00f);
+  ImVec4 ImGuiCol_Separator = ImVec4(0.3f, 0.3f, 0.3f, 0.5f);
   ImVec4 ImGuiCol_SeparatorHovered = ImVec4(0.32f, 0.33f, 0.36f, 1.00f);
   ImVec4 ImGuiCol_SeparatorActive = ImVec4(0.44f, 0.50f, 0.98f, 1.00f);
   ImVec4 ImGuiCol_ResizeGrip = ImVec4(0.26f, 0.27f, 0.29f, 0.30f);
