@@ -3,6 +3,8 @@
 #include "core/canvas/shader.h"
 #include "core/canvas/utils/shape_utils.h"
 #include "core/utils/vector.h"
+#include "glm/detail/qualifier.hpp"
+#include "glm/fwd.hpp"
 #include "imgui.h"
 #include <cassert>
 #include <cstdio>
@@ -142,6 +144,10 @@ glm::vec2 CanvasManager::GetCanvasSize() { return mCanvasSize; }
 
 glm::vec2 CanvasManager::GetCanvasPosition() { return mCanvasPosition; }
 
+void CanvasManager::SetCanvasPosition(const glm::vec2 &position) {
+  mCanvasPosition = position;
+}
+
 void CanvasManager::SetCanvasBackgroundColor(const glm::vec4 &color) {
   mCanvasBackgroundColor = color;
 }
@@ -173,6 +179,9 @@ void CanvasManager::SetMouseLocation(ImVec2 mouseLocation) {
 void CanvasManager::AddActiveRenderable(canvas::Irenderable *renderable) {
   mSelectedRenderables.push_back(renderable);
 }
+
+
+
 void CanvasManager::updateSelected() {
   for (auto &layers : mLayers) {
     for (auto &renderables : layers) {
@@ -210,23 +219,40 @@ bool CanvasManager::isPointInRect(nuvio::canvas::Rect &rect, ImVec2 &vec) {
           vec.y <= bottom_px);
 }
 
-void CanvasManager::updateMouseCollision() {
-    for (auto &renderables : mSelectedRenderables) {
-      canvas::Rect renderable_rect = renderables->get_rect();
-        // NDC space (OpenGL)
-        // float world_left = -1.0f, world_right = 1.0f;
-        // float world_top = -1.0f, world_bottom = 1.0f;
-        // convert to imgui mouse delta to world space
-        float world_dx = 2.0f * mMouseDelta.x / mCanvasSize.x;
-        float world_dy = -2.0f * mMouseDelta.y / mCanvasSize.y;
+ImVec2 CanvasManager::NDCToScreen(const ImVec2 &ndc) {
+  // Convert NDC -> canvas-local pixel coords, then offset by canvas position
+  return ImVec2(mCanvasPosition.x + (ndc.x + 1.0f) * 0.5f * mCanvasSize.x,
+                mCanvasPosition.y +
+                    (1.0f - (ndc.y + 1.0f) * 0.5f) * mCanvasSize.y);
+}
 
-        // construct new rect for renderable
-        canvas::Rect newrect = {
-            {renderable_rect.position.x + world_dx,
-             renderable_rect.position.y + world_dy},
-            {renderable_rect.size.x, renderable_rect.size.y}};
-        // set new rect
-        renderables->set_rect(newrect);
+void CanvasManager::updateMouseCollision() {
+  for (auto &renderables : mSelectedRenderables) {
+    canvas::Rect renderable_rect = renderables->get_rect();
+    // 1. Get rect edges in NDC
+    float left = renderable_rect.edge_position(canvas::RectSide::LEFT);
+    float right = renderable_rect.edge_position(canvas::RectSide::RIGHT);
+    float top = renderable_rect.edge_position(canvas::RectSide::TOP);
+    float bottom = renderable_rect.edge_position(canvas::RectSide::BOTTOM);
+
+    // 2. Convert corners to absolute screen pixel coords
+    ImVec2 top_left_screen = NDCToScreen(ImVec2(left, top));
+    ImVec2 bottom_right_screen = NDCToScreen(ImVec2(right, bottom));
+
+    // 3. Draw in ImGui overlay
+    ImDrawList *draw_list = ImGui::GetForegroundDrawList();
+    draw_list->AddRect(top_left_screen, bottom_right_screen,
+                       IM_COL32(0, 0, 255, 255), 0.0f, 0, 2.0f
+
+    );
+
+    // (Your rect move code as before)
+    float world_dx = 2.0f * mMouseDelta.x / mCanvasSize.x;
+    float world_dy = -2.0f * mMouseDelta.y / mCanvasSize.y;
+    canvas::Rect newrect = {{renderable_rect.position.x + world_dx,
+                             renderable_rect.position.y + world_dy},
+                            {renderable_rect.size.x, renderable_rect.size.y}};
+    renderables->set_rect(newrect);
   }
 }
 

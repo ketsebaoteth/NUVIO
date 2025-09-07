@@ -7,8 +7,11 @@
 
 NUVIO_NAMESPACE_BEGIN
 enum class ShortcutType { Key, MouseButton };
+enum class WantedState { Press, Release };
+
 struct shortcut {
   ShortcutType type = ShortcutType::Key;
+  WantedState wantedstate = WantedState::Press;
   int key;
   void (*callback)();
   std::vector<int> modifiers;

@@ -3,6 +3,7 @@
 #include "GLFW/glfw3.h"
 #include "core/undo/manager.h"
 #include "core/window/window_manager.h"
+#include "imgui.h"
 #include <cstdio>
 #include <iostream>
 
@@ -12,6 +13,7 @@ std::vector<shortcut> all_shortcuts = {
     // -- save shortcut -- 
     {
         ShortcutType::Key,
+        WantedState::Press, // type for this shortcut
         GLFW_KEY_S,
         []() {
             printf("Save triggered \n");
@@ -21,6 +23,7 @@ std::vector<shortcut> all_shortcuts = {
     // -- undo shortcut --
     {
         ShortcutType::Key,
+        WantedState::Press,
         GLFW_KEY_Z,
         [](){
             gUndoManager.undo_last_action();
@@ -30,6 +33,7 @@ std::vector<shortcut> all_shortcuts = {
     // -- redo shortcut --
     {
         ShortcutType::Key,
+        WantedState::Press,
         GLFW_KEY_Y,
         [](){
             gUndoManager.redo_last_undo();
@@ -39,6 +43,7 @@ std::vector<shortcut> all_shortcuts = {
     // -- close window shortcut --
     {
         ShortcutType::Key,
+        WantedState::Press,
         GLFW_KEY_Q,
         [](){
             gWindowManager.destroy_window();
@@ -48,14 +53,24 @@ std::vector<shortcut> all_shortcuts = {
     // -- select shortcut --
     {
         ShortcutType::MouseButton,
+        WantedState::Press,
         GLFW_MOUSE_BUTTON_LEFT,
         [](){
           gCanvasManager.updateSelected();
         },
         {}
-    }
+    },
+    {
+        ShortcutType::MouseButton,
+        WantedState::Release,
+        GLFW_MOUSE_BUTTON_LEFT,
+        [](){
+            ImGui::ResetMouseDragDelta();
+        },
+        {}
+    },
+    
 };
-
 
 void register_all_shortcuts(){
     for(auto& sc : all_shortcuts) {

@@ -3,6 +3,7 @@
 #include "core/canvas/shader.h"
 #include "core/nuvio_namespaces.h"
 #include "glad/glad.h"
+#include "glm/detail/qualifier.hpp"
 #include "glm/glm.hpp"
 #include "imgui.h"
 #include <vector>
@@ -36,12 +37,15 @@ public:
   void SetCanvasBackgroundColor(const glm::vec4 &color);
   void SetMouseDelta(ImVec2 mouseDelta);
   void SetMouseLocation(ImVec2 mouseLocation);
-  void AddActiveRenderable(canvas::Irenderable* renderable);
+  void AddActiveRenderable(canvas::Irenderable *renderable);
+  canvas::Rect NDCRectToCanvasPixelRect(const canvas::Rect &rect,
+                                        const glm::vec2 &canvasSize);
   /**
    * getters
    */
   glm::vec2 GetCanvasSize();
   glm::vec2 GetCanvasPosition();
+  ImVec2 NDCToScreen(const ImVec2 &ndc);
   /**
    *
    * canvas layer and renderable insertion
@@ -83,7 +87,7 @@ private:
 
   GLuint mCanvasTexture;
   // -- for opengl --
-  std::vector<canvas::Irenderable*> mSelectedRenderables;
+  std::vector<canvas::Irenderable *> mSelectedRenderables;
   bool isPointInRect(nuvio::canvas::Rect &rect, ImVec2 &vec);
 };
 
