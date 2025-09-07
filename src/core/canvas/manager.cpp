@@ -2,6 +2,8 @@
 #include <cassert>
 #include <cstdio>
 #include <iostream>
+#include <pstl/glue_algorithm_defs.h>
+#include "core/canvas/irenderable.h"
 #include "core/canvas/shader.h"
 
 NUVIO_NAMESPACE_BEGIN
@@ -134,6 +136,14 @@ void CanvasManager::AppendLayer(std::vector<canvas::Irenderable*> Layer){
 
 void CanvasManager::AppendRenderable(canvas::Irenderable* renderable,int index){
  mLayers[index].push_back(renderable); 
+}
+
+void CanvasManager::RemoveRenderable(canvas::Irenderable* renderable, int index){
+  auto& vec = mLayers[index];
+  vec.erase(
+    std::remove(vec.begin(), vec.end(), renderable),
+    vec.end()
+  );
 }
 
 

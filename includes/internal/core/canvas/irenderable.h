@@ -1,11 +1,14 @@
 #pragma once
 #include "core/nuvio_namespaces.h"
+#include "core/undo/manager.h"
 #include "glm/fwd.hpp"
 #include "glm/glm.hpp"
 #include <cstdint>
 #include <vector>
 
 NUVIO_CANVAS_NAMESPACE_BEGIN
+class CanvasManager;
+extern CanvasManager gCanvasManager;
 
 struct vertex{
   glm::vec3 position;
@@ -31,6 +34,17 @@ public:
   virtual RenderData get_render_data() const = 0;
   virtual ~Irenderable() = default;
   RenderableType type;
+};
+
+class AddRenderableAction : public action {
+  Irenderable* renderable;
+  int layerIndex;
+public:
+  AddRenderableAction(Irenderable* rend, int idx);
+  void execute() override ;
+
+    void undo() override ;
+
 };
 
 NUVIO_CANVAS_NAMESPACE_END

@@ -1,10 +1,14 @@
 #pragma once
+#include "core/canvas/irenderable.h"
 #include "core/nuvio_namespaces.h"
 #include "glm/glm.hpp"
 #include "glad/glad.h"
 #include <vector>
-#include "core/canvas/irenderable.h"
 #include "core/canvas/shader.h"
+
+NUVIO_CANVAS_NAMESPACE_BEGIN
+class Irenderable;
+NUVIO_CANVAS_NAMESPACE_END
 
 NUVIO_NAMESPACE_BEGIN
 
@@ -32,8 +36,9 @@ public:
      *
      * canvas layer and renderable insertion
      */
-    void AppendLayer(std::vector<canvas::Irenderable*> Layer);
-    void AppendRenderable(canvas::Irenderable* renderable,int index);
+    void AppendLayer(std::vector<nuvio::canvas::Irenderable*> Layer);
+    void AppendRenderable(nuvio::canvas::Irenderable* renderable,int index);
+    void RemoveRenderable(nuvio::canvas::Irenderable* renderable, int index);
     /**
      * Canvas Drawing Functions
      */

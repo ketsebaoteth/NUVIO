@@ -1,14 +1,17 @@
 #include "core/nuvio.hpp"
 #include "core/canvas/components/rectangle.h"
+#include "core/canvas/irenderable.h"
 #include "core/dna/project.h"
 #include "core/dna/project_manager.h"
 #include "core/canvas/manager.h"
+#include "core/undo/manager.h"
 #include "core/window/window_manager.h"
 #include "core/ui/ui.h"
 #include "core/ui/theme/theme.h"
 #include "core/shortcut/manager.h"
 //profiling
 #include "Tracy.hpp"
+#include <memory>
 
 NUVIO_NAMESPACE_BEGIN
 
@@ -25,7 +28,9 @@ NuvioApp::NuvioApp(int argc, char** argv) {
     nuvio::canvas::Rectangle* testrect = new canvas::Rectangle({-0.5f,-0.5f},{1.0f,1.0f});
     std::vector<nuvio::canvas::Irenderable*> l1;
     nuvio::gCanvasManager.AppendLayer(l1);
-    nuvio::gCanvasManager.AppendRenderable(testrect,0);
+    auto action = std::make_unique<canvas::AddRenderableAction>(testrect,0);
+    action->execute();
+    gUndoManager.add_action(std::move(action));
     //set default theme for now
     nuvio::ui::gThemeManager.ApplyTheme("Default");
 

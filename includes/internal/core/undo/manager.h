@@ -1,35 +1,30 @@
 #pragma once
 #include "core/nuvio_namespaces.h"
-#include <cstddef>
 #include <memory>
-#include <functional>
-#include <string>
 #include <vector>
-#include "core/canvas/irenderable.h"
 
 NUVIO_NAMESPACE_BEGIN
 
-struct action{
-  int action_id;
-  std::string name;
-  std::function<void(const void*)> do_func;
-  std::function<void(const void*)> undo_func;
-  std::shared_ptr<void> do_args;
-  std::shared_ptr<void> undo_args;
-  struct action* prev;
-  struct action* next;
-  std::vector<canvas::Irenderable> snapshot;
-  
+class action{
+public:
+  virtual void execute() = 0;
+  virtual void undo() = 0;
+  virtual ~action();
 };
 
 class UndoManager{
 public:
-  void add_action(action a);
-  std::vector<action> get_full_history();
+  void add_action(std::unique_ptr<action> a);
+  const std::vector<std::unique_ptr<action>>& get_full_history()const;
+  void undo_last_action();
+  void redo_last_undo();
 private:
   int max_undo_stepCount;
-  std::vector<action> mHistory;
+  std::vector<std::unique_ptr<action>> mUndo;
+  std::vector<std::unique_ptr<action>> mHistory;
 
 };
+
+extern UndoManager gUndoManager;
 
 NUVIO_NAMESPACE_END
