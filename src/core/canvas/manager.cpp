@@ -8,6 +8,7 @@
 #include "imgui.h"
 #include <cassert>
 #include <cstdio>
+#include <ios>
 #include <iostream>
 #include <ostream>
 #include <pstl/glue_algorithm_defs.h>
@@ -180,41 +181,43 @@ void CanvasManager::AddActiveRenderable(canvas::Irenderable *renderable) {
   mSelectedRenderables.push_back(renderable);
 }
 
-
-
 void CanvasManager::updateSelected() {
+  mSelectedRenderables.clear();
   for (auto &layers : mLayers) {
     for (auto &renderables : layers) {
       canvas::Rect renderable_rect = renderables->get_rect();
       if (isPointInRect(renderable_rect, mMouseLocation)) {
         AddActiveRenderable(renderables);
-      } else {
-        mSelectedRenderables.clear();
+        // If only one selection allowed, return here
+        // return;
       }
     }
   }
 }
 
 bool CanvasManager::isPointInRect(nuvio::canvas::Rect &rect, ImVec2 &vec) {
-  // Assume you have access to your canvas/image pixel size:
-  float canvas_width = mCanvasSize.x;  // e.g. this->canvas_width;
-  float canvas_height = mCanvasSize.y; // e.g. this->canvas_height;
+  // Canvas dimensions in pixels
+  float canvas_width = mCanvasSize.x;
+  float canvas_height = mCanvasSize.y;
 
-  // Convert OpenGL rect edges to pixel space
-  float left_px =
-      ((rect.edge_position(nuvio::canvas::RectSide::LEFT) + 1.0f) * 0.5f) *
-      canvas_width;
+  // Helper lambda to convert OpenGL [-1, 1] to pixel space [0, canvas_size]
+  auto glToPixelX = [&](float gl_x) {
+    return ((gl_x + 1.0f) * 0.5f) * canvas_width;
+  };
+  auto glToPixelY = [&](float gl_y) {
+    return ((1.0f - gl_y) * 0.5f) * canvas_height;
+  };
+
+  // Convert rect edges from OpenGL space to pixel space
+  float left_px = glToPixelX(rect.edge_position(nuvio::canvas::RectSide::LEFT));
   float right_px =
-      ((rect.edge_position(nuvio::canvas::RectSide::RIGHT) + 1.0f) * 0.5f) *
-      canvas_width;
+      glToPixelX(rect.edge_position(nuvio::canvas::RectSide::RIGHT));
+  float bottom_px = glToPixelY(rect.edge_position(nuvio::canvas::RectSide::TOP));
   float top_px =
-      ((rect.edge_position(nuvio::canvas::RectSide::TOP) + 1.0f) * 0.5f) *
-      canvas_height;
-  float bottom_px =
-      ((rect.edge_position(nuvio::canvas::RectSide::BOTTOM) + 1.0f) * 0.5f) *
-      canvas_height;
+      glToPixelY(rect.edge_position(nuvio::canvas::RectSide::BOTTOM));
+  
 
-  // Now compare mouse position (vec) in canvas pixel space
+  // Check if the point is within the rectangle bounds
   return (vec.x >= left_px && vec.x <= right_px && vec.y >= top_px &&
           vec.y <= bottom_px);
 }

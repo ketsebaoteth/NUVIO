@@ -61,7 +61,6 @@ component get_viewport_component() {
           gCanvasManager.SetMouseDelta({0, 0});
         }
 
-        std::cout << dragDelta.x << std::endl;
 
         ImGui::End();
       }};

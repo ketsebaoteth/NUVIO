@@ -22,13 +22,13 @@ struct Rect{
   float edge_position(RectSide side)const{
     switch(side){
       case nuvio::canvas::RectSide::LEFT:
-        return position.x;
+        return position.x - (size.x/2);
       case nuvio::canvas::RectSide::RIGHT:
-        return position.x + size.x;
+        return position.x + (size.x/2);
       case nuvio::canvas::RectSide::TOP:
-        return position.y;
+        return position.y - (size.y/2);
       case nuvio::canvas::RectSide::BOTTOM:
-        return position.y + size.y;
+        return position.y + (size.y/2);
       default:
         return 0.0f;
     }
