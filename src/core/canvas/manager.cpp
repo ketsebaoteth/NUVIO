@@ -215,7 +215,7 @@ bool CanvasManager::isPointInRect(nuvio::canvas::Rect &rect, ImVec2 &vec) {
   float bottom_px = glToPixelY(rect.edge_position(nuvio::canvas::RectSide::TOP));
   float top_px =
       glToPixelY(rect.edge_position(nuvio::canvas::RectSide::BOTTOM));
-  
+ 
 
   // Check if the point is within the rectangle bounds
   return (vec.x >= left_px && vec.x <= right_px && vec.y >= top_px &&
@@ -241,10 +241,9 @@ void CanvasManager::updateMouseCollision() {
     // 2. Convert corners to absolute screen pixel coords
     ImVec2 top_left_screen = NDCToScreen(ImVec2(left, top));
     ImVec2 bottom_right_screen = NDCToScreen(ImVec2(right, bottom));
-
     // 3. Draw in ImGui overlay
     ImDrawList *draw_list = ImGui::GetForegroundDrawList();
-    draw_list->AddRect(top_left_screen, bottom_right_screen,
+    draw_list->AddRect({top_left_screen.x-10,top_left_screen.y+10}, {bottom_right_screen.x + 10, bottom_right_screen.y - 10},
                        IM_COL32(0, 0, 255, 255), 0.0f, 0, 2.0f
 
     );

@@ -25,7 +25,7 @@ NuvioApp::NuvioApp(int argc, char** argv) {
     nuvio::gUIManager.init();
     nuvio::gCanvasManager.Init(1000,600);
     nuvio::gCanvasManager.SetCanvasBackgroundColor({1.0f,1.0f,1.0f,1.0f});
-    nuvio::canvas::Rectangle* testrect = new canvas::Rectangle({-0.5f,-0.5f},{2.0f,2.0f});
+    nuvio::canvas::Rectangle* testrect = new canvas::Rectangle({0.0f,0.0f},{1.0f,1.0f});
     std::vector<nuvio::canvas::Irenderable*> l1;
     nuvio::gCanvasManager.AppendLayer(l1);
     auto action = std::make_unique<canvas::AddRenderableAction>(testrect,0);
