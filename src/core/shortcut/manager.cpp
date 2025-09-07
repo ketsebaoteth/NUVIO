@@ -17,27 +17,44 @@ void ShortcutManager::process() {
     bool already_handled =
         (std::find(handledShortcuts.begin(), handledShortcuts.end(),
                    _shortcut) != handledShortcuts.end());
-    
-    if (modifier_pressed &&
-        glfwGetKey(glfwGetCurrentContext(), _shortcut.key) == GLFW_PRESS &&
-        !already_handled) {
-      _shortcut.callback();
-      handledShortcuts.push_back(_shortcut);
+    if (_shortcut.type == ShortcutType::Key) {
+      if (modifier_pressed &&
+          glfwGetKey(glfwGetCurrentContext(), _shortcut.key) == GLFW_PRESS &&
+          !already_handled) {
+        _shortcut.callback();
+        handledShortcuts.push_back(_shortcut);
+      }
+    } else {
+      if (modifier_pressed &&
+          glfwGetMouseButton(glfwGetCurrentContext(), _shortcut.key) ==
+              GLFW_PRESS &&
+          !already_handled) {
+        _shortcut.callback();
+        handledShortcuts.push_back(_shortcut);
+      }
     }
   }
-  // After processing all shortcuts:
+  //handle shortcuts that are completed
   handledShortcuts.erase(
       std::remove_if(
           handledShortcuts.begin(), handledShortcuts.end(),
           [](const shortcut &sc) {
-            if (glfwGetKey(glfwGetCurrentContext(), sc.key) == GLFW_PRESS) {
+            bool still_pressed = false;
+            if (sc.type == ShortcutType::Key) {
+              still_pressed =
+                  glfwGetKey(glfwGetCurrentContext(), sc.key) == GLFW_PRESS;
+            } else {
+              still_pressed = glfwGetMouseButton(glfwGetCurrentContext(),
+                                                 sc.key) == GLFW_PRESS;
+            }
+            if (still_pressed) {
               for (auto &mod : sc.modifiers) {
                 if (glfwGetKey(glfwGetCurrentContext(), mod) != GLFW_PRESS)
                   return true; // Modifier released
               }
               return false; // All still pressed
             }
-            return true; // Key released
+            return true; // Key or button released
           }),
       handledShortcuts.end());
 }

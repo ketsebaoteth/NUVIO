@@ -1,11 +1,15 @@
 #include "core/canvas/components/rectangle.h"
+#include "core/canvas/utils/shape_utils.h"
 #include "core/nuvio_namespaces.h"
 
 NUVIO_CANVAS_NAMESPACE_BEGIN
 
 Rectangle::Rectangle(glm::vec2 pos, glm::vec2 size) : mRect{pos,size} {}
 
-Rect Rectangle::get_rect(){return mRect;}
+Rect Rectangle::get_rect() const {return mRect;}
+void Rectangle::set_rect(Rect rect){
+  mRect = rect;
+}
 
 RenderableType Rectangle::get_type() const {return RenderableType::RECTANGLE;}
 

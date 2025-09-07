@@ -2,6 +2,8 @@
 #include "core/nuvio_namespaces.h"
 #include "glm/fwd.hpp"
 #include "glm/glm.hpp"
+#include <ostream>
+#include <random>
 
 NUVIO_CANVAS_NAMESPACE_BEGIN
 
@@ -17,7 +19,7 @@ struct Rect{
   glm::vec2 size;
   // returns position of each side
   // to make calculations easier to read use this
-  float edge_position(RectSide side){
+  float edge_position(RectSide side)const{
     switch(side){
       case nuvio::canvas::RectSide::LEFT:
         return position.x;
@@ -27,8 +29,15 @@ struct Rect{
         return position.y;
       case nuvio::canvas::RectSide::BOTTOM:
         return position.y + size.y;
+      default:
+        return 0.0f;
     }
   };
+  
 };
+
+std::ostream& operator<<(std::ostream& os, const Rect& r);
+
+
 
 NUVIO_CANVAS_NAMESPACE_END

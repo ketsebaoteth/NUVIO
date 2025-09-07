@@ -5,6 +5,7 @@
 #include "glm/glm.hpp"
 #include <cstdint>
 #include <vector>
+#include "core/canvas/utils/shape_utils.h"
 
 NUVIO_CANVAS_NAMESPACE_BEGIN
 class CanvasManager;
@@ -32,6 +33,8 @@ class Irenderable {
 public:
   virtual RenderableType get_type() const = 0;
   virtual RenderData get_render_data() const = 0;
+  virtual Rect get_rect() const = 0;
+  virtual void set_rect(Rect rect) = 0;
   virtual ~Irenderable() = default;
   RenderableType type;
 };
