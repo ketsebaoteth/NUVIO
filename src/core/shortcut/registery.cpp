@@ -47,7 +47,7 @@ std::vector<shortcut> all_shortcuts = {
         WantedState::Press,
         GLFW_KEY_Q,
         [](){
-            gWindowManager.destroy_window();
+            gWindowManager.request_close();
 },
         {GLFW_KEY_LEFT_CONTROL}
     },

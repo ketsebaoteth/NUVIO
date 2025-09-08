@@ -44,8 +44,9 @@ void window_manager::destroy_window() {
     }
 }
 
-bool window_manager::is_null() const {
-  return (m_window == nullptr);
+void window_manager::request_close() const {
+  std::cout << "Nuvio Gracefull Shutdown !" << std::endl;
+  glfwSetWindowShouldClose(m_window,GLFW_TRUE);
 }
 
 bool window_manager::should_close() const {
