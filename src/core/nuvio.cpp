@@ -1,8 +1,6 @@
 #include "core/nuvio.hpp"
 #include "core/canvas/components/rectangle.h"
 #include "core/canvas/irenderable.h"
-#include "core/dna/project.h"
-#include "core/dna/project_manager.h"
 #include "core/canvas/manager.h"
 #include "core/undo/manager.h"
 #include "core/window/window_manager.h"
@@ -49,7 +47,7 @@ NuvioApp::NuvioApp(int argc, char** argv) {
 
 void NuvioApp::run() {
     while(!nuvio::gWindowManager.should_close()){
-	ZoneScopedN("main_render");
+	ZoneScopedN("main_render loop");
         nuvio::gUIManager.begin_frame();
         nuvio::gUIManager.render();
         nuvio::gUIManager.end_frame();
@@ -58,7 +56,6 @@ void NuvioApp::run() {
         nuvio::gShortcutManager.process();
 	FrameMark;
     }
-    nuvio::gWindowManager.destroy_window();
 }
 
 NUVIO_NAMESPACE_END

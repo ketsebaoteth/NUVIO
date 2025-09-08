@@ -1,3 +1,4 @@
+#include "core/ui/ui.h"
 #include "glad/glad.h"
 #include "core/window/window_manager.h"
 #include "core/shortcut/registery.h"
@@ -37,9 +38,14 @@ void window_manager::create_window(std::string title, window_flags flags)
 void window_manager::destroy_window() {
     assert(m_window && "Window must be created before it can be destroyed");
     if (m_window) {
+        gUIManager.Shutdown();
         glfwDestroyWindow(m_window);
         m_window = nullptr;
     }
+}
+
+bool window_manager::is_null() const {
+  return (m_window == nullptr);
 }
 
 bool window_manager::should_close() const {

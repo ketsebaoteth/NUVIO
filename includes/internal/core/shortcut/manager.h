@@ -27,6 +27,7 @@ public:
   void process();
   void register_shortcut(shortcut _shortcut);
   void unregister_shortcut(shortcut _shortcut);
+  void shutdown();
 
 private:
   // Input state

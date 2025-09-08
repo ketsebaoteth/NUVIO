@@ -1,4 +1,5 @@
 #include "core/ui/editor/navbar.h"
+#include "core/canvas/manager.h"
 #include "core/nuvio_namespaces.h"
 #include "core/ui/components/menu_item.h"
 #include "core/ui/components/registery.h"
@@ -53,7 +54,10 @@ menu_item export_as_png = {
     .sd = separator_direction::NONE,
     .icon = "png_icon.png",
     .children = {},
-    .on_click = []() { /* Export as PNG logic */ },
+    .on_click = []() { 
+      std::string path = "output.png";
+      gCanvasManager.WriteImage(path);
+    },
     .on_hover = []() { /* Show tooltip */ }
 };
 menu_item export_as_jpeg = {

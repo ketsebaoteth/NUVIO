@@ -33,6 +33,7 @@ public:
     bool should_close() const;
     void swap_buffers() const;
     void poll_events() const;
+    bool is_null() const;
     vec2<int> get_size() const;
     GLFWwindow* get_window() const;
     private:

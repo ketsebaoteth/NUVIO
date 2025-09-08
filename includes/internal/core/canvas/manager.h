@@ -6,6 +6,7 @@
 #include "glad/glad.h"
 #include "glm/glm.hpp"
 #include "imgui.h"
+#include <string>
 #include <vector>
 
 NUVIO_CANVAS_NAMESPACE_BEGIN
@@ -75,6 +76,10 @@ class CanvasManager {
      */
     glm::vec2 GetCanvasSize();
     glm::vec2 GetCanvasPosition();
+    // -- for image exporting --
+    std::vector<unsigned char> ReadPixels(int x, int y, int width, int height);
+    void WriteImage(std::string& path);
+
     ImVec2 NDCToScreen(const ImVec2 &ndc) const;
     /**
      *
@@ -87,10 +92,6 @@ class CanvasManager {
      * Canvas Drawing Functions
      */
     void DrawHandles() const;
-    void FillPixel(const glm::vec2 &position, const glm::vec2 &size, const glm::vec4 &color);
-    void DrawRectangle(const glm::vec2 &position, const glm::vec2 &size, const glm::vec4 &color);
-    void DrawCircle(const glm::vec2 &position, float radius, const glm::vec4 &color);
-    void DrawLine(const glm::vec2 &start, const glm::vec2 &end, const glm::vec4 &color);
 
   private:
     // -- canvas properties --
@@ -119,6 +120,7 @@ class CanvasManager {
     bool isPointInRect(nuvio::canvas::Rect &rect, ImVec2 &vec);
     // -- for undo ---
     std::vector<MoveData> mMoveData; // data to store the starting and endin
+
 };
 
 extern CanvasManager gCanvasManager;
