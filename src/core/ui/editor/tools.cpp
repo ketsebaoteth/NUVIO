@@ -9,9 +9,7 @@
 #include "core/ui/components/comp.h"
 #include <unordered_map>
 #include <cstdint> // for intptr_t
-#ifdef _WIN32
-#include <windows.h>
-#endif
+
 
 NUVIO_UI_NAMESPACE_BEGIN
 // --------- ICON LOADING UTILITIES ---------

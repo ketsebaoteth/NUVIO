@@ -134,7 +134,7 @@ GLuint CanvasManager::Render() {
             glBufferData(GL_ELEMENT_ARRAY_BUFFER, data.indecies.size() * sizeof(uint32_t), data.indecies.data(),
                          GL_DYNAMIC_DRAW);
 
-            glDrawElements(GL_TRIANGLES, data.indecies.size(), GL_UNSIGNED_INT, 0);
+            glDrawElements(GL_TRIANGLES, static_cast<GLsizei>(data.indecies.size()), GL_UNSIGNED_INT, 0);
             //
             glBindVertexArray(0);
         }
@@ -325,7 +325,7 @@ std::vector<unsigned char> CanvasManager::ReadPixels(int x, int y, int width, in
 
 void CanvasManager::WriteImage(std::string &path) {
     mSelectedRenderables.clear(); 
-    std::vector<unsigned char> pixels = ReadPixels(0, 0, mCanvasSize.x, mCanvasSize.y);
+    std::vector<unsigned char> pixels = ReadPixels(0, 0, static_cast<int>(mCanvasSize.x), static_cast<int>(mCanvasSize.y));
     stbi_write_png(path.c_str(), mCanvasSize.x, mCanvasSize.y, 4, pixels.data(), mCanvasSize.x * 4);
 }
 

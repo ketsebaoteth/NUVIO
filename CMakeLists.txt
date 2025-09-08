@@ -75,7 +75,7 @@ target_compile_definitions(NUVIO PRIVATE TRACY_ENABLE)
 
 
 if(MSVC)
-    target_compile_options(NUVIO PRIVATE /W4 /WX)
+    target_compile_options(NUVIO PRIVATE /W4 )
 else()
     target_compile_options(NUVIO PRIVATE -Wall -Wextra )
 endif()
