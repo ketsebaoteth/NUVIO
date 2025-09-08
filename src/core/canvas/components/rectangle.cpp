@@ -1,6 +1,8 @@
 #include "core/canvas/components/rectangle.h"
 #include "core/canvas/utils/shape_utils.h"
 #include "core/nuvio_namespaces.h"
+#include "glm/fwd.hpp"
+#include "imgui.h"
 #include <iostream>
 
 NUVIO_CANVAS_NAMESPACE_BEGIN
@@ -14,8 +16,16 @@ Rect Rectangle::get_rect() const {
     return mRect;
 }
 
-RenderableType Rectangle::get_type() const {return RenderableType::RECTANGLE;}
+void Rectangle::set_position(ImVec2 position) {
+  mRect.position = {position.x, position.y};
+}
 
+ImVec2 Rectangle::get_position(){
+  return {mRect.position.x,mRect.position.y};
+}
+
+RenderableType Rectangle::get_type() const {return RenderableType::RECTANGLE;}
+ 
 RenderData Rectangle::get_render_data() const {
   RenderData data;
 

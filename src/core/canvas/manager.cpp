@@ -2,17 +2,16 @@
 #include "core/canvas/irenderable.h"
 #include "core/canvas/shader.h"
 #include "core/canvas/utils/shape_utils.h"
+#include "core/undo/manager.h"
 #include "core/utils/vector.h"
-#include "glm/detail/qualifier.hpp"
 #include "glm/fwd.hpp"
 #include "imgui.h"
 #include <algorithm>
 #include <cassert>
 #include <cstdio>
-#include <ios>
 #include <iostream>
+#include <memory>
 #include <ostream>
-#include <pstl/glue_algorithm_defs.h>
 
 NUVIO_NAMESPACE_BEGIN
 
@@ -323,6 +322,23 @@ void CanvasManager::updateMouseCollision() {
             {renderable_rect.size.x, renderable_rect.size.y}};
         renderables->set_rect(newrect);
     }
+}
+
+
+void CanvasManager::RegisterMoveStart(){
+  for(auto& selected : mSelectedRenderables){
+    ImVec2 oldPos = selected->get_position();
+    mMoveData.push_back({selected,oldPos,oldPos}); // store old pos for now for the new pos till we get the new pos
+  }
+}
+
+void CanvasManager::RegisterMoveEnd(){
+  for(auto& movedata: mMoveData){
+    movedata.newPos = movedata.renderable->get_position();
+  }
+  //create an undo command 
+  gUndoManager.add_action(std::make_unique<MoveCommand>(mMoveData));
+  mMoveData.clear();
 }
 
 CanvasManager gCanvasManager;

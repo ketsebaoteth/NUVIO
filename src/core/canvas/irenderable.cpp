@@ -14,4 +14,5 @@ void AddRenderableAction::undo() {
   nuvio::gCanvasManager.RemoveRenderable(renderable, layerIndex);
 }
 
+
 NUVIO_CANVAS_NAMESPACE_END
