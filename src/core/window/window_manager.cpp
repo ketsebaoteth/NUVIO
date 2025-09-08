@@ -45,6 +45,7 @@ void window_manager::destroy_window() {
 }
 
 void window_manager::request_close() const {
+  assert(m_window && "Cannot Request Close Window is Already NULL");
   std::cout << "Nuvio Gracefull Shutdown !" << std::endl;
   glfwSetWindowShouldClose(m_window,GLFW_TRUE);
 }

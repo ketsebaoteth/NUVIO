@@ -17,8 +17,11 @@ class Rectangle : public Irenderable {
     RenderData get_render_data() const override;
     RenderableType get_type() const override;
 
+    // --specific to rectangle--
+    void set_background_color(glm::vec4 color);
   private:
     Rect mRect;
+    glm::vec4 mBackgroundColor;
 };
 
 NUVIO_CANVAS_NAMESPACE_END

@@ -7,7 +7,9 @@
 
 NUVIO_CANVAS_NAMESPACE_BEGIN
 
-Rectangle::Rectangle(glm::vec2 pos, glm::vec2 size) : mRect{pos,size} {}
+Rectangle::Rectangle(glm::vec2 pos, glm::vec2 size) : mRect{pos,size} {
+  mBackgroundColor = {1.0f,0.0f,0.0f,1.0f};
+}
 
 void Rectangle::set_rect(Rect rect) {
     mRect = rect;
@@ -18,6 +20,10 @@ Rect Rectangle::get_rect() const {
 
 void Rectangle::set_position(ImVec2 position) {
   mRect.position = {position.x, position.y};
+}
+
+void Rectangle::set_background_color(glm::vec4 color){
+  mBackgroundColor =  color;
 }
 
 ImVec2 Rectangle::get_position(){
@@ -35,7 +41,7 @@ RenderData Rectangle::get_render_data() const {
   float w = mRect.size.x;
   float h = mRect.size.y;
 
-  glm::vec4 vertColor = {1.0f, 0.0f, 0.0f, 1.0f}; // Red color
+  glm::vec4 vertColor = mBackgroundColor; // Red color
 
   // Vertices in counter-clockwise order: bottom-left, bottom-right, top-right, top-left
   data.verticies = {
