@@ -54,6 +54,7 @@ component get_viewport_component() {
             ImGui::IsMouseDragging(ImGuiMouseButton_Left)) {
 
           gCanvasManager.SetMouseDelta(dragDelta);
+          gCanvasManager.updateMouseCollision();
         }
         // Instead, reset when the drag is released:
         if (ImGui::IsItemDeactivated() && ImGui::IsItemHovered()) {

@@ -141,6 +141,12 @@ GLuint CanvasManager::Render() {
 
     glBindFramebuffer(GL_FRAMEBUFFER, 0);
 
+    // draw imgui side handles
+    if (!mSelectedRenderables.empty()) {
+        updateHandleRect();
+        DrawHandles();
+    }
+
     return mCanvasTexture;
 }
 
@@ -177,7 +183,6 @@ void CanvasManager::SetMouseDelta(ImVec2 mouseDelta) {
 
 void CanvasManager::SetMouseLocation(ImVec2 mouseLocation) {
     mMouseLocation = mouseLocation;
-    updateMouseCollision();
 }
 
 void CanvasManager::AddActiveRenderable(canvas::Irenderable *renderable) {
@@ -203,20 +208,13 @@ void CanvasManager::updateHandleRect() {
         float right = selected_rect.edge_position(canvas::RectSide::RIGHT);
         float top = selected_rect.edge_position(canvas::RectSide::TOP);
         float bottom = selected_rect.edge_position(canvas::RectSide::BOTTOM);
-        // std::cout<< right << std::endl;
-        // std::cout<< maxXY.x << std::endl;
-        // std::cout<< std::max(right,maxXY.x) << std::endl;
+
         minXY.x = std::min(minXY.x, left);
         minXY.y = std::min(minXY.y, top);
         maxXY.x = std::max(maxXY.x, right);
         maxXY.y = std::max(maxXY.y, bottom);
 
         anySelected = true;
-    }
-
-    if (!anySelected) {
-        mHandleRect = canvas::Rect({0, 0}, {0, 0});
-        return;
     }
 
     // --- Add margin in NDC units (positive = more space around selection) ---
@@ -228,6 +226,11 @@ void CanvasManager::updateHandleRect() {
     glm::vec2 center = (minXY + maxXY) * 0.5f;
     glm::vec2 size = maxXY - minXY;
 
+    if (!anySelected) {
+        mHandleRect = canvas::Rect({0, 0}, {0, 0});
+        return;
+    }
+
     mHandleRect = canvas::Rect(center, size);
 }
 
@@ -238,9 +241,6 @@ void CanvasManager::updateSelected() {
             canvas::Rect renderable_rect = renderables->get_rect();
             if (isPointInRect(renderable_rect, mMouseLocation)) {
                 AddActiveRenderable(renderables);
-
-                // If only one selection allowed, return here
-                // return;
             }
         }
     }
@@ -252,7 +252,6 @@ void CanvasManager::AppendSelected() {
             canvas::Rect renderable_rect = renderables->get_rect();
             if (isPointInRect(renderable_rect, mMouseLocation)) {
                 AddActiveRenderable(renderables);
-                // If only one selection allowed, return here
             }
         }
     }
@@ -316,10 +315,6 @@ void CanvasManager::updateMouseCollision() {
     for (auto &renderables : mSelectedRenderables) {
         canvas::Rect renderable_rect = renderables->get_rect();
 
-        updateHandleRect();
-        DrawHandles();
-
-        // (Your rect move code as before)
         float world_dx = 2.0f * mMouseDelta.x / mCanvasSize.x;
         float world_dy = -2.0f * mMouseDelta.y / mCanvasSize.y;
         canvas::Rect newrect = {
