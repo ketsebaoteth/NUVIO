@@ -33,6 +33,8 @@ void window_manager::create_window(std::string title, window_flags flags)
     //registers all shortcuts in shortcut registery
     //look at core/shortcut/registery.cpp
     nuvio::register_all_shortcuts();
+    glfwSwapInterval(1);
+  
 }
 
 void window_manager::destroy_window() {
