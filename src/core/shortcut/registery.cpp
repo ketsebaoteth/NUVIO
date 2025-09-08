@@ -1,6 +1,7 @@
 #include "core/canvas/manager.h"
 #include "core/shortcut/registery.h"
 #include "GLFW/glfw3.h"
+#include "core/shortcut/manager.h"
 #include "core/undo/manager.h"
 #include "core/window/window_manager.h"
 #include "imgui.h"
@@ -47,7 +48,7 @@ std::vector<shortcut> all_shortcuts = {
         GLFW_KEY_Q,
         [](){
             gWindowManager.destroy_window();
-        },
+},
         {GLFW_KEY_LEFT_CONTROL}
     },
     // -- select shortcut --
@@ -59,6 +60,15 @@ std::vector<shortcut> all_shortcuts = {
           gCanvasManager.updateSelected();
         },
         {}
+    },
+    {
+      ShortcutType::MouseButton,
+      WantedState::Press,
+      GLFW_MOUSE_BUTTON_LEFT,
+      [](){
+        gCanvasManager.AppendSelected();
+      },
+      {GLFW_KEY_LEFT_CONTROL}
     },
     {
         ShortcutType::MouseButton,

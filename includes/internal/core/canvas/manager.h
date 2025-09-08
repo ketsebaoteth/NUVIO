@@ -29,6 +29,8 @@ public:
    */
   void updateMouseCollision();
   void updateSelected();
+  void AppendSelected();
+  void updateHandleRect();
   /**
    * setters
    */
@@ -45,7 +47,7 @@ public:
    */
   glm::vec2 GetCanvasSize();
   glm::vec2 GetCanvasPosition();
-  ImVec2 NDCToScreen(const ImVec2 &ndc);
+  ImVec2 NDCToScreen(const ImVec2 &ndc) const ;
   /**
    *
    * canvas layer and renderable insertion
@@ -56,6 +58,7 @@ public:
   /**
    * Canvas Drawing Functions
    */
+  void DrawHandles() const ;
   void FillPixel(const glm::vec2 &position, const glm::vec2 &size,
                  const glm::vec4 &color);
   void DrawRectangle(const glm::vec2 &position, const glm::vec2 &size,
@@ -73,6 +76,7 @@ private:
 
   ImVec2 mMouseDelta;
   ImVec2 mMouseLocation;
+  canvas::Rect mHandleRect; // rect used to draw handles
 
   std::vector<std::vector<canvas::Irenderable *>> mLayers;
   // -- canvas properties --
@@ -91,6 +95,6 @@ private:
   bool isPointInRect(nuvio::canvas::Rect &rect, ImVec2 &vec);
 };
 
-extern CanvasManager gCanvasManager;
+extern CanvasManager gCanvasManager ;
 
 NUVIO_NAMESPACE_END

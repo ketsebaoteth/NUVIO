@@ -2,6 +2,10 @@
 
 NUVIO_CANVAS_NAMESPACE_BEGIN
 
+Rect::Rect() : position(0,0), size(0,0){};
+
+Rect::Rect(glm::vec2 pos , glm::vec2 s) : position(pos), size(s) {};
+
 std::ostream& operator<<(std::ostream& os, const Rect& r) {
     os << "Rect { "
        << "pos=(" << r.position.x << ", " << r.position.y << "), "

@@ -17,6 +17,8 @@ enum class RectSide{
 struct Rect{
   glm::vec2 position;
   glm::vec2 size;
+  Rect();
+  Rect(glm::vec2 pos, glm::vec2 size);
   // returns position of each side
   // to make calculations easier to read use this
   float edge_position(RectSide side)const{

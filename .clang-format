@@ -1,0 +1,3 @@
+IndentWidth: 4
+TabWidth: 4
+UseTab: Never  # or ForIndentation if you want actual tabs

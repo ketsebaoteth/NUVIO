@@ -25,12 +25,20 @@ NuvioApp::NuvioApp(int argc, char** argv) {
     nuvio::gUIManager.init();
     nuvio::gCanvasManager.Init(1000,600);
     nuvio::gCanvasManager.SetCanvasBackgroundColor({1.0f,1.0f,1.0f,1.0f});
-    nuvio::canvas::Rectangle* testrect = new canvas::Rectangle({0.0f,0.0f},{1.0f,1.0f});
+
     std::vector<nuvio::canvas::Irenderable*> l1;
+    nuvio::canvas::Rectangle* testrect = new canvas::Rectangle({0.0f,0.0f},{0.6f,0.6f});
     nuvio::gCanvasManager.AppendLayer(l1);
     auto action = std::make_unique<canvas::AddRenderableAction>(testrect,0);
     action->execute();
     gUndoManager.add_action(std::move(action));
+
+    nuvio::canvas::Rectangle* testrect2 = new canvas::Rectangle({0.5f,0.0f},{0.6f,0.6f});
+    nuvio::gCanvasManager.AppendLayer(l1);
+    auto action2 = std::make_unique<canvas::AddRenderableAction>(testrect2,0);
+    action2->execute();
+    gUndoManager.add_action(std::move(action2));
+
     //set default theme for now
     nuvio::ui::gThemeManager.ApplyTheme("Default");
 
