@@ -217,12 +217,31 @@ void CanvasManager::updateHandleRect() {
     mHandleRect = canvas::Rect(center, size);
 }
 
+bool CanvasManager::isMouseOverHandles() {
+    int idx = 0;
+    for (const auto &rect : mHandleRects) {
+        float x = rect.position.x;
+        float y = rect.position.y;
+        float w = rect.size.x;
+        float h = rect.size.y;
+        if (mMouseLocation.x >= x && mMouseLocation.x <= x + w && mMouseLocation.y >= y && mMouseLocation.y <= y + h) {
+            mIsResizing = true;
+            mResizingHandleIndex = idx;
+            return true;
+        }
+        ++idx;
+    }
+    return false;
+}
+
 void CanvasManager::updateSelected() {
+    if (isMouseOverHandles()) {
+        return;
+    }
     mSelectedRenderables.clear();
     for (auto &layers : mLayers) {
         for (auto &renderables : layers) {
             canvas::Rect renderable_rect = renderables->get_rect();
-
             if (isPointInRect(renderable_rect, mMouseLocation)) {
                 AddActiveRenderable(renderables);
             }
@@ -243,12 +262,10 @@ void CanvasManager::AppendSelected() {
 
 bool CanvasManager::isPointInRect(nuvio::canvas::Rect &rect, ImVec2 &vec) {
     // Canvas dimensions in pixels
-    float canvas_width = mCanvasSize.x;
-    float canvas_height = mCanvasSize.y;
 
     // Helper lambda to convert OpenGL [-1, 1] to pixel space [0, canvas_size]
-    auto glToPixelX = [&](float gl_x) { return ((gl_x + 1.0f) * 0.5f) * canvas_width; };
-    auto glToPixelY = [&](float gl_y) { return ((1.0f - gl_y) * 0.5f) * canvas_height; };
+    auto glToPixelX = [&](float gl_x) { return ((gl_x + 1.0f) * 0.5f) * mCanvasSize.x; };
+    auto glToPixelY = [&](float gl_y) { return ((1.0f - gl_y) * 0.5f) * mCanvasSize.y;; };
 
     // Convert rect edges from OpenGL space to pixel space
     float left_px = glToPixelX(rect.edge_position(nuvio::canvas::RectSide::LEFT));
@@ -266,21 +283,38 @@ ImVec2 CanvasManager::NDCToScreen(const ImVec2 &ndc) const {
                   mCanvasPosition.y + (1.0f - (ndc.y + 1.0f) * 0.5f) * mCanvasSize.y);
 }
 
-void CanvasManager::DrawHandles() const {
-    // 1. Get rect edges in NDC
+void CanvasManager::DrawHandles() {
+    // Get rect edges in NDC
     float left = mHandleRect.edge_position(canvas::RectSide::LEFT);
     float right = mHandleRect.edge_position(canvas::RectSide::RIGHT);
     float top = mHandleRect.edge_position(canvas::RectSide::BOTTOM);
     float bottom = mHandleRect.edge_position(canvas::RectSide::TOP);
 
-    // 2. Convert corners to absolute screen pixel coords
+    // Convert corners to absolute screen pixel coords
     ImVec2 top_left_screen = NDCToScreen(ImVec2(left, top));
     ImVec2 bottom_right_screen = NDCToScreen(ImVec2(right, bottom));
-    // 3. Draw in ImGui overlay
+    // Draw in ImGui overlay
     ImDrawList *draw_list = ImGui::GetForegroundDrawList();
     draw_list->AddRect({top_left_screen.x, top_left_screen.y}, {bottom_right_screen.x, bottom_right_screen.y},
                        IM_COL32(0, 0, 255, 255), 0.0f, 0, 2.0f);
 
+    mHandleRects.clear();
+    // Store the handle rects for mouse interaction, relative to the canvas
+    // todo: refactor this mess
+    mHandleRects.clear();
+    mHandleRects.emplace_back(glm::vec2(top_left_screen.x - mCanvasPosition.x, top_left_screen.y - mCanvasPosition.y),
+                              glm::vec2(mHandleSize.x, mHandleSize.y));
+    mHandleRects.emplace_back(
+        glm::vec2(bottom_right_screen.x - mCanvasPosition.x, bottom_right_screen.y - mCanvasPosition.y),
+        glm::vec2(mHandleSize.x, mHandleSize.y));
+    mHandleRects.emplace_back(
+        glm::vec2(top_left_screen.x - mCanvasPosition.x, bottom_right_screen.y - mCanvasPosition.y),
+        glm::vec2(mHandleSize.x, mHandleSize.y));
+    mHandleRects.emplace_back(
+        glm::vec2(bottom_right_screen.x - mCanvasPosition.x, top_left_screen.y - mCanvasPosition.y),
+        glm::vec2(mHandleSize.x, mHandleSize.y));
+
+    // Todo: refactor to use a rect to draw stroked rectangles
     //draw the handles on the 4 edges
     canvas::DrawStrokedRectangle(top_left_screen, mHandleSize); 
     canvas::DrawStrokedRectangle(bottom_right_screen, mHandleSize);
@@ -290,14 +324,60 @@ void CanvasManager::DrawHandles() const {
 }
 
 void CanvasManager::updateMouseCollision() {
-    for (auto &renderables : mSelectedRenderables) {
-        canvas::Rect renderable_rect = renderables->get_rect();
+    if (mIsResizing) {
+        if (mSelectedRenderables.empty())
+            return;
+
+        auto renderable = mSelectedRenderables[0];
+        canvas::Rect rect = renderable->get_rect();
+
+        float half_w = rect.size.x * 0.5f;
+        float half_h = rect.size.y * 0.5f;
+        glm::vec2 center = rect.position;
+
+        ImVec2 tl = {center.x - half_w, center.y - half_h};
+        ImVec2 tr = {center.x + half_w, center.y - half_h};
+        ImVec2 bl = {center.x - half_w, center.y + half_h};
+        ImVec2 br = {center.x + half_w, center.y + half_h};
 
         float world_dx = 2.0f * mMouseDelta.x / mCanvasSize.x;
         float world_dy = -2.0f * mMouseDelta.y / mCanvasSize.y;
-        canvas::Rect newrect = {{renderable_rect.position.x + world_dx, renderable_rect.position.y + world_dy},
-                                {renderable_rect.size.x, renderable_rect.size.y}};
-        renderables->set_rect(newrect);
+
+        ImVec2 moved, fixed;
+
+        switch (mResizingHandleIndex) {
+        case 0: // bottom-left moves, top-right fixed
+            moved = {bl.x + world_dx, bl.y + world_dy};
+            fixed = tr;
+            break;
+        case 1: // top-right moves, bottom-left fixed
+            moved = {tr.x + world_dx, tr.y + world_dy};
+            fixed = bl;
+            break;
+        case 2: // top-left moves, bottom-right fixed
+            moved = {tl.x + world_dx, tl.y + world_dy};
+            fixed = br;
+            break;
+        case 3: // bottom-right moves, top-left fixed
+            moved = {br.x + world_dx, br.y + world_dy};
+            fixed = tl;
+            break;
+        default:
+            return;
+        }
+
+        ImVec2 new_center = {(moved.x + fixed.x) * 0.5f, (moved.y + fixed.y) * 0.5f};
+        ImVec2 new_size = {fabsf(moved.x - fixed.x), fabsf(moved.y - fixed.y)};
+        renderable->set_rect({{new_center.x, new_center.y}, {new_size.x, new_size.y}});
+    } else {
+        for (auto &renderables : mSelectedRenderables) {
+            canvas::Rect renderable_rect = renderables->get_rect();
+
+            float world_dx = 2.0f * mMouseDelta.x / mCanvasSize.x;
+            float world_dy = -2.0f * mMouseDelta.y / mCanvasSize.y;
+            renderables->set_rect({{renderable_rect.position.x + world_dx, renderable_rect.position.y + world_dy},
+                                   {renderable_rect.size.x, renderable_rect.size.y}});
+        }
     }
 }
 

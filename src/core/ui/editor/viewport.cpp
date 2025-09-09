@@ -56,6 +56,7 @@ component get_viewport_component() {
                              if (gCanvasManager.hasDraggingStarted) {
                                  gCanvasManager.RegisterMoveEnd();
                                  gCanvasManager.hasDraggingStarted = false;
+                                 gCanvasManager.mIsResizing = false;
                              }
                              ImGui::ResetMouseDragDelta();
                              gCanvasManager.SetMouseDelta({0, 0});

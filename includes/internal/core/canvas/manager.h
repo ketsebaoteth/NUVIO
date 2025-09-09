@@ -59,8 +59,11 @@ class CanvasManager {
      * Dragging api
      */
     bool hasDraggingStarted;
+    bool mIsResizing = false;
+    int mResizingHandleIndex = -1;
     void RegisterMoveStart();
     void RegisterMoveEnd();
+    bool isMouseOverHandles();
     /**
      * setters
      */
@@ -91,14 +94,17 @@ class CanvasManager {
     /**
      * Canvas Drawing Functions
      */
-    void DrawHandles() const;
+    void DrawHandles();
 
   private:
     // -- canvas properties --
     glm::vec2 mCanvasPosition;
     glm::vec2 mCanvasSize;
     glm::vec4 mCanvasBackgroundColor;
+
     ImVec2 mHandleSize = ImVec2(10, 10);
+    std::vector<canvas::Rect> mHandleRects;
+
     ImVec2 mMouseDelta;
     ImVec2 mMouseLocation;
     canvas::Rect mHandleRect; // rect used to draw handles
