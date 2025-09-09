@@ -3,7 +3,7 @@
 #include "glm/fwd.hpp"
 #include "glm/glm.hpp"
 #include <ostream>
-#include <random>
+#include "imgui.h"
 
 NUVIO_CANVAS_NAMESPACE_BEGIN
 
@@ -40,6 +40,6 @@ struct Rect{
 
 std::ostream& operator<<(std::ostream& os, const Rect& r);
 
-
+void DrawStrokedRectangle(ImVec2 pos, ImVec2 size);
 
 NUVIO_CANVAS_NAMESPACE_END

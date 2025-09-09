@@ -11,8 +11,7 @@
 #include <memory>
 #include <ostream>
 
-
-//suppress warrnings from stb_image_write
+// suppress warrnings from stb_image_write
 #if defined(__GNUC__) || defined(__clang__)
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wmissing-field-initializers"
@@ -24,8 +23,6 @@
 #if defined(__GNUC__) || defined(__clang__)
 #pragma GCC diagnostic pop
 #endif
-
-
 
 NUVIO_NAMESPACE_BEGIN
 
@@ -272,18 +269,23 @@ void CanvasManager::DrawHandles() const {
     // 1. Get rect edges in NDC
     float left = mHandleRect.edge_position(canvas::RectSide::LEFT);
     float right = mHandleRect.edge_position(canvas::RectSide::RIGHT);
-    float top = mHandleRect.edge_position(canvas::RectSide::TOP);
-    float bottom = mHandleRect.edge_position(canvas::RectSide::BOTTOM);
+    float top = mHandleRect.edge_position(canvas::RectSide::BOTTOM);
+    float bottom = mHandleRect.edge_position(canvas::RectSide::TOP);
 
     // 2. Convert corners to absolute screen pixel coords
     ImVec2 top_left_screen = NDCToScreen(ImVec2(left, top));
     ImVec2 bottom_right_screen = NDCToScreen(ImVec2(right, bottom));
     // 3. Draw in ImGui overlay
     ImDrawList *draw_list = ImGui::GetForegroundDrawList();
-    draw_list->AddRect({top_left_screen.x - 10, top_left_screen.y + 10},
-                       {bottom_right_screen.x + 10, bottom_right_screen.y - 10}, IM_COL32(0, 0, 255, 255), 0.0f, 0, 2.0f
+    draw_list->AddRect({top_left_screen.x, top_left_screen.y}, {bottom_right_screen.x, bottom_right_screen.y},
+                       IM_COL32(0, 0, 255, 255), 0.0f, 0, 2.0f);
 
-    );
+    //draw the handles on the 4 edges
+    canvas::DrawStrokedRectangle(top_left_screen, {10,10}); 
+    canvas::DrawStrokedRectangle(bottom_right_screen, {10,10});
+    canvas::DrawStrokedRectangle({top_left_screen.x,bottom_right_screen.y}, {10,10});
+    canvas::DrawStrokedRectangle({bottom_right_screen.x,top_left_screen.y}, {10,10});
+
 }
 
 void CanvasManager::updateMouseCollision() {
@@ -316,7 +318,7 @@ void CanvasManager::RegisterMoveEnd() {
 }
 
 std::vector<unsigned char> CanvasManager::ReadPixels(int x, int y, int width, int height) {
-    glBindFramebuffer(GL_FRAMEBUFFER, mFramebuffer); 
+    glBindFramebuffer(GL_FRAMEBUFFER, mFramebuffer);
     std::vector<unsigned char> pixels(width * height * 4); // rgba
     glReadPixels(x, y, width, height, GL_RGBA, GL_UNSIGNED_BYTE, pixels.data());
     glBindFramebuffer(GL_FRAMEBUFFER, 0);
@@ -324,8 +326,9 @@ std::vector<unsigned char> CanvasManager::ReadPixels(int x, int y, int width, in
 }
 
 void CanvasManager::WriteImage(std::string &path) {
-    mSelectedRenderables.clear(); 
-    std::vector<unsigned char> pixels = ReadPixels(0, 0, static_cast<int>(mCanvasSize.x), static_cast<int>(mCanvasSize.y));
+    mSelectedRenderables.clear();
+    std::vector<unsigned char> pixels =
+        ReadPixels(0, 0, static_cast<int>(mCanvasSize.x), static_cast<int>(mCanvasSize.y));
     stbi_write_png(path.c_str(), mCanvasSize.x, mCanvasSize.y, 4, pixels.data(), mCanvasSize.x * 4);
 }
 
