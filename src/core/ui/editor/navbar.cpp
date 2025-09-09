@@ -4,14 +4,17 @@
 #include "core/ui/components/menu_item.h"
 #include "core/ui/components/registery.h"
 #include "imgui.h"
+#include <memory>
+#include <vector>
 #include <cstdio>
-
-
 
 NUVIO_UI_NAMESPACE_BEGIN
 
+// Helper for shared_ptr creation
+using menu_item_ptr = std::shared_ptr<menu_item>;
+
 // "Open from Other source" submenu
-menu_item open_from_url_sub_menu = {
+menu_item_ptr open_from_url_sub_menu = std::make_shared<menu_item>(menu_item{
     .title = "Open from URL",
     .shortcut = "",
     .tooltip_title = "Open from URL",
@@ -21,8 +24,8 @@ menu_item open_from_url_sub_menu = {
     .children = {},
     .on_click = []() { /* Open from URL logic */ },
     .on_hover = []() { /* Show tooltip */ }
-};
-menu_item open_from_clipboard_sub_menu = {
+});
+menu_item_ptr open_from_clipboard_sub_menu = std::make_shared<menu_item>(menu_item{
     .title = "Open from clipboard",
     .shortcut = "",
     .tooltip_title = "Open from clipboard",
@@ -32,8 +35,8 @@ menu_item open_from_clipboard_sub_menu = {
     .children = {},
     .on_click = []() { /* Open from clipboard logic */ },
     .on_hover = []() { /* Show tooltip */ }
-};
-menu_item open_from_other_source_menu = {
+});
+menu_item_ptr open_from_other_source_menu = std::make_shared<menu_item>(menu_item{
     .title = "Open from Other source",
     .shortcut = "",
     .tooltip_title = "Open from Other source",
@@ -43,10 +46,10 @@ menu_item open_from_other_source_menu = {
     .children = {open_from_url_sub_menu, open_from_clipboard_sub_menu},
     .on_click = []() {},
     .on_hover = []() {}
-};
+});
 
 // "Export As" submenu
-menu_item export_as_png = {
+menu_item_ptr export_as_png = std::make_shared<menu_item>(menu_item{
     .title = "PNG",
     .shortcut = "",
     .tooltip_title = "Export as PNG",
@@ -54,13 +57,13 @@ menu_item export_as_png = {
     .sd = separator_direction::NONE,
     .icon = "png_icon.png",
     .children = {},
-    .on_click = []() { 
+    .on_click = []() {
       std::string path = "output.png";
       gCanvasManager.WriteImage(path);
     },
     .on_hover = []() { /* Show tooltip */ }
-};
-menu_item export_as_jpeg = {
+});
+menu_item_ptr export_as_jpeg = std::make_shared<menu_item>(menu_item{
     .title = "JPEG",
     .shortcut = "",
     .tooltip_title = "Export as JPEG",
@@ -70,8 +73,8 @@ menu_item export_as_jpeg = {
     .children = {},
     .on_click = []() { /* Export as JPEG logic */ },
     .on_hover = []() { /* Show tooltip */ }
-};
-menu_item export_as_bmp = {
+});
+menu_item_ptr export_as_bmp = std::make_shared<menu_item>(menu_item{
     .title = "BMP",
     .shortcut = "",
     .tooltip_title = "Export as BMP",
@@ -81,8 +84,8 @@ menu_item export_as_bmp = {
     .children = {},
     .on_click = []() { /* Export as BMP logic */ },
     .on_hover = []() { /* Show tooltip */ }
-};
-menu_item export_as_menu = {
+});
+menu_item_ptr export_as_menu = std::make_shared<menu_item>(menu_item{
     .title = "Export As",
     .shortcut = "",
     .tooltip_title = "Export As",
@@ -92,10 +95,10 @@ menu_item export_as_menu = {
     .children = {export_as_png, export_as_jpeg, export_as_bmp},
     .on_click = []() {},
     .on_hover = []() {}
-};
+});
 
 // Main File Menu Items
-menu_item new_file_menu = {
+menu_item_ptr new_file_menu = std::make_shared<menu_item>(menu_item{
     .title = "New",
     .shortcut = "⌘CTRL+N",
     .tooltip_title = "New File",
@@ -105,8 +108,8 @@ menu_item new_file_menu = {
     .children = {},
     .on_click = []() { /* New file logic */ },
     .on_hover = []() { /* Show tooltip */ }
-};
-menu_item open_file_menu = {
+});
+menu_item_ptr open_file_menu = std::make_shared<menu_item>(menu_item{
     .title = "Open",
     .shortcut = "⌘CTRL+O",
     .tooltip_title = "Open File",
@@ -116,8 +119,8 @@ menu_item open_file_menu = {
     .children = {},
     .on_click = []() { /* Open file logic */ },
     .on_hover = []() { /* Show tooltip */ }
-};
-menu_item open_from_dropbox_menu = {
+});
+menu_item_ptr open_from_dropbox_menu = std::make_shared<menu_item>(menu_item{
     .title = "Open from dropbox",
     .shortcut = "",
     .tooltip_title = "Open from Dropbox",
@@ -127,8 +130,8 @@ menu_item open_from_dropbox_menu = {
     .children = {},
     .on_click = []() { /* Open from Dropbox logic */ },
     .on_hover = []() { /* Show tooltip */ }
-};
-menu_item open_from_drive_menu = {
+});
+menu_item_ptr open_from_drive_menu = std::make_shared<menu_item>(menu_item{
     .title = "Open from drive",
     .shortcut = "",
     .tooltip_title = "Open from Drive",
@@ -138,8 +141,8 @@ menu_item open_from_drive_menu = {
     .children = {},
     .on_click = []() { /* Open from Drive logic */ },
     .on_hover = []() { /* Show tooltip */ }
-};
-menu_item save_file_menu = {
+});
+menu_item_ptr save_file_menu = std::make_shared<menu_item>(menu_item{
     .title = "Save",
     .shortcut = "⌘CTRL+S",
     .tooltip_title = "Save File",
@@ -149,8 +152,8 @@ menu_item save_file_menu = {
     .children = {},
     .on_click = []() { /* Save file logic */ },
     .on_hover = []() { /* Show tooltip */ }
-};
-menu_item save_as_menu = {
+});
+menu_item_ptr save_as_menu = std::make_shared<menu_item>(menu_item{
     .title = "Save As",
     .shortcut = "⌘CTRL+SHIFT+N",
     .tooltip_title = "Save As",
@@ -160,8 +163,8 @@ menu_item save_as_menu = {
     .children = {},
     .on_click = []() { /* Save As logic */ },
     .on_hover = []() { /* Show tooltip */ }
-};
-menu_item save_as_psd_menu = {
+});
+menu_item_ptr save_as_psd_menu = std::make_shared<menu_item>(menu_item{
     .title = "Save As PSD",
     .shortcut = "",
     .tooltip_title = "Save As PSD",
@@ -171,8 +174,8 @@ menu_item save_as_psd_menu = {
     .children = {},
     .on_click = []() { /* Save as PSD logic */ },
     .on_hover = []() { /* Show tooltip */ }
-};
-menu_item export_quick_menu = {
+});
+menu_item_ptr export_quick_menu = std::make_shared<menu_item>(menu_item{
     .title = "Export Quick",
     .shortcut = "⌘CTRL+E",
     .tooltip_title = "Export Quick",
@@ -182,8 +185,8 @@ menu_item export_quick_menu = {
     .children = {},
     .on_click = []() { /* Export Quick logic */ },
     .on_hover = []() { /* Show tooltip */ }
-};
-menu_item print_menu = {
+});
+menu_item_ptr print_menu = std::make_shared<menu_item>(menu_item{
     .title = "Print",
     .shortcut = "⌘CTRL+P",
     .tooltip_title = "Print",
@@ -193,8 +196,8 @@ menu_item print_menu = {
     .children = {},
     .on_click = []() { /* Print logic */ },
     .on_hover = []() { /* Show tooltip */ }
-};
-menu_item close_menu = {
+});
+menu_item_ptr close_menu = std::make_shared<menu_item>(menu_item{
     .title = "Close",
     .shortcut = "⌘CTRL+Q",
     .tooltip_title = "Close",
@@ -204,10 +207,10 @@ menu_item close_menu = {
     .children = {},
     .on_click = []() { /* Close logic */ },
     .on_hover = []() { /* Show tooltip */ }
-};
+});
 
 // The File menu with all submenus and items
-menu_item file_menu = {
+menu_item_ptr file_menu = std::make_shared<menu_item>(menu_item{
     .title = "File",
     .shortcut = "",
     .tooltip_title = "File Menu",
@@ -230,10 +233,10 @@ menu_item file_menu = {
     },
     .on_click = []() {},
     .on_hover = []() {}
-};
+});
 
 // Free Transform submenu
-menu_item free_transform_repeat = {
+menu_item_ptr free_transform_repeat = std::make_shared<menu_item>(menu_item{
     .title = "Repeat",
     .shortcut = "",
     .tooltip_title = "Repeat",
@@ -243,8 +246,8 @@ menu_item free_transform_repeat = {
     .children = {},
     .on_click = []() { /* Repeat transform logic */ },
     .on_hover = []() { /* Show tooltip */ }
-};
-menu_item free_transform_scale = {
+});
+menu_item_ptr free_transform_scale = std::make_shared<menu_item>(menu_item{
     .title = "Scale",
     .shortcut = "",
     .tooltip_title = "Scale",
@@ -254,8 +257,8 @@ menu_item free_transform_scale = {
     .children = {},
     .on_click = []() { /* Scale logic */ },
     .on_hover = []() { /* Show tooltip */ }
-};
-menu_item free_transform_rotate = {
+});
+menu_item_ptr free_transform_rotate = std::make_shared<menu_item>(menu_item{
     .title = "Rotate",
     .shortcut = "",
     .tooltip_title = "Rotate",
@@ -265,8 +268,8 @@ menu_item free_transform_rotate = {
     .children = {},
     .on_click = []() { /* Rotate logic */ },
     .on_hover = []() { /* Show tooltip */ }
-};
-menu_item free_transform_skew = {
+});
+menu_item_ptr free_transform_skew = std::make_shared<menu_item>(menu_item{
     .title = "Skew",
     .shortcut = "",
     .tooltip_title = "Skew",
@@ -276,8 +279,8 @@ menu_item free_transform_skew = {
     .children = {},
     .on_click = []() { /* Skew logic */ },
     .on_hover = []() { /* Show tooltip */ }
-};
-menu_item free_transform_distort = {
+});
+menu_item_ptr free_transform_distort = std::make_shared<menu_item>(menu_item{
     .title = "Distort",
     .shortcut = "",
     .tooltip_title = "Distort",
@@ -287,8 +290,8 @@ menu_item free_transform_distort = {
     .children = {},
     .on_click = []() { /* Distort logic */ },
     .on_hover = []() { /* Show tooltip */ }
-};
-menu_item free_transform_perspective = {
+});
+menu_item_ptr free_transform_perspective = std::make_shared<menu_item>(menu_item{
     .title = "Perspective",
     .shortcut = "",
     .tooltip_title = "Perspective",
@@ -298,8 +301,8 @@ menu_item free_transform_perspective = {
     .children = {},
     .on_click = []() { /* Perspective logic */ },
     .on_hover = []() { /* Show tooltip */ }
-};
-menu_item free_transform_rotate_90_left = {
+});
+menu_item_ptr free_transform_rotate_90_left = std::make_shared<menu_item>(menu_item{
     .title = "Rotate 90 Left",
     .shortcut = "",
     .tooltip_title = "Rotate 90 Left",
@@ -309,8 +312,8 @@ menu_item free_transform_rotate_90_left = {
     .children = {},
     .on_click = []() { /* Rotate 90 left logic */ },
     .on_hover = []() { /* Show tooltip */ }
-};
-menu_item free_transform_rotate_90_right = {
+});
+menu_item_ptr free_transform_rotate_90_right = std::make_shared<menu_item>(menu_item{
     .title = "Rotate 90 Right",
     .shortcut = "",
     .tooltip_title = "Rotate 90 Right",
@@ -320,8 +323,8 @@ menu_item free_transform_rotate_90_right = {
     .children = {},
     .on_click = []() { /* Rotate 90 right logic */ },
     .on_hover = []() { /* Show tooltip */ }
-};
-menu_item free_transform_menu = {
+});
+menu_item_ptr free_transform_menu = std::make_shared<menu_item>(menu_item{
     .title = "Free Transform",
     .shortcut = "",
     .tooltip_title = "Free Transform",
@@ -340,10 +343,10 @@ menu_item free_transform_menu = {
     },
     .on_click = []() {},
     .on_hover = []() {}
-};
+});
 
 // Main Edit Menu Items
-menu_item undo_menu = {
+menu_item_ptr undo_menu = std::make_shared<menu_item>(menu_item{
     .title = "Undo",
     .shortcut = "⌘CTRL+Z",
     .tooltip_title = "Undo",
@@ -353,8 +356,8 @@ menu_item undo_menu = {
     .children = {},
     .on_click = []() { /* Undo logic */ },
     .on_hover = []() { /* Show tooltip */ }
-};
-menu_item redo_menu = {
+});
+menu_item_ptr redo_menu = std::make_shared<menu_item>(menu_item{
     .title = "Redo",
     .shortcut = "⌘CTRL+SHIFT+Z",
     .tooltip_title = "Redo",
@@ -364,8 +367,8 @@ menu_item redo_menu = {
     .children = {},
     .on_click = []() { /* Redo logic */ },
     .on_hover = []() { /* Show tooltip */ }
-};
-menu_item bring_to_front_menu = {
+});
+menu_item_ptr bring_to_front_menu = std::make_shared<menu_item>(menu_item{
     .title = "Bring To Front",
     .shortcut = "⌘]",
     .tooltip_title = "Bring To Front",
@@ -375,8 +378,8 @@ menu_item bring_to_front_menu = {
     .children = {},
     .on_click = []() { /* Bring to front logic */ },
     .on_hover = []() { /* Show tooltip */ }
-};
-menu_item send_to_back_menu = {
+});
+menu_item_ptr send_to_back_menu = std::make_shared<menu_item>(menu_item{
     .title = "Send To Back",
     .shortcut = "⌘[",
     .tooltip_title = "Send To Back",
@@ -386,8 +389,8 @@ menu_item send_to_back_menu = {
     .children = {},
     .on_click = []() { /* Send to back logic */ },
     .on_hover = []() { /* Show tooltip */ }
-};
-menu_item cut_menu = {
+});
+menu_item_ptr cut_menu = std::make_shared<menu_item>(menu_item{
     .title = "Cut",
     .shortcut = "⌘CTRL+X",
     .tooltip_title = "Cut",
@@ -397,8 +400,8 @@ menu_item cut_menu = {
     .children = {},
     .on_click = []() { /* Cut logic */ },
     .on_hover = []() { /* Show tooltip */ }
-};
-menu_item copy_menu = {
+});
+menu_item_ptr copy_menu = std::make_shared<menu_item>(menu_item{
     .title = "Copy",
     .shortcut = "⌘CTRL+C",
     .tooltip_title = "Copy",
@@ -408,8 +411,8 @@ menu_item copy_menu = {
     .children = {},
     .on_click = []() { /* Copy logic */ },
     .on_hover = []() { /* Show tooltip */ }
-};
-menu_item paste_menu = {
+});
+menu_item_ptr paste_menu = std::make_shared<menu_item>(menu_item{
     .title = "Paste",
     .shortcut = "⌘CTRL+V",
     .tooltip_title = "Paste",
@@ -419,8 +422,8 @@ menu_item paste_menu = {
     .children = {},
     .on_click = []() { /* Paste logic */ },
     .on_hover = []() { /* Show tooltip */ }
-};
-menu_item paste_new_layer_menu = {
+});
+menu_item_ptr paste_new_layer_menu = std::make_shared<menu_item>(menu_item{
     .title = "Paste New Layer",
     .shortcut = "⌘CTRL+ALT+V",
     .tooltip_title = "Paste New Layer",
@@ -430,8 +433,8 @@ menu_item paste_new_layer_menu = {
     .children = {},
     .on_click = []() { /* Paste new layer logic */ },
     .on_hover = []() { /* Show tooltip */ }
-};
-menu_item clear_menu = {
+});
+menu_item_ptr clear_menu = std::make_shared<menu_item>(menu_item{
     .title = "clear",
     .shortcut = "",
     .tooltip_title = "Clear",
@@ -441,8 +444,8 @@ menu_item clear_menu = {
     .children = {},
     .on_click = []() { /* Clear logic */ },
     .on_hover = []() { /* Show tooltip */ }
-};
-menu_item clear_canvas_menu = {
+});
+menu_item_ptr clear_canvas_menu = std::make_shared<menu_item>(menu_item{
     .title = "Clear Canvas",
     .shortcut = "⌘CTRL+ALT+X",
     .tooltip_title = "Clear Canvas",
@@ -452,8 +455,8 @@ menu_item clear_canvas_menu = {
     .children = {},
     .on_click = []() { /* Clear canvas logic */ },
     .on_hover = []() { /* Show tooltip */ }
-};
-menu_item fill_menu = {
+});
+menu_item_ptr fill_menu = std::make_shared<menu_item>(menu_item{
     .title = "Fill",
     .shortcut = "",
     .tooltip_title = "Fill",
@@ -463,8 +466,8 @@ menu_item fill_menu = {
     .children = {},
     .on_click = []() { /* Fill logic */ },
     .on_hover = []() { /* Show tooltip */ }
-};
-menu_item stroke_menu = {
+});
+menu_item_ptr stroke_menu = std::make_shared<menu_item>(menu_item{
     .title = "Stroke",
     .shortcut = "",
     .tooltip_title = "Stroke",
@@ -474,8 +477,8 @@ menu_item stroke_menu = {
     .children = {},
     .on_click = []() { /* Stroke logic */ },
     .on_hover = []() { /* Show tooltip */ }
-};
-menu_item content_aware_scale_menu = {
+});
+menu_item_ptr content_aware_scale_menu = std::make_shared<menu_item>(menu_item{
     .title = "Content Aware Scale",
     .shortcut = "",
     .tooltip_title = "Content Aware Scale",
@@ -485,8 +488,8 @@ menu_item content_aware_scale_menu = {
     .children = {},
     .on_click = []() { /* Content aware scale logic */ },
     .on_hover = []() { /* Show tooltip */ }
-};
-menu_item puppet_wrap_menu = {
+});
+menu_item_ptr puppet_wrap_menu = std::make_shared<menu_item>(menu_item{
     .title = "Puppet Wrap",
     .shortcut = "",
     .tooltip_title = "Puppet Wrap",
@@ -496,8 +499,8 @@ menu_item puppet_wrap_menu = {
     .children = {},
     .on_click = []() { /* Puppet wrap logic */ },
     .on_hover = []() { /* Show tooltip */ }
-};
-menu_item transform_menu = {
+});
+menu_item_ptr transform_menu = std::make_shared<menu_item>(menu_item{
     .title = "Transform",
     .shortcut = "",
     .tooltip_title = "Transform",
@@ -507,8 +510,8 @@ menu_item transform_menu = {
     .children = {},
     .on_click = []() { /* Transform logic */ },
     .on_hover = []() { /* Show tooltip */ }
-};
-menu_item wrap_menu = {
+});
+menu_item_ptr wrap_menu = std::make_shared<menu_item>(menu_item{
     .title = "wrap",
     .shortcut = "",
     .tooltip_title = "Wrap",
@@ -518,10 +521,10 @@ menu_item wrap_menu = {
     .children = {},
     .on_click = []() { /* Wrap logic */ },
     .on_hover = []() { /* Show tooltip */ }
-};
+});
 
 // The Edit menu with all submenus and items
-menu_item edit_menu = {
+menu_item_ptr edit_menu = std::make_shared<menu_item>(menu_item{
     .title = "Edit",
     .shortcut = "",
     .tooltip_title = "Edit Menu",
@@ -549,9 +552,10 @@ menu_item edit_menu = {
     },
     .on_click = []() {},
     .on_hover = []() {}
-};
+});
+
 // View Menu Subitems
-menu_item zoom_in_sub_menu = {
+menu_item_ptr zoom_in_sub_menu = std::make_shared<menu_item>(menu_item{
     .title = "Zoom In",
     .shortcut = "⌘+",
     .tooltip_title = "Zoom In",
@@ -561,8 +565,8 @@ menu_item zoom_in_sub_menu = {
     .children = {},
     .on_click = []() { /* Zoom In logic */ },
     .on_hover = []() { /* Show tooltip */ }
-};
-menu_item zoom_out_sub_menu = {
+});
+menu_item_ptr zoom_out_sub_menu = std::make_shared<menu_item>(menu_item{
     .title = "Zoom Out",
     .shortcut = "⌘-",
     .tooltip_title = "Zoom Out",
@@ -572,8 +576,8 @@ menu_item zoom_out_sub_menu = {
     .children = {},
     .on_click = []() { /* Zoom Out logic */ },
     .on_hover = []() { /* Show tooltip */ }
-};
-menu_item reset_zoom_sub_menu = {
+});
+menu_item_ptr reset_zoom_sub_menu = std::make_shared<menu_item>(menu_item{
     .title = "Reset Zoom",
     .shortcut = "⌘0",
     .tooltip_title = "Reset Zoom",
@@ -583,8 +587,8 @@ menu_item reset_zoom_sub_menu = {
     .children = {},
     .on_click = []() { /* Reset Zoom logic */ },
     .on_hover = []() { /* Show tooltip */ }
-};
-menu_item fullscreen_sub_menu = {
+});
+menu_item_ptr fullscreen_sub_menu = std::make_shared<menu_item>(menu_item{
     .title = "Fullscreen",
     .shortcut = "F11",
     .tooltip_title = "Fullscreen",
@@ -594,9 +598,9 @@ menu_item fullscreen_sub_menu = {
     .children = {},
     .on_click = []() { /* Fullscreen logic */ },
     .on_hover = []() { /* Show tooltip */ }
-};
+});
 
-menu_item view_menu = {
+menu_item_ptr view_menu = std::make_shared<menu_item>(menu_item{
     .title = "View",
     .shortcut = "",
     .tooltip_title = "View Menu",
@@ -606,10 +610,10 @@ menu_item view_menu = {
     .children = {zoom_in_sub_menu, zoom_out_sub_menu, reset_zoom_sub_menu, fullscreen_sub_menu},
     .on_click = []() {},
     .on_hover = []() {}
-};
+});
 
 // Layer Menu Subitems
-menu_item new_layer_sub_menu = {
+menu_item_ptr new_layer_sub_menu = std::make_shared<menu_item>(menu_item{
     .title = "New Layer",
     .shortcut = "⇧⌘N",
     .tooltip_title = "New Layer",
@@ -619,8 +623,8 @@ menu_item new_layer_sub_menu = {
     .children = {},
     .on_click = []() { /* New Layer logic */ },
     .on_hover = []() { /* Show tooltip */ }
-};
-menu_item duplicate_layer_sub_menu = {
+});
+menu_item_ptr duplicate_layer_sub_menu = std::make_shared<menu_item>(menu_item{
     .title = "Duplicate Layer",
     .shortcut = "⌘D",
     .tooltip_title = "Duplicate Layer",
@@ -630,8 +634,8 @@ menu_item duplicate_layer_sub_menu = {
     .children = {},
     .on_click = []() { /* Duplicate Layer logic */ },
     .on_hover = []() { /* Show tooltip */ }
-};
-menu_item merge_down_sub_menu = {
+});
+menu_item_ptr merge_down_sub_menu = std::make_shared<menu_item>(menu_item{
     .title = "Merge Down",
     .shortcut = "⌘E",
     .tooltip_title = "Merge Down",
@@ -641,8 +645,8 @@ menu_item merge_down_sub_menu = {
     .children = {},
     .on_click = []() { /* Merge Down logic */ },
     .on_hover = []() { /* Show tooltip */ }
-};
-menu_item delete_layer_sub_menu = {
+});
+menu_item_ptr delete_layer_sub_menu = std::make_shared<menu_item>(menu_item{
     .title = "Delete Layer",
     .shortcut = "⌫",
     .tooltip_title = "Delete Layer",
@@ -652,9 +656,9 @@ menu_item delete_layer_sub_menu = {
     .children = {},
     .on_click = []() { /* Delete Layer logic */ },
     .on_hover = []() { /* Show tooltip */ }
-};
+});
 
-menu_item layer_menu = {
+menu_item_ptr layer_menu = std::make_shared<menu_item>(menu_item{
     .title = "Layer",
     .shortcut = "",
     .tooltip_title = "Layer Menu",
@@ -664,10 +668,10 @@ menu_item layer_menu = {
     .children = {new_layer_sub_menu, duplicate_layer_sub_menu, merge_down_sub_menu, delete_layer_sub_menu},
     .on_click = []() {},
     .on_hover = []() {}
-};
+});
 
 // Help Menu Subitems
-menu_item about_sub_menu = {
+menu_item_ptr about_sub_menu = std::make_shared<menu_item>(menu_item{
     .title = "About",
     .shortcut = "",
     .tooltip_title = "About",
@@ -677,8 +681,8 @@ menu_item about_sub_menu = {
     .children = {},
     .on_click = []() { /* About logic */ },
     .on_hover = []() { /* Show tooltip */ }
-};
-menu_item documentation_sub_menu = {
+});
+menu_item_ptr documentation_sub_menu = std::make_shared<menu_item>(menu_item{
     .title = "Documentation",
     .shortcut = "F1",
     .tooltip_title = "Documentation",
@@ -688,8 +692,8 @@ menu_item documentation_sub_menu = {
     .children = {},
     .on_click = []() { /* Documentation logic */ },
     .on_hover = []() { /* Show tooltip */ }
-};
-menu_item report_issue_sub_menu = {
+});
+menu_item_ptr report_issue_sub_menu = std::make_shared<menu_item>(menu_item{
     .title = "Report Issue",
     .shortcut = "",
     .tooltip_title = "Report Issue",
@@ -699,9 +703,9 @@ menu_item report_issue_sub_menu = {
     .children = {},
     .on_click = []() { /* Issue reporting logic */ },
     .on_hover = []() { /* Show tooltip */ }
-};
+});
 
-menu_item help_menu = {
+menu_item_ptr help_menu = std::make_shared<menu_item>(menu_item{
     .title = "Help",
     .shortcut = "",
     .tooltip_title = "Help Menu",
@@ -711,10 +715,10 @@ menu_item help_menu = {
     .children = {about_sub_menu, documentation_sub_menu, report_issue_sub_menu},
     .on_click = []() {},
     .on_hover = []() {}
-};
+});
 
 // Top-level Navbar
-menu_item gNavbar = {
+menu_item_ptr gNavbar = std::make_shared<menu_item>(menu_item{
     .title = "",
     .shortcut = "",
     .tooltip_title = "Navbar",
@@ -724,28 +728,24 @@ menu_item gNavbar = {
     .children = {file_menu, edit_menu, view_menu, layer_menu, help_menu},
     .on_click = []() {},
     .on_hover = []() {}
-};
+});
 
-void draw_subitems(const menu_item& item) {
-    if (ImGui::BeginMenu(item.title.c_str())) {
-        for (const auto &subitem : item.children) {
-            if(subitem.sd == separator_direction::UP){
-              ImGui::Separator();
-}
-            if (!subitem.children.empty()) {
+void draw_subitems(const menu_item_ptr& item) {
+    if (ImGui::BeginMenu(item->title.c_str())) {
+        for (const auto& subitem : item->children) {
+            if (subitem->sd == separator_direction::UP) ImGui::Separator();
+            if (!subitem->children.empty()) {
                 draw_subitems(subitem);
             } else {
-                if (ImGui::MenuItem(subitem.title.c_str(), subitem.shortcut.c_str())) {
-                    if (subitem.on_click) subitem.on_click();
+                if (ImGui::MenuItem(subitem->title.c_str(), subitem->shortcut.c_str())) {
+                    if (subitem->on_click) subitem->on_click();
                 }
             }
-            if(subitem.sd == separator_direction::DOWN){
-              ImGui::Separator();
-            }
-            if (ImGui::IsItemHovered() && subitem.on_hover) {
-                subitem.on_hover();
-                if (!subitem.tooltip_title.empty() || !subitem.tooltip_desc.empty()) {
-                    ImGui::SetTooltip("%s\n%s", subitem.tooltip_title.c_str(), subitem.tooltip_desc.c_str());
+            if (subitem->sd == separator_direction::DOWN) ImGui::Separator();
+            if (ImGui::IsItemHovered() && subitem->on_hover) {
+                subitem->on_hover();
+                if (!subitem->tooltip_title.empty() || !subitem->tooltip_desc.empty()) {
+                    ImGui::SetTooltip("%s\n%s", subitem->tooltip_title.c_str(), subitem->tooltip_desc.c_str());
                 }
             }
         }
@@ -755,20 +755,18 @@ void draw_subitems(const menu_item& item) {
 
 void render_navbar() {
     if (ImGui::BeginMainMenuBar()) {
-        for (const auto &item : gNavbar.children) {
-            if (!item.children.empty()) {
+        for (const auto& item : gNavbar->children) {
+            if (!item->children.empty()) {
                 draw_subitems(item);
             } else {
-
-                if (ImGui::MenuItem(item.title.c_str(), item.shortcut.c_str())) {
-                    if (item.on_click) item.on_click();
+                if (ImGui::MenuItem(item->title.c_str(), item->shortcut.c_str())) {
+                    if (item->on_click) item->on_click();
                 }
-                
             }
-            if (ImGui::IsItemHovered() && item.on_hover) {
-                item.on_hover();
-                if (!item.tooltip_title.empty() || !item.tooltip_desc.empty()) {
-                    ImGui::SetTooltip("%s\n%s", item.tooltip_title.c_str(), item.tooltip_desc.c_str());
+            if (ImGui::IsItemHovered() && item->on_hover) {
+                item->on_hover();
+                if (!item->tooltip_title.empty() || !item->tooltip_desc.empty()) {
+                    ImGui::SetTooltip("%s\n%s", item->tooltip_title.c_str(), item->tooltip_desc.c_str());
                 }
             }
         }

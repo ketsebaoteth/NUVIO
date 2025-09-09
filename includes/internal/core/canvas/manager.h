@@ -98,7 +98,7 @@ class CanvasManager {
     glm::vec2 mCanvasPosition;
     glm::vec2 mCanvasSize;
     glm::vec4 mCanvasBackgroundColor;
-
+    ImVec2 mHandleSize = ImVec2(10, 10);
     ImVec2 mMouseDelta;
     ImVec2 mMouseLocation;
     canvas::Rect mHandleRect; // rect used to draw handles

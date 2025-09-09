@@ -222,6 +222,7 @@ void CanvasManager::updateSelected() {
     for (auto &layers : mLayers) {
         for (auto &renderables : layers) {
             canvas::Rect renderable_rect = renderables->get_rect();
+
             if (isPointInRect(renderable_rect, mMouseLocation)) {
                 AddActiveRenderable(renderables);
             }
@@ -281,10 +282,10 @@ void CanvasManager::DrawHandles() const {
                        IM_COL32(0, 0, 255, 255), 0.0f, 0, 2.0f);
 
     //draw the handles on the 4 edges
-    canvas::DrawStrokedRectangle(top_left_screen, {10,10}); 
-    canvas::DrawStrokedRectangle(bottom_right_screen, {10,10});
-    canvas::DrawStrokedRectangle({top_left_screen.x,bottom_right_screen.y}, {10,10});
-    canvas::DrawStrokedRectangle({bottom_right_screen.x,top_left_screen.y}, {10,10});
+    canvas::DrawStrokedRectangle(top_left_screen, mHandleSize); 
+    canvas::DrawStrokedRectangle(bottom_right_screen, mHandleSize);
+    canvas::DrawStrokedRectangle({top_left_screen.x,bottom_right_screen.y}, mHandleSize);
+    canvas::DrawStrokedRectangle({bottom_right_screen.x,top_left_screen.y}, mHandleSize);
 
 }
 

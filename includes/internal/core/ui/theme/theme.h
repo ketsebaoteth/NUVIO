@@ -14,7 +14,7 @@ struct theme_data {
   // Font
   std::string DefaultFontPath =
       "./assets/fonts/inter/static/Inter_24pt-Regular.ttf";
-  float DefaultFontSize = 12.0f;
+  float DefaultFontSize = 10.0f;
 
   // Layout
   float Alpha = 1.0f;

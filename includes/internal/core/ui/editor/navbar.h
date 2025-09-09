@@ -10,6 +10,6 @@ void render_navbar();
 
 component get_navbar_component();
 
-extern menu_item gNavbar;
+extern std::shared_ptr<menu_item> gNavbar;
 
 NUVIO_UI_NAMESPACE_END

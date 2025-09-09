@@ -3,6 +3,8 @@
 #include "core/ui/components/comp.h"
 #include <vector>
 
+
+
 NUVIO_NAMESPACE_BEGIN
 
 void showFrameTiming();
@@ -39,6 +41,7 @@ class UIManager {
         void WriteLayoutConfig();
 
         void Shutdown();
+
     private:
         // List of registered UI components
         std::vector<nuvio::ui::component> mComponents;

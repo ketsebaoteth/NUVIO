@@ -1,11 +1,10 @@
 #include "core/ui/editor/tools.h"
 #include "core/nuvio_namespaces.h"
 #include "imgui.h"
-#define STB_IMAGE_IMPLEMENTATION
-#include "stb_image.h"
+#include "core/utils/texture.h"
 #include <vector>
 #include <string>
-#include "glad/glad.h"
+#include "core/utils/texture.h"
 #include "core/ui/components/comp.h"
 #include <unordered_map>
 #include <cstdint> // for intptr_t
@@ -16,29 +15,7 @@ NUVIO_UI_NAMESPACE_BEGIN
 // Simple OpenGL texture loader using stb_image.h
 // (You can replace with your renderer's texture loader if not using OpenGL)
 
-static GLuint LoadTextureFromFile(const char* filename, int* out_width, int* out_height)
-{
-    int image_width = 0;
-    int image_height = 0;
-    unsigned char* image_data = stbi_load(filename, &image_width, &image_height, NULL, 4);
-    if (image_data == NULL)
-        return 0;
 
-    GLuint image_texture;
-    glGenTextures(1, &image_texture);
-    glBindTexture(GL_TEXTURE_2D, image_texture);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-#ifdef GL_UNPACK_ROW_LENGTH
-    glPixelStorei(GL_UNPACK_ROW_LENGTH, 0);
-#endif
-    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, image_width, image_height, 0, GL_RGBA, GL_UNSIGNED_BYTE, image_data);
-    stbi_image_free(image_data);
-
-    *out_width = image_width;
-    *out_height = image_height;
-    return image_texture;
-}
 
 // --------- TOOLBAR STRUCTURE ---------
 struct tool {

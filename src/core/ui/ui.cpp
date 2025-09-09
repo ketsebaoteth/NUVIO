@@ -8,6 +8,8 @@
 #include <algorithm>
 #include "Tracy.hpp"
 
+
+
 NUVIO_NAMESPACE_BEGIN
 
 void UIManager::init() {
@@ -19,7 +21,7 @@ void UIManager::init() {
     WriteLayoutConfig();
   }
   GLFWmonitor *monitor = glfwGetPrimaryMonitor();
-  m_ui_scaler_factor = 2.1f;
+  m_ui_scaler_factor = 1.5f;
   m_dpi_scale = ImGui_ImplGlfw_GetContentScaleForMonitor(monitor);
   m_dpi_scale *= m_ui_scaler_factor;
   
@@ -89,6 +91,7 @@ void UIManager::begin_frame() {
   // Dockspace ID
   ImGuiID dockspace_id = ImGui::GetID("MyDockSpace");
   ImGui::DockSpace(dockspace_id, ImVec2(0.0f, 0.0f), dockspace_flags);
+
 }
 
 void UIManager::end_frame() {

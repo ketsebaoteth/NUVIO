@@ -3,6 +3,7 @@
 #include <string>
 #include <vector>
 #include "core/ui/components/comp.h"
+#include <memory>
 
 NUVIO_UI_NAMESPACE_BEGIN
 
@@ -19,7 +20,7 @@ struct menu_item {
     std::string tooltip_desc;
     separator_direction sd = separator_direction::NONE;
     std::string icon; // icon path relative to /assets/icons/
-    std::vector<menu_item> children;
+    std::vector<std::shared_ptr<menu_item>> children;
     void(*on_click)();
     void(*on_hover)();
     // add more event handlers if needed

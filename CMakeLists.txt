@@ -46,7 +46,7 @@ add_executable(NUVIO
     ${IMGUI_SOURCES}
     ${GLAD_SOURCES}
     ./profiling/Tracy/public/TracyClient.cpp
-)
+ "includes/internal/core/utils/texture.h" "src/core/utils/texture.cpp" )
 
 # Include directories
 target_include_directories(NUVIO PRIVATE
