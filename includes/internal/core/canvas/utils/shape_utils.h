@@ -40,6 +40,6 @@ struct Rect{
 
 std::ostream& operator<<(std::ostream& os, const Rect& r);
 
-void DrawStrokedRectangle(ImVec2 pos, ImVec2 size);
+void DrawStrokedRectangle(canvas::Rect rect);
 
 NUVIO_CANVAS_NAMESPACE_END

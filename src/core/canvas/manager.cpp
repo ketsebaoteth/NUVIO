@@ -141,7 +141,7 @@ GLuint CanvasManager::Render() {
 
     // draw imgui side handles
     if (!mSelectedRenderables.empty()) {
-        updateHandleRect();
+        updateOutlineRect();
         DrawHandles();
     }
 
@@ -179,7 +179,7 @@ void CanvasManager::AddActiveRenderable(canvas::Irenderable *renderable) {
     }
 }
 
-void CanvasManager::updateHandleRect() {
+void CanvasManager::updateOutlineRect() {
     glm::vec2 minXY(std::numeric_limits<float>::max(), std::numeric_limits<float>::max());
     glm::vec2 maxXY(std::numeric_limits<float>::lowest(), std::numeric_limits<float>::lowest());
 
@@ -261,8 +261,6 @@ void CanvasManager::AppendSelected() {
 }
 
 bool CanvasManager::isPointInRect(nuvio::canvas::Rect &rect, ImVec2 &vec) {
-    // Canvas dimensions in pixels
-
     // Helper lambda to convert OpenGL [-1, 1] to pixel space [0, canvas_size]
     auto glToPixelX = [&](float gl_x) { return ((gl_x + 1.0f) * 0.5f) * mCanvasSize.x; };
     auto glToPixelY = [&](float gl_y) { return ((1.0f - gl_y) * 0.5f) * mCanvasSize.y;; };
@@ -277,13 +275,13 @@ bool CanvasManager::isPointInRect(nuvio::canvas::Rect &rect, ImVec2 &vec) {
     return (vec.x >= left_px && vec.x <= right_px && vec.y >= top_px && vec.y <= bottom_px);
 }
 
-ImVec2 CanvasManager::NDCToScreen(const ImVec2 &ndc) const {
+glm::vec2 CanvasManager::NDCToScreen(const glm::vec2 &ndc) const {
     // Convert NDC -> canvas-local pixel coords, then offset by canvas position
-    return ImVec2(mCanvasPosition.x + (ndc.x + 1.0f) * 0.5f * mCanvasSize.x,
+    return glm::vec2(mCanvasPosition.x + (ndc.x + 1.0f) * 0.5f * mCanvasSize.x,
                   mCanvasPosition.y + (1.0f - (ndc.y + 1.0f) * 0.5f) * mCanvasSize.y);
 }
 
-void CanvasManager::DrawHandles() {
+void CanvasManager::updateHandleRects(){
     // Get rect edges in NDC
     float left = mHandleRect.edge_position(canvas::RectSide::LEFT);
     float right = mHandleRect.edge_position(canvas::RectSide::RIGHT);
@@ -291,35 +289,31 @@ void CanvasManager::DrawHandles() {
     float bottom = mHandleRect.edge_position(canvas::RectSide::TOP);
 
     // Convert corners to absolute screen pixel coords
-    ImVec2 top_left_screen = NDCToScreen(ImVec2(left, top));
-    ImVec2 bottom_right_screen = NDCToScreen(ImVec2(right, bottom));
-    // Draw in ImGui overlay
+    mOutlineTopLeftScreen = NDCToScreen(glm::vec2(left, top));
+    mOutlineBottomRightScreen = NDCToScreen(glm::vec2(right, bottom));
+
+    mHandleRects.clear();
+    // handle positions and sizes relative to canvas
+    mHandleRects.insert(mHandleRects.end(), {
+    {glm::vec2(mOutlineTopLeftScreen.x - mCanvasPosition.x, mOutlineTopLeftScreen.y - mCanvasPosition.y), mHandleSize},
+    {glm::vec2(mOutlineBottomRightScreen.x - mCanvasPosition.x, mOutlineBottomRightScreen.y - mCanvasPosition.y), mHandleSize},
+    {glm::vec2(mOutlineTopLeftScreen.x - mCanvasPosition.x, mOutlineBottomRightScreen.y - mCanvasPosition.y), mHandleSize},
+    {glm::vec2(mOutlineBottomRightScreen.x - mCanvasPosition.x, mOutlineTopLeftScreen.y - mCanvasPosition.y), mHandleSize}
+    });
+}
+
+void CanvasManager::DrawHandles() {
+    
+    updateHandleRects();
+    // Draw in outline rectangle
     ImDrawList *draw_list = ImGui::GetForegroundDrawList();
-    draw_list->AddRect({top_left_screen.x, top_left_screen.y}, {bottom_right_screen.x, bottom_right_screen.y},
+    draw_list->AddRect({mOutlineTopLeftScreen.x, mOutlineTopLeftScreen.y}, {mOutlineBottomRightScreen.x, mOutlineBottomRightScreen.y},
                        IM_COL32(0, 0, 255, 255), 0.0f, 0, 2.0f);
 
-    mHandleRects.clear();
-    // Store the handle rects for mouse interaction, relative to the canvas
-    // todo: refactor this mess
-    mHandleRects.clear();
-    mHandleRects.emplace_back(glm::vec2(top_left_screen.x - mCanvasPosition.x, top_left_screen.y - mCanvasPosition.y),
-                              glm::vec2(mHandleSize.x, mHandleSize.y));
-    mHandleRects.emplace_back(
-        glm::vec2(bottom_right_screen.x - mCanvasPosition.x, bottom_right_screen.y - mCanvasPosition.y),
-        glm::vec2(mHandleSize.x, mHandleSize.y));
-    mHandleRects.emplace_back(
-        glm::vec2(top_left_screen.x - mCanvasPosition.x, bottom_right_screen.y - mCanvasPosition.y),
-        glm::vec2(mHandleSize.x, mHandleSize.y));
-    mHandleRects.emplace_back(
-        glm::vec2(bottom_right_screen.x - mCanvasPosition.x, top_left_screen.y - mCanvasPosition.y),
-        glm::vec2(mHandleSize.x, mHandleSize.y));
-
-    // Todo: refactor to use a rect to draw stroked rectangles
-    //draw the handles on the 4 edges
-    canvas::DrawStrokedRectangle(top_left_screen, mHandleSize); 
-    canvas::DrawStrokedRectangle(bottom_right_screen, mHandleSize);
-    canvas::DrawStrokedRectangle({top_left_screen.x,bottom_right_screen.y}, mHandleSize);
-    canvas::DrawStrokedRectangle({bottom_right_screen.x,top_left_screen.y}, mHandleSize);
+    for(auto &handle : mHandleRects) {
+        // make them relative to window cause imgui 
+        canvas::DrawStrokedRectangle({handle.position + mCanvasPosition, handle.size});
+    }
 
 }
 
@@ -346,19 +340,19 @@ void CanvasManager::updateMouseCollision() {
         ImVec2 moved, fixed;
 
         switch (mResizingHandleIndex) {
-        case 0: // bottom-left moves, top-right fixed
+        case 0: // bottom-left moves
             moved = {bl.x + world_dx, bl.y + world_dy};
             fixed = tr;
             break;
-        case 1: // top-right moves, bottom-left fixed
+        case 1: // top-right moves
             moved = {tr.x + world_dx, tr.y + world_dy};
             fixed = bl;
             break;
-        case 2: // top-left moves, bottom-right fixed
+        case 2: // top-left moves
             moved = {tl.x + world_dx, tl.y + world_dy};
             fixed = br;
             break;
-        case 3: // bottom-right moves, top-left fixed
+        case 3: // bottom-right moves
             moved = {br.x + world_dx, br.y + world_dy};
             fixed = tl;
             break;
@@ -410,7 +404,7 @@ void CanvasManager::WriteImage(std::string &path) {
     mSelectedRenderables.clear();
     std::vector<unsigned char> pixels =
         ReadPixels(0, 0, static_cast<int>(mCanvasSize.x), static_cast<int>(mCanvasSize.y));
-    stbi_write_png(path.c_str(), mCanvasSize.x, mCanvasSize.y, 4, pixels.data(), mCanvasSize.x * 4);
+    stbi_write_png(path.c_str(), static_cast<int>(mCanvasSize.x), static_cast<int>(mCanvasSize.y), 4, pixels.data(), static_cast<int>(mCanvasSize.x * 4));
 }
 
 CanvasManager gCanvasManager;

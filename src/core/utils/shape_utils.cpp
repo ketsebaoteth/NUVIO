@@ -17,19 +17,19 @@ std::ostream &operator<<(std::ostream &os, const Rect &r) {
        << "bottom=" << r.edge_position(nuvio::canvas::RectSide::BOTTOM) << " }";
     return os;
 }
-void DrawStrokedRectangle(ImVec2 pos, ImVec2 size) {
+void DrawStrokedRectangle(Rect rect) {
     ImDrawList *draw_list = ImGui::GetForegroundDrawList();
-    ImVec2 halfedSize = {size.x/2,size.y/2};
+    ImVec2 halfedSize = {rect.size.x/2,rect.size.y/2};
     // draw handle
-    draw_list->AddRectFilled(ImVec2(pos.x - halfedSize.x, pos.y - halfedSize.y),
-                             ImVec2(pos.x + size.x, pos.y + size.x),
+    draw_list->AddRectFilled(ImVec2(rect.position.x - halfedSize.x, rect.position.y - halfedSize.y),
+                             ImVec2(rect.position.x + rect.size.x, rect.position.y + rect.size.x),
                              IM_COL32(255, 255, 255, 255), // white fill
                              5.0f                          // optional corner rounding
     );
 
     // Then: draw blue border
-    draw_list->AddRect(ImVec2(pos.x - halfedSize.x, pos.y - halfedSize.y),
-                       ImVec2(pos.x + size.x, pos.y + size.y), IM_COL32(0, 0, 255, 255), // blue border
+    draw_list->AddRect(ImVec2(rect.position.x - halfedSize.x, rect.position.y - halfedSize.y),
+                       ImVec2(rect.position.x + rect.size.x, rect.position.y + rect.size.y), IM_COL32(0, 0, 255, 255), // blue border
                        5.0f, // match corner rounding
                        0,    // flags (0 = all corners)
                        2.0f  // thickness

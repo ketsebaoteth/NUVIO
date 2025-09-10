@@ -21,6 +21,7 @@ struct MoveData {
     ImVec2 newPos;
 };
 
+// Command to move renderables and support undo/redo
 class MoveCommand : public action {
   public:
     MoveCommand(const std::vector<MoveData> &moves) : mMoves(moves) {}
@@ -54,7 +55,8 @@ class CanvasManager {
     void updateMouseCollision();
     void updateSelected();
     void AppendSelected();
-    void updateHandleRect();
+    void updateOutlineRect();
+    void updateHandleRects();
     /**
      * Dragging api
      */
@@ -81,9 +83,9 @@ class CanvasManager {
     glm::vec2 GetCanvasPosition();
     // -- for image exporting --
     std::vector<unsigned char> ReadPixels(int x, int y, int width, int height);
-    void WriteImage(std::string& path);
+    void WriteImage(std::string &path);
 
-    ImVec2 NDCToScreen(const ImVec2 &ndc) const;
+    glm::vec2 NDCToScreen(const glm::vec2 &ndc) const;
     /**
      *
      * canvas layer and renderable insertion
@@ -102,12 +104,14 @@ class CanvasManager {
     glm::vec2 mCanvasSize;
     glm::vec4 mCanvasBackgroundColor;
 
-    ImVec2 mHandleSize = ImVec2(10, 10);
+    static constexpr glm::vec2 mHandleSize  = glm::vec2(10, 10);
     std::vector<canvas::Rect> mHandleRects;
 
     ImVec2 mMouseDelta;
     ImVec2 mMouseLocation;
     canvas::Rect mHandleRect; // rect used to draw handles
+    glm::vec2 mOutlineTopLeftScreen;
+    glm::vec2 mOutlineBottomRightScreen;
 
     std::vector<std::vector<canvas::Irenderable *>> mLayers;
     // -- canvas properties --
@@ -126,7 +130,6 @@ class CanvasManager {
     bool isPointInRect(nuvio::canvas::Rect &rect, ImVec2 &vec);
     // -- for undo ---
     std::vector<MoveData> mMoveData; // data to store the starting and endin
-
 };
 
 extern CanvasManager gCanvasManager;

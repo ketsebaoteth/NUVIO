@@ -40,6 +40,7 @@ component get_viewport_component() {
                          gCanvasManager.SetMouseLocation(relPos);
 
                          ImGui::SetCursorScreenPos(imagePos);
+                         // Invisible button to cover the image for interaction
                          ImGui::InvisibleButton("canvas_button", imageSize);
 
                          ImVec2 dragDelta = ImGui::GetIO().MouseDelta;
