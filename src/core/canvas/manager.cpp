@@ -32,10 +32,12 @@ void CanvasManager::Init(int width, int height) {
 
     // create frame buffer
     glGenFramebuffers(1, &mFramebuffer);
+    assert(mFramebuffer && "Failed to generate framebuffer");
     glBindFramebuffer(GL_FRAMEBUFFER, mFramebuffer);
 
     // create canvas texture
     glGenTextures(1, &mCanvasTexture);
+    assert(mCanvasTexture && "Failed to generate canvas texture");
     glBindTexture(GL_TEXTURE_2D, mCanvasTexture);
     glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, static_cast<GLsizei>(mCanvasSize.x), static_cast<GLsizei>(mCanvasSize.y), 0,
                  GL_RGBA, GL_UNSIGNED_BYTE, nullptr);
@@ -55,16 +57,19 @@ void CanvasManager::Init(int width, int height) {
     mShader = canvas::shader("shaders/default_vertex.glsl", "shaders/default_fragment.glsl");
     // create vao
     glGenVertexArrays(1, &mVao);
+    assert(mVao && "Failed to generate vertex array object");
     glBindVertexArray(mVao);
 
     // create vbo
     glGenBuffers(1, &mVbo);
+    assert(mVbo && "Failed to generate vertex buffer object");
     glBindBuffer(GL_ARRAY_BUFFER, mVbo);
 
     glBufferData(GL_ARRAY_BUFFER, 0, nullptr, GL_DYNAMIC_DRAW);
 
     // create ebo
     glGenBuffers(1, &mEbo);
+    assert(mEbo && "Failed to generate element buffer object");
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, mEbo);
     // You can allocate zero bytes here as a placeholder, e.g.:
     glBufferData(GL_ELEMENT_ARRAY_BUFFER, 0, nullptr, GL_DYNAMIC_DRAW);
@@ -163,6 +168,7 @@ void CanvasManager::AppendRenderable(canvas::Irenderable *renderable, int index)
 }
 
 void CanvasManager::RemoveRenderable(canvas::Irenderable *renderable, int index) {
+    assert(index >= 0 && index < static_cast<int>(mLayers.size()) && "Layer index out of bounds");
     auto &vec = mLayers[index];
     vec.erase(std::remove(vec.begin(), vec.end(), renderable), vec.end());
 }
@@ -263,7 +269,10 @@ void CanvasManager::AppendSelected() {
 bool CanvasManager::isPointInRect(nuvio::canvas::Rect &rect, ImVec2 &vec) {
     // Helper lambda to convert OpenGL [-1, 1] to pixel space [0, canvas_size]
     auto glToPixelX = [&](float gl_x) { return ((gl_x + 1.0f) * 0.5f) * mCanvasSize.x; };
-    auto glToPixelY = [&](float gl_y) { return ((1.0f - gl_y) * 0.5f) * mCanvasSize.y;; };
+    auto glToPixelY = [&](float gl_y) {
+        return ((1.0f - gl_y) * 0.5f) * mCanvasSize.y;
+        ;
+    };
 
     // Convert rect edges from OpenGL space to pixel space
     float left_px = glToPixelX(rect.edge_position(nuvio::canvas::RectSide::LEFT));
@@ -278,10 +287,10 @@ bool CanvasManager::isPointInRect(nuvio::canvas::Rect &rect, ImVec2 &vec) {
 glm::vec2 CanvasManager::NDCToScreen(const glm::vec2 &ndc) const {
     // Convert NDC -> canvas-local pixel coords, then offset by canvas position
     return glm::vec2(mCanvasPosition.x + (ndc.x + 1.0f) * 0.5f * mCanvasSize.x,
-                  mCanvasPosition.y + (1.0f - (ndc.y + 1.0f) * 0.5f) * mCanvasSize.y);
+                     mCanvasPosition.y + (1.0f - (ndc.y + 1.0f) * 0.5f) * mCanvasSize.y);
 }
 
-void CanvasManager::updateHandleRects(){
+void CanvasManager::updateHandleRects() {
     // Get rect edges in NDC
     float left = mHandleRect.edge_position(canvas::RectSide::LEFT);
     float right = mHandleRect.edge_position(canvas::RectSide::RIGHT);
@@ -294,35 +303,40 @@ void CanvasManager::updateHandleRects(){
 
     mHandleRects.clear();
     // handle positions and sizes relative to canvas
-    mHandleRects.insert(mHandleRects.end(), {
-    {glm::vec2(mOutlineTopLeftScreen.x - mCanvasPosition.x, mOutlineTopLeftScreen.y - mCanvasPosition.y), mHandleSize},
-    {glm::vec2(mOutlineBottomRightScreen.x - mCanvasPosition.x, mOutlineBottomRightScreen.y - mCanvasPosition.y), mHandleSize},
-    {glm::vec2(mOutlineTopLeftScreen.x - mCanvasPosition.x, mOutlineBottomRightScreen.y - mCanvasPosition.y), mHandleSize},
-    {glm::vec2(mOutlineBottomRightScreen.x - mCanvasPosition.x, mOutlineTopLeftScreen.y - mCanvasPosition.y), mHandleSize}
-    });
+    mHandleRects.insert(
+        mHandleRects.end(),
+        {{glm::vec2(mOutlineTopLeftScreen.x - mCanvasPosition.x, mOutlineTopLeftScreen.y - mCanvasPosition.y),
+          mHandleSize},
+         {glm::vec2(mOutlineBottomRightScreen.x - mCanvasPosition.x, mOutlineBottomRightScreen.y - mCanvasPosition.y),
+          mHandleSize},
+         {glm::vec2(mOutlineTopLeftScreen.x - mCanvasPosition.x, mOutlineBottomRightScreen.y - mCanvasPosition.y),
+          mHandleSize},
+         {glm::vec2(mOutlineBottomRightScreen.x - mCanvasPosition.x, mOutlineTopLeftScreen.y - mCanvasPosition.y),
+          mHandleSize}});
 }
 
 void CanvasManager::DrawHandles() {
-    
+
     updateHandleRects();
     // Draw in outline rectangle
     ImDrawList *draw_list = ImGui::GetForegroundDrawList();
-    draw_list->AddRect({mOutlineTopLeftScreen.x, mOutlineTopLeftScreen.y}, {mOutlineBottomRightScreen.x, mOutlineBottomRightScreen.y},
-                       IM_COL32(0, 0, 255, 255), 0.0f, 0, 2.0f);
+    draw_list->AddRect({mOutlineTopLeftScreen.x, mOutlineTopLeftScreen.y},
+                       {mOutlineBottomRightScreen.x, mOutlineBottomRightScreen.y}, IM_COL32(0, 0, 255, 255), 0.0f, 0,
+                       2.0f);
 
-    for(auto &handle : mHandleRects) {
-        // make them relative to window cause imgui 
+    for (auto &handle : mHandleRects) {
+        // make them relative to window cause imgui
         canvas::DrawStrokedRectangle({handle.position + mCanvasPosition, handle.size});
     }
-
 }
 
 void CanvasManager::updateMouseCollision() {
+    // currently only support resizing single object
     if (mIsResizing) {
         if (mSelectedRenderables.empty())
             return;
-
         auto renderable = mSelectedRenderables[0];
+        assert(renderable && "Renderable pointer is null");
         canvas::Rect rect = renderable->get_rect();
 
         float half_w = rect.size.x * 0.5f;
@@ -393,6 +407,7 @@ void CanvasManager::RegisterMoveEnd() {
 }
 
 std::vector<unsigned char> CanvasManager::ReadPixels(int x, int y, int width, int height) {
+    assert(width > 0 && height > 0 && "ReadPixels: width and height should be positive");
     glBindFramebuffer(GL_FRAMEBUFFER, mFramebuffer);
     std::vector<unsigned char> pixels(width * height * 4); // rgba
     glReadPixels(x, y, width, height, GL_RGBA, GL_UNSIGNED_BYTE, pixels.data());
@@ -404,7 +419,8 @@ void CanvasManager::WriteImage(std::string &path) {
     mSelectedRenderables.clear();
     std::vector<unsigned char> pixels =
         ReadPixels(0, 0, static_cast<int>(mCanvasSize.x), static_cast<int>(mCanvasSize.y));
-    stbi_write_png(path.c_str(), static_cast<int>(mCanvasSize.x), static_cast<int>(mCanvasSize.y), 4, pixels.data(), static_cast<int>(mCanvasSize.x * 4));
+    stbi_write_png(path.c_str(), static_cast<int>(mCanvasSize.x), static_cast<int>(mCanvasSize.y), 4, pixels.data(),
+                   static_cast<int>(mCanvasSize.x * 4));
 }
 
 CanvasManager gCanvasManager;
