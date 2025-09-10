@@ -6,6 +6,7 @@
 #include "imgui.h"
 #include <cstdint>
 #include <vector>
+#include "core/canvas/components/properties.h"
 
 NUVIO_CANVAS_NAMESPACE_BEGIN
 class CanvasManager;
@@ -29,12 +30,13 @@ enum class RenderableType { RECTANGLE };
 
 class Irenderable {
   public:
+    virtual std::vector<Property> get_properties() = 0;
     virtual RenderableType get_type() const = 0;
     virtual RenderData get_render_data() const = 0;
     virtual Rect get_rect() const = 0;
     virtual void set_rect(Rect rect) = 0;
-    virtual void set_position(ImVec2 positino) = 0;
-    virtual ImVec2 get_position() = 0;
+    virtual void set_position(glm::vec2 position) = 0;
+    virtual glm::vec2& get_position() = 0;
     virtual ~Irenderable() = default;
     RenderableType type;
 };

@@ -1,6 +1,7 @@
 #pragma once
 #include "core/nuvio_namespaces.h"
 #include "core/ui/components/comp.h"
+#include "core/canvas/manager.h"
 #include <memory>
 
 NUVIO_UI_NAMESPACE_BEGIN

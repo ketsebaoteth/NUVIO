@@ -241,7 +241,13 @@ bool CanvasManager::isMouseOverHandles() {
 }
 
 void CanvasManager::updateSelected() {
-    if (isMouseOverHandles()) {
+    canvas::Rect canvas_rect = {mCanvasPosition, mCanvasSize};
+    if(mMouseLocation.x < canvas_rect.edge_position(canvas::RectSide::LEFT) || mMouseLocation.x > canvas_rect.edge_position(canvas::RectSide::RIGHT) ||
+       mMouseLocation.y < canvas_rect.edge_position(canvas::RectSide::TOP) || mMouseLocation.y > canvas_rect.edge_position(canvas::RectSide::BOTTOM)){
+        // mouse is outside canvas
+        return;
+    }
+    if (isMouseOverHandles() ) {
         return;
     }
     mSelectedRenderables.clear();
@@ -391,7 +397,7 @@ void CanvasManager::updateMouseCollision() {
 
 void CanvasManager::RegisterMoveStart() {
     for (auto &selected : mSelectedRenderables) {
-        ImVec2 oldPos = selected->get_position();
+        glm::vec2 oldPos = selected->get_position();
         mMoveData.push_back(
             {selected, oldPos, oldPos}); // store old pos for now for the new pos till we get the new pos
     }
@@ -422,6 +428,8 @@ void CanvasManager::WriteImage(std::string &path) {
     stbi_write_png(path.c_str(), static_cast<int>(mCanvasSize.x), static_cast<int>(mCanvasSize.y), 4, pixels.data(),
                    static_cast<int>(mCanvasSize.x * 4));
 }
+
+std::vector<canvas::Irenderable *>& CanvasManager::GetSelectedRenderables() { return mSelectedRenderables; }
 
 CanvasManager gCanvasManager;
 

@@ -17,8 +17,8 @@ NUVIO_NAMESPACE_BEGIN
 
 struct MoveData {
     canvas::Irenderable *renderable;
-    ImVec2 oldPos;
-    ImVec2 newPos;
+    glm::vec2 oldPos;
+    glm::vec2 newPos;
 };
 
 // Command to move renderables and support undo/redo
@@ -81,6 +81,7 @@ class CanvasManager {
      */
     glm::vec2 GetCanvasSize();
     glm::vec2 GetCanvasPosition();
+    std::vector<canvas::Irenderable *>& GetSelectedRenderables();
     // -- for image exporting --
     std::vector<unsigned char> ReadPixels(int x, int y, int width, int height);
     void WriteImage(std::string &path);

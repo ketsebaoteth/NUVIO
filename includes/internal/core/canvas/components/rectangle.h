@@ -5,15 +5,17 @@
 #include "glm/fwd.hpp"
 #include "imgui.h"
 
+
 NUVIO_CANVAS_NAMESPACE_BEGIN
 
 class Rectangle : public Irenderable {
   public:
+    std::vector<Property> get_properties() override;
     Rectangle(glm::vec2 pos, glm::vec2 size);
     Rect get_rect() const override;
     void set_rect(Rect rect) override;
-    void set_position(ImVec2 position) override;
-    ImVec2 get_position() override;
+    void set_position(glm::vec2 position) override;
+    glm::vec2& get_position() override;
     RenderData get_render_data() const override;
     RenderableType get_type() const override;
 
